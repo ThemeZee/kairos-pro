@@ -4,7 +4,7 @@
  *
  * Adds custom font settings to Customizer and generates font CSS code
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Custom Fonts Class
  */
-class Harrison_Pro_Custom_Fonts {
+class Kairos_Pro_Custom_Fonts {
 
 	/**
 	 * Custom Fonts Setup
@@ -24,17 +24,17 @@ class Harrison_Pro_Custom_Fonts {
 	 */
 	static function setup() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
 		// Include Customizer Control Files.
-		require_once HARRISON_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-font-control.php';
-		require_once HARRISON_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-gt-plugin-control.php';
+		require_once KAIROS_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-font-control.php';
+		require_once KAIROS_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-gt-plugin-control.php';
 
 		// Add Custom Fonts CSS code to custom stylesheet output.
-		add_filter( 'harrison_pro_custom_css_stylesheet', array( __CLASS__, 'get_custom_fonts_css' ) );
+		add_filter( 'kairos_pro_custom_css_stylesheet', array( __CLASS__, 'get_custom_fonts_css' ) );
 
 		// Load custom fonts from Google web font API.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'load_google_fonts' ), 1 );
@@ -72,10 +72,10 @@ class Harrison_Pro_Custom_Fonts {
 	static function get_custom_fonts_css( $custom_css ) {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Get Default Fonts from settings.
-		$default_options = Harrison_Pro_Customizer::get_default_options();
+		$default_options = Kairos_Pro_Customizer::get_default_options();
 
 		// Font Variables.
 		$font_variables = '';
@@ -131,7 +131,7 @@ class Harrison_Pro_Custom_Fonts {
 	static function load_google_fonts() {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Get Local Fonts which haven't to be load from Google.
 		$local_fonts = self::get_local_fonts();
@@ -181,7 +181,7 @@ class Harrison_Pro_Custom_Fonts {
 		$google_fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
 		// Register and Enqueue Google Fonts.
-		wp_enqueue_style( 'harrison-pro-custom-fonts', $google_fonts_url, array(), null );
+		wp_enqueue_style( 'kairos-pro-custom-fonts', $google_fonts_url, array(), null );
 	}
 
 	/**
@@ -192,137 +192,137 @@ class Harrison_Pro_Custom_Fonts {
 	static function font_settings( $wp_customize ) {
 
 		// Add Section for Theme Fonts.
-		$wp_customize->add_section( 'harrison_pro_section_typography', array(
-			'title'    => __( 'Typography', 'harrison-pro' ),
+		$wp_customize->add_section( 'kairos_pro_section_typography', array(
+			'title'    => __( 'Typography', 'kairos-pro' ),
 			'priority' => 120,
-			'panel'    => 'harrison_options_panel',
+			'panel'    => 'kairos_options_panel',
 		) );
 
 		// Get Default Fonts from settings.
-		$default_options = Harrison_Pro_Customizer::get_default_options();
+		$default_options = Kairos_Pro_Customizer::get_default_options();
 
 		// Add Text Font setting.
-		$wp_customize->add_setting( 'harrison_theme_options[text_font]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[text_font]', array(
 			'default'           => $default_options['text_font'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 		) );
 
-		$wp_customize->add_control( new Harrison_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
 			$wp_customize, 'text_font', array(
-				'label'    => esc_html__( 'Body Font', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_typography',
-				'settings' => 'harrison_theme_options[text_font]',
+				'label'    => esc_html__( 'Body Font', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_typography',
+				'settings' => 'kairos_theme_options[text_font]',
 				'priority' => 10,
 			)
 		) );
 
 		// Add Title Font setting.
-		$wp_customize->add_setting( 'harrison_theme_options[title_font]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[title_font]', array(
 			'default'           => $default_options['title_font'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 		) );
 
-		$wp_customize->add_control( new Harrison_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
 			$wp_customize, 'title_font', array(
-				'label'    => esc_html_x( 'Headings', 'Font Setting', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_typography',
-				'settings' => 'harrison_theme_options[title_font]',
+				'label'    => esc_html_x( 'Headings', 'Font Setting', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_typography',
+				'settings' => 'kairos_theme_options[title_font]',
 				'priority' => 20,
 			)
 		) );
 
 		// Add Title Font Weight setting.
-		$wp_customize->add_setting( 'harrison_theme_options[title_is_bold]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[title_is_bold]', array(
 			'default'           => $default_options['title_is_bold'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'harrison_sanitize_checkbox',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'harrison_theme_options[title_is_bold]', array(
-			'label'    => esc_html_x( 'Bold', 'Font Setting', 'harrison-pro' ),
-			'section'  => 'harrison_pro_section_typography',
-			'settings' => 'harrison_theme_options[title_is_bold]',
+		$wp_customize->add_control( 'kairos_theme_options[title_is_bold]', array(
+			'label'    => esc_html_x( 'Bold', 'Font Setting', 'kairos-pro' ),
+			'section'  => 'kairos_pro_section_typography',
+			'settings' => 'kairos_theme_options[title_is_bold]',
 			'type'     => 'checkbox',
 			'priority' => 30,
 		) );
 
 		// Add Title Uppercase setting.
-		$wp_customize->add_setting( 'harrison_theme_options[title_is_uppercase]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[title_is_uppercase]', array(
 			'default'           => $default_options['title_is_uppercase'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'harrison_sanitize_checkbox',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'harrison_theme_options[title_is_uppercase]', array(
-			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'harrison-pro' ),
-			'section'  => 'harrison_pro_section_typography',
-			'settings' => 'harrison_theme_options[title_is_uppercase]',
+		$wp_customize->add_control( 'kairos_theme_options[title_is_uppercase]', array(
+			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'kairos-pro' ),
+			'section'  => 'kairos_pro_section_typography',
+			'settings' => 'kairos_theme_options[title_is_uppercase]',
 			'type'     => 'checkbox',
 			'priority' => 40,
 		) );
 
 		// Add Navigation Font setting.
-		$wp_customize->add_setting( 'harrison_theme_options[navi_font]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[navi_font]', array(
 			'default'           => $default_options['navi_font'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 		) );
 
-		$wp_customize->add_control( new Harrison_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
 			$wp_customize, 'navi_font', array(
-				'label'    => esc_html_x( 'Navigation', 'Font Setting', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_typography',
-				'settings' => 'harrison_theme_options[navi_font]',
+				'label'    => esc_html_x( 'Navigation', 'Font Setting', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_typography',
+				'settings' => 'kairos_theme_options[navi_font]',
 				'priority' => 50,
 			)
 		) );
 
 		// Add Navi Font Weight setting.
-		$wp_customize->add_setting( 'harrison_theme_options[navi_is_bold]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[navi_is_bold]', array(
 			'default'           => $default_options['navi_is_bold'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'harrison_sanitize_checkbox',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'harrison_theme_options[navi_is_bold]', array(
-			'label'    => esc_html_x( 'Bold', 'Font Setting', 'harrison-pro' ),
-			'section'  => 'harrison_pro_section_typography',
-			'settings' => 'harrison_theme_options[navi_is_bold]',
+		$wp_customize->add_control( 'kairos_theme_options[navi_is_bold]', array(
+			'label'    => esc_html_x( 'Bold', 'Font Setting', 'kairos-pro' ),
+			'section'  => 'kairos_pro_section_typography',
+			'settings' => 'kairos_theme_options[navi_is_bold]',
 			'type'     => 'checkbox',
 			'priority' => 60,
 		) );
 
 		// Add Navi Uppercase setting.
-		$wp_customize->add_setting( 'harrison_theme_options[navi_is_uppercase]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[navi_is_uppercase]', array(
 			'default'           => $default_options['navi_is_uppercase'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'harrison_sanitize_checkbox',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'harrison_theme_options[navi_is_uppercase]', array(
-			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'harrison-pro' ),
-			'section'  => 'harrison_pro_section_typography',
-			'settings' => 'harrison_theme_options[navi_is_uppercase]',
+		$wp_customize->add_control( 'kairos_theme_options[navi_is_uppercase]', array(
+			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'kairos-pro' ),
+			'section'  => 'kairos_pro_section_typography',
+			'settings' => 'kairos_theme_options[navi_is_uppercase]',
 			'type'     => 'checkbox',
 			'priority' => 70,
 		) );
 
 		// Add GT Local Fonts control.
 		if ( ! class_exists( 'GermanThemes_Local_Fonts' ) ) {
-			$wp_customize->add_control( new Harrison_Pro_Customize_GT_Plugin_Control(
+			$wp_customize->add_control( new Kairos_Pro_Customize_GT_Plugin_Control(
 				$wp_customize, 'gt_local_fonts_plugin', array(
-					'label'       => esc_html__( 'More Local Fonts', 'harrison-pro' ),
-					'description' => esc_html__( 'You can install the GT Local Fonts plugin to extend the typography options with additional local GDPR-compatible fonts.', 'harrison-pro' ),
-					'section'     => 'harrison_pro_section_typography',
+					'label'       => esc_html__( 'More Local Fonts', 'kairos-pro' ),
+					'description' => esc_html__( 'You can install the GT Local Fonts plugin to extend the typography options with additional local GDPR-compatible fonts.', 'kairos-pro' ),
+					'section'     => 'kairos_pro_section_typography',
 					'settings'    => array(),
 					'priority'    => 80,
 				)
@@ -336,7 +336,7 @@ class Harrison_Pro_Custom_Fonts {
 	static function get_selected_fonts() {
 
 		// Get theme options from database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Get selected fonts.
 		$selected_fonts = array(
@@ -356,7 +356,7 @@ class Harrison_Pro_Custom_Fonts {
 
 		// Remove default Barlow font if not needed.
 		if ( ! in_array( 'Barlow', $selected_fonts ) ) {
-			wp_dequeue_style( 'harrison-theme-fonts' );
+			wp_dequeue_style( 'kairos-theme-fonts' );
 		}
 	}
 
@@ -397,10 +397,10 @@ class Harrison_Pro_Custom_Fonts {
 		$fonts = apply_filters( 'gt_typography_fonts', $fonts );
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Get Default Fonts from settings.
-		$default_options = Harrison_Pro_Customizer::get_default_options();
+		$default_options = Kairos_Pro_Customizer::get_default_options();
 
 		// Add default fonts to local fonts.
 		if ( isset( $default_options['text_font'] ) and ! array_key_exists( $default_options['text_font'], $fonts ) ) :
@@ -1158,7 +1158,7 @@ class Harrison_Pro_Custom_Fonts {
 		);
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Get Local Fonts.
 		$local_fonts = self::get_local_fonts();
@@ -1176,5 +1176,5 @@ class Harrison_Pro_Custom_Fonts {
 }
 
 // Run Class.
-add_action( 'init', array( 'Harrison_Pro_Custom_Fonts', 'setup' ) );
-add_action( 'after_setup_theme', array( 'Harrison_Pro_Custom_Fonts', 'add_typography_theme_support' ) );
+add_action( 'init', array( 'Kairos_Pro_Custom_Fonts', 'setup' ) );
+add_action( 'after_setup_theme', array( 'Kairos_Pro_Custom_Fonts', 'add_typography_theme_support' ) );

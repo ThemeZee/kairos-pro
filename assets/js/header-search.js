@@ -1,7 +1,7 @@
 /**
  * Header Search JS
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 ( function( $ ) {

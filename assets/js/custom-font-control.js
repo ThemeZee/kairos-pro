@@ -3,7 +3,7 @@
  *
  * Adds Javascript for the Custom Font Control in the Customizer. Ensures that Prev/Next/Default Font buttons work.
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 ( function( wp, $ ) {
@@ -11,7 +11,7 @@
 	 * The Customizer looks for wp.customizer.controlConstructor[type] functions
 	 * where type == the type member of a WP_Customize_Control
 	 */
-	wp.customize.controlConstructor.harrison_pro_custom_font = wp.customize.Control.extend({
+	wp.customize.controlConstructor.kairos_pro_custom_font = wp.customize.Control.extend({
 		/**
 		 * This method is called when the control is ready to run.
 		 * Do all of your setup and event binding here.

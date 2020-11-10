@@ -4,7 +4,7 @@
  *
  * Displays header search in main navigation menu
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Header Search Class
  */
-class Harrison_Pro_Header_Search {
+class Kairos_Pro_Header_Search {
 
 	/**
 	 * Header Search Setup
@@ -24,8 +24,8 @@ class Harrison_Pro_Header_Search {
 	 */
 	static function setup() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
@@ -33,10 +33,10 @@ class Harrison_Pro_Header_Search {
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_script' ) );
 
 		// Add search icon on main navigation menu.
-		add_action( 'harrison_after_navigation', array( __CLASS__, 'add_header_search_icon' ) );
+		add_action( 'kairos_after_navigation', array( __CLASS__, 'add_header_search_icon' ) );
 
 		// Add search form on header area.
-		add_action( 'harrison_after_header', array( __CLASS__, 'add_header_search_form' ) );
+		add_action( 'kairos_after_header', array( __CLASS__, 'add_header_search_form' ) );
 
 		// Add Header Search checkbox in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'header_search_settings' ) );
@@ -53,12 +53,12 @@ class Harrison_Pro_Header_Search {
 	static function enqueue_script() {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Embed header search JS if enabled.
 		if ( ( true === $theme_options['header_search'] || is_customize_preview() ) && ! self::is_amp() ) :
 
-			wp_enqueue_script( 'harrison-pro-header-search', HARRISON_PRO_PLUGIN_URL . 'assets/js/header-search.js', array( 'jquery' ), HARRISON_PRO_VERSION, true );
+			wp_enqueue_script( 'kairos-pro-header-search', KAIROS_PRO_PLUGIN_URL . 'assets/js/header-search.js', array( 'jquery' ), KAIROS_PRO_VERSION, true );
 
 		endif;
 	}
@@ -71,7 +71,7 @@ class Harrison_Pro_Header_Search {
 	static function add_header_search_icon() {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Show header search if activated.
 		if ( true === $theme_options['header_search'] || is_customize_preview() ) : ?>
@@ -79,8 +79,8 @@ class Harrison_Pro_Header_Search {
 			<div class="header-search-button">
 
 				<button class="header-search-icon" aria-controls="header-search" aria-expanded="false" <?php self::amp_search_toggle(); ?>>
-					<?php echo harrison_get_svg( 'search' ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'harrison-pro' ); ?></span>
+					<?php echo kairos_get_svg( 'search' ); ?>
+					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'kairos-pro' ); ?></span>
 				</button>
 
 			</div>
@@ -97,7 +97,7 @@ class Harrison_Pro_Header_Search {
 	static function add_header_search_form() {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Show header search if activated.
 		if ( true === $theme_options['header_search'] || is_customize_preview() ) :
@@ -123,27 +123,27 @@ class Harrison_Pro_Header_Search {
 	static function header_search_settings( $wp_customize ) {
 
 		// Add Header Search Headline.
-		$wp_customize->add_control( new Harrison_Customize_Header_Control(
-			$wp_customize, 'harrison_theme_options[header_search_title]', array(
-				'label'    => esc_html__( 'Header Search', 'harrison-pro' ),
-				'section'  => 'harrison_section_layout',
+		$wp_customize->add_control( new Kairos_Customize_Header_Control(
+			$wp_customize, 'kairos_theme_options[header_search_title]', array(
+				'label'    => esc_html__( 'Header Search', 'kairos-pro' ),
+				'section'  => 'kairos_section_layout',
 				'settings' => array(),
 				'priority' => 30,
 			)
 		) );
 
 		// Add Header Search setting and control.
-		$wp_customize->add_setting( 'harrison_theme_options[header_search]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[header_search]', array(
 			'default'           => false,
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'harrison_sanitize_checkbox',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'harrison_theme_options[header_search]', array(
-			'label'    => esc_html__( 'Enable search field in header', 'harrison-pro' ),
-			'section'  => 'harrison_section_layout',
-			'settings' => 'harrison_theme_options[header_search]',
+		$wp_customize->add_control( 'kairos_theme_options[header_search]', array(
+			'label'    => esc_html__( 'Enable search field in header', 'kairos-pro' ),
+			'section'  => 'kairos_section_layout',
+			'settings' => 'kairos_theme_options[header_search]',
 			'type'     => 'checkbox',
 			'priority' => 40,
 		) );
@@ -158,7 +158,7 @@ class Harrison_Pro_Header_Search {
 	static function hide_header_search( $classes ) {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Add class if header search is enabled.
 		if ( true === $theme_options['header_search'] ) {
@@ -206,4 +206,4 @@ class Harrison_Pro_Header_Search {
 }
 
 // Run Class.
-add_action( 'init', array( 'Harrison_Pro_Header_Search', 'setup' ) );
+add_action( 'init', array( 'Kairos_Pro_Header_Search', 'setup' ) );

@@ -4,7 +4,7 @@
  *
  * Displays scroll to top button based on theme options
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Scroll to Top Class
  */
-class Harrison_Pro_Scroll_To_Top {
+class Kairos_Pro_Scroll_To_Top {
 
 	/**
 	 * Scroll to Top Setup
@@ -24,8 +24,8 @@ class Harrison_Pro_Scroll_To_Top {
 	 */
 	static function setup() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
@@ -44,15 +44,15 @@ class Harrison_Pro_Scroll_To_Top {
 	static function enqueue_script() {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Call Credit Link function of theme if credit link is activated.
 		if ( true === $theme_options['scroll_to_top'] && ! self::is_amp() ) :
 
-			wp_enqueue_script( 'harrison-pro-scroll-to-top', HARRISON_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.js', array( 'jquery' ), HARRISON_PRO_VERSION, true );
+			wp_enqueue_script( 'kairos-pro-scroll-to-top', KAIROS_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.js', array( 'jquery' ), KAIROS_PRO_VERSION, true );
 
 			// Passing Parameters to navigation.js.
-			wp_localize_script( 'harrison-pro-scroll-to-top', 'harrison_pro_scroll_button', harrison_get_svg( 'collapse' ) );
+			wp_localize_script( 'kairos-pro-scroll-to-top', 'kairos_pro_scroll_button', kairos_get_svg( 'collapse' ) );
 
 		endif;
 	}
@@ -65,27 +65,27 @@ class Harrison_Pro_Scroll_To_Top {
 	static function scroll_to_top_settings( $wp_customize ) {
 
 		// Add Scroll to Top headline.
-		$wp_customize->add_control( new Harrison_Customize_Header_Control(
-			$wp_customize, 'harrison_theme_options[scroll_top_title]', array(
-				'label'    => esc_html__( 'Scroll to Top', 'harrison-pro' ),
-				'section'  => 'harrison_section_footer',
+		$wp_customize->add_control( new Kairos_Customize_Header_Control(
+			$wp_customize, 'kairos_theme_options[scroll_top_title]', array(
+				'label'    => esc_html__( 'Scroll to Top', 'kairos-pro' ),
+				'section'  => 'kairos_section_footer',
 				'settings' => array(),
 				'priority' => 40,
 			)
 		) );
 
 		// Add Scroll to Top setting.
-		$wp_customize->add_setting( 'harrison_theme_options[scroll_to_top]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[scroll_to_top]', array(
 			'default'           => false,
 			'type'              => 'option',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'harrison_sanitize_checkbox',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'harrison_theme_options[scroll_to_top]', array(
-			'label'    => esc_html__( 'Display Scroll to Top Button', 'harrison-pro' ),
-			'section'  => 'harrison_section_footer',
-			'settings' => 'harrison_theme_options[scroll_to_top]',
+		$wp_customize->add_control( 'kairos_theme_options[scroll_to_top]', array(
+			'label'    => esc_html__( 'Display Scroll to Top Button', 'kairos-pro' ),
+			'section'  => 'kairos_section_footer',
+			'settings' => 'kairos_theme_options[scroll_to_top]',
 			'type'     => 'checkbox',
 			'priority' => 50,
 		) );
@@ -100,4 +100,4 @@ class Harrison_Pro_Scroll_To_Top {
 }
 
 // Run Class.
-add_action( 'init', array( 'Harrison_Pro_Scroll_To_Top', 'setup' ) );
+add_action( 'init', array( 'Kairos_Pro_Scroll_To_Top', 'setup' ) );

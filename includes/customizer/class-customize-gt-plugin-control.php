@@ -2,7 +2,7 @@
 /**
  * Plugin Control for the Customizer
  *
- * @package Harrison
+ * @package Kairos
  */
 
 /**
@@ -13,7 +13,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	/**
 	 * Displays a bold label text. Used to create headlines for radio buttons and description sections.
 	 */
-	class Harrison_Pro_Customize_GT_Plugin_Control extends WP_Customize_Control {
+	class Kairos_Pro_Customize_GT_Plugin_Control extends WP_Customize_Control {
 		/**
 		 * Render Control
 		 */
@@ -30,7 +30,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 			<p>
 				<a href="<?php echo esc_url( network_admin_url( 'plugin-install.php?tab=search&type=author&s=germanthemes' ) ); ?>" class="button button-secondary">
-					<?php esc_html_e( 'Install Plugin', 'harrison' ); ?>
+					<?php esc_html_e( 'Install Plugin', 'kairos' ); ?>
 				</a>
 			</p>
 

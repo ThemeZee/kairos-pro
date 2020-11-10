@@ -4,7 +4,7 @@
  *
  * Adds theme color settings to Customizer and generates color CSS code
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Theme Colors Class
  */
-class Harrison_Pro_Theme_Colors {
+class Kairos_Pro_Theme_Colors {
 
 	/**
 	 * Theme Colors Setup
@@ -24,13 +24,13 @@ class Harrison_Pro_Theme_Colors {
 	 */
 	static function setup() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
 		// Add Custom Color CSS code to custom stylesheet output.
-		add_filter( 'harrison_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
+		add_filter( 'kairos_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
 
 		// Add Custom Color Settings.
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
@@ -45,10 +45,10 @@ class Harrison_Pro_Theme_Colors {
 	static function custom_colors_css( $custom_css ) {
 
 		// Get Theme Options from Database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Get Default Fonts from settings.
-		$default_options = Harrison_Pro_Customizer::get_default_options();
+		$default_options = Kairos_Pro_Customizer::get_default_options();
 
 		// Color Variables.
 		$color_variables = '';
@@ -155,187 +155,187 @@ class Harrison_Pro_Theme_Colors {
 	static function color_settings( $wp_customize ) {
 
 		// Add Section for Theme Colors.
-		$wp_customize->add_section( 'harrison_pro_section_theme_colors', array(
-			'title'    => esc_html__( 'Theme Colors', 'harrison-pro' ),
+		$wp_customize->add_section( 'kairos_pro_section_theme_colors', array(
+			'title'    => esc_html__( 'Theme Colors', 'kairos-pro' ),
 			'priority' => 110,
-			'panel'    => 'harrison_options_panel',
+			'panel'    => 'kairos_options_panel',
 		) );
 
 		// Get Default Colors from settings.
-		$default_options = Harrison_Pro_Customizer::get_default_options();
+		$default_options = Kairos_Pro_Customizer::get_default_options();
 
 		// Add Page Background Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[page_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[page_color]', array(
 			'default'           => $default_options['page_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[page_color]', array(
-				'label'    => esc_html_x( 'Page Background', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[page_color]',
+			$wp_customize, 'kairos_theme_options[page_color]', array(
+				'label'    => esc_html_x( 'Page Background', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[page_color]',
 				'priority' => 10,
 			)
 		) );
 
 		// Add Header Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[header_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[header_color]', array(
 			'default'           => $default_options['header_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[header_color]', array(
-				'label'    => esc_html_x( 'Header Background', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[header_color]',
+			$wp_customize, 'kairos_theme_options[header_color]', array(
+				'label'    => esc_html_x( 'Header Background', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[header_color]',
 				'priority' => 20,
 			)
 		) );
 
 		// Add Navigation Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[navi_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[navi_color]', array(
 			'default'           => $default_options['navi_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[navi_color]', array(
-				'label'    => esc_html_x( 'Navigation', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[navi_color]',
+			$wp_customize, 'kairos_theme_options[navi_color]', array(
+				'label'    => esc_html_x( 'Navigation', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[navi_color]',
 				'priority' => 30,
 			)
 		) );
 
 		// Add Link Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[link_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[link_color]', array(
 			'default'           => $default_options['link_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[link_color]', array(
-				'label'    => esc_html_x( 'Links', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[link_color]',
+			$wp_customize, 'kairos_theme_options[link_color]', array(
+				'label'    => esc_html_x( 'Links', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[link_color]',
 				'priority' => 40,
 			)
 		) );
 
 		// Add Link Hover Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[link_hover_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[link_hover_color]', array(
 			'default'           => $default_options['link_hover_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[link_hover_color]', array(
-				'label'    => esc_html_x( 'Link Hover', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[link_hover_color]',
+			$wp_customize, 'kairos_theme_options[link_hover_color]', array(
+				'label'    => esc_html_x( 'Link Hover', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[link_hover_color]',
 				'priority' => 50,
 			)
 		) );
 
 		// Add Button Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[button_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[button_color]', array(
 			'default'           => $default_options['button_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[button_color]', array(
-				'label'    => esc_html_x( 'Buttons', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[button_color]',
+			$wp_customize, 'kairos_theme_options[button_color]', array(
+				'label'    => esc_html_x( 'Buttons', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[button_color]',
 				'priority' => 60,
 			)
 		) );
 
 		// Add Button Hover Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[button_hover_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[button_hover_color]', array(
 			'default'           => $default_options['button_hover_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[button_hover_color]', array(
-				'label'    => esc_html_x( 'Button Hover', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[button_hover_color]',
+			$wp_customize, 'kairos_theme_options[button_hover_color]', array(
+				'label'    => esc_html_x( 'Button Hover', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[button_hover_color]',
 				'priority' => 70,
 			)
 		) );
 
 		// Add Titles Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[title_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[title_color]', array(
 			'default'           => $default_options['title_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[title_color]', array(
-				'label'    => esc_html_x( 'Titles', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[title_color]',
+			$wp_customize, 'kairos_theme_options[title_color]', array(
+				'label'    => esc_html_x( 'Titles', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[title_color]',
 				'priority' => 80,
 			)
 		) );
 
 		// Add Title Hover Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[title_hover_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[title_hover_color]', array(
 			'default'           => $default_options['title_hover_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[title_hover_color]', array(
-				'label'    => esc_html_x( 'Title Hover', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[title_hover_color]',
+			$wp_customize, 'kairos_theme_options[title_hover_color]', array(
+				'label'    => esc_html_x( 'Title Hover', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[title_hover_color]',
 				'priority' => 90,
 			)
 		) );
 
 		// Add Footer Widgets Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[footer_widgets_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[footer_widgets_color]', array(
 			'default'           => $default_options['footer_widgets_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[footer_widgets_color]', array(
-				'label'    => esc_html_x( 'Footer Widgets', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[footer_widgets_color]',
+			$wp_customize, 'kairos_theme_options[footer_widgets_color]', array(
+				'label'    => esc_html_x( 'Footer Widgets', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[footer_widgets_color]',
 				'priority' => 100,
 			)
 		) );
 
 		// Add Footer Copyright Color setting.
-		$wp_customize->add_setting( 'harrison_theme_options[footer_color]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[footer_color]', array(
 			'default'           => $default_options['footer_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'harrison_theme_options[footer_color]', array(
-				'label'    => esc_html_x( 'Footer Copyright', 'Color Option', 'harrison-pro' ),
-				'section'  => 'harrison_pro_section_theme_colors',
-				'settings' => 'harrison_theme_options[footer_color]',
+			$wp_customize, 'kairos_theme_options[footer_color]', array(
+				'label'    => esc_html_x( 'Footer Copyright', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[footer_color]',
 				'priority' => 110,
 			)
 		) );
@@ -379,4 +379,4 @@ class Harrison_Pro_Theme_Colors {
 }
 
 // Run Class.
-add_action( 'init', array( 'Harrison_Pro_Theme_Colors', 'setup' ) );
+add_action( 'init', array( 'Kairos_Pro_Theme_Colors', 'setup' ) );

@@ -2,7 +2,7 @@
 /**
  * Social Icons Menus
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Header Bar Class
  */
-class Harrison_Pro_Social_Icons {
+class Kairos_Pro_Social_Icons {
 
 	/**
 	 * Class Setup
@@ -22,8 +22,8 @@ class Harrison_Pro_Social_Icons {
 	 */
 	static function setup() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
@@ -63,7 +63,7 @@ class Harrison_Pro_Social_Icons {
 
 		// Create SVG markup.
 		$svg  = '<svg class="icon icon-' . esc_attr( $icon ) . '" aria-hidden="true" role="img">';
-		$svg .= ' <use xlink:href="' . HARRISON_PRO_PLUGIN_URL . 'assets/icons/social-icons.svg#icon-' . esc_html( $icon ) . '"></use> ';
+		$svg .= ' <use xlink:href="' . KAIROS_PRO_PLUGIN_URL . 'assets/icons/social-icons.svg#icon-' . esc_html( $icon ) . '"></use> ';
 		$svg .= '</svg>';
 
 		return $svg;
@@ -165,21 +165,21 @@ class Harrison_Pro_Social_Icons {
 	 */
 	static function register_nav_menus() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
 		register_nav_menus( array(
-			'social-header' => esc_html__( 'Social Icons (Header)', 'harrison-pro' ),
-			'social-footer' => esc_html__( 'Social Icons (Footer)', 'harrison-pro' ),
+			'social-header' => esc_html__( 'Social Icons (Header)', 'kairos-pro' ),
+			'social-footer' => esc_html__( 'Social Icons (Footer)', 'kairos-pro' ),
 		) );
 
 	}
 }
 
 // Run Class.
-add_action( 'init', array( 'Harrison_Pro_Social_Icons', 'setup' ) );
+add_action( 'init', array( 'Kairos_Pro_Social_Icons', 'setup' ) );
 
 // Register navigation menus in backend.
-add_action( 'after_setup_theme', array( 'Harrison_Pro_Social_Icons', 'register_nav_menus' ), 30 );
+add_action( 'after_setup_theme', array( 'Kairos_Pro_Social_Icons', 'register_nav_menus' ), 30 );

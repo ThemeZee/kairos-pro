@@ -1,17 +1,17 @@
 /*
- * Harrison Settings CSS
+ * Kairos Settings CSS
  *
  * CSS Stylesheet for settings page on Appearance -> Pro Version
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 /* License Settings */
-.harrison-pro-settings-wrap {
+.kairos-pro-settings-wrap {
 	margin: 25px 0 0;
 }
 
-.harrison-pro-settings-wrap .license-status {
+.kairos-pro-settings-wrap .license-status {
 	display: inline-block;
 	margin: 0 12px 0 0;
 	padding: 4px 8px;
@@ -20,19 +20,19 @@
 	text-transform: uppercase;
 }
 
-.harrison-pro-settings-wrap .license-active {
+.kairos-pro-settings-wrap .license-active {
 	background: green;
 }
 
-.harrison-pro-settings-wrap .license-invalid,
-.harrison-pro-settings-wrap .license-expired {
+.kairos-pro-settings-wrap .license-invalid,
+.kairos-pro-settings-wrap .license-expired {
 	background: red;
 }
 
-.harrison-pro-settings-wrap .license-description {
+.kairos-pro-settings-wrap .license-description {
 	margin: 16px 0 0;
 }
 
-.harrison-pro-settings-wrap .license-renewal {
+.kairos-pro-settings-wrap .license-renewal {
 	margin: 16px 0 0;
 }

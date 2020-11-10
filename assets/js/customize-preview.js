@@ -3,13 +3,13 @@
  *
  * Reloads changes on Theme Customizer Preview asynchronously for better usability
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 ( function( $ ) {
 
 	/* Header Search checkbox */
-	wp.customize( 'harrison_theme_options[header_search]', function( value ) {
+	wp.customize( 'kairos_theme_options[header_search]', function( value ) {
 		value.bind( function( newval ) {
 			if ( false === newval ) {
 				$( 'body' ).addClass( 'header-search-hidden' );
@@ -27,7 +27,7 @@
 	} );
 
 	/* Author Bio checkbox */
-	wp.customize( 'harrison_theme_options[author_bio]', function( value ) {
+	wp.customize( 'kairos_theme_options[author_bio]', function( value ) {
 		value.bind( function( newval ) {
 			if ( false === newval ) {
 				$( 'body' ).addClass( 'author-bio-hidden' );
@@ -38,56 +38,56 @@
 	} );
 
 	/* Primary Color Option */
-	wp.customize( 'harrison_theme_options[primary_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[primary_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--primary-color', newval );
 		} );
 	} );
 
 	/* Secondary Color Option */
-	wp.customize( 'harrison_theme_options[secondary_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[secondary_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--secondary-color', newval );
 		} );
 	} );
 
 	/* Accent Color Option */
-	wp.customize( 'harrison_theme_options[accent_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[accent_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--accent-color', newval );
 		} );
 	} );
 
 	/* Highlight Color Option */
-	wp.customize( 'harrison_theme_options[highlight_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[highlight_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--highlight-color', newval );
 		} );
 	} );
 
 	/* Light Gray Color Option */
-	wp.customize( 'harrison_theme_options[light_gray_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[light_gray_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--light-gray-color', newval );
 		} );
 	} );
 
 	/* Gray Color Option */
-	wp.customize( 'harrison_theme_options[gray_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[gray_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--gray-color', newval );
 		} );
 	} );
 
 	/* Dark Gray Color Option */
-	wp.customize( 'harrison_theme_options[dark_gray_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[dark_gray_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--dark-gray-color', newval );
 		} );
 	} );
 
 	/* Page Background Color Option */
-	wp.customize( 'harrison_theme_options[page_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[page_color]', function( value ) {
 		value.bind( function( newval ) {
 			var text_color, medium_text_color, light_text_color, border_color, light_bg_color;
 
@@ -115,7 +115,7 @@
 	} );
 
 	/* Header Color Option */
-	wp.customize( 'harrison_theme_options[header_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
 			var text_color, border_color;
 
@@ -134,56 +134,56 @@
 	} );
 
 	/* Navigation Color Option */
-	wp.customize( 'harrison_theme_options[navi_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[navi_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--header-text-hover-color', newval );
 		} );
 	} );
 
 	/* Link Color Option */
-	wp.customize( 'harrison_theme_options[link_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[link_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--link-color', newval );
 		} );
 	} );
 
 	/* Link Color Hover Option */
-	wp.customize( 'harrison_theme_options[link_hover_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[link_hover_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--link-hover-color', newval );
 		} );
 	} );
 
 	/* Button Color Option */
-	wp.customize( 'harrison_theme_options[button_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[button_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--button-color', newval );
 		} );
 	} );
 
 	/* Button Color Hover Option */
-	wp.customize( 'harrison_theme_options[button_hover_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[button_hover_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--button-hover-color', newval );
 		} );
 	} );
 
 	/* Title Color Option */
-	wp.customize( 'harrison_theme_options[title_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[title_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--title-color', newval );
 		} );
 	} );
 
 	/* Title Hover Color Option */
-	wp.customize( 'harrison_theme_options[title_hover_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[title_hover_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--title-hover-color', newval );
 		} );
 	} );
 
 	/* Footer Widgets Color Option */
-	wp.customize( 'harrison_theme_options[footer_widgets_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[footer_widgets_color]', function( value ) {
 		value.bind( function( newval ) {
 			var text_color, link_color, link_hover_color, border_color;
 
@@ -208,7 +208,7 @@
 	} );
 
 	/* Footer Color Option */
-	wp.customize( 'harrison_theme_options[footer_color]', function( value ) {
+	wp.customize( 'kairos_theme_options[footer_color]', function( value ) {
 		value.bind( function( newval ) {
 			var text_color, link_color, link_hover_color, border_color;
 
@@ -233,17 +233,17 @@
 	} );
 
 	/* Theme Fonts */
-	wp.customize( 'harrison_theme_options[text_font]', function( value ) {
+	wp.customize( 'kairos_theme_options[text_font]', function( value ) {
 		value.bind( function( newval ) {
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
 			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
-			var googleFontSource = "<link id='harrison-pro-custom-text-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
-			var checkLink = $( "head" ).find( "#harrison-pro-custom-text-font" ).length;
+			var googleFontSource = "<link id='kairos-pro-custom-text-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
+			var checkLink = $( "head" ).find( "#kairos-pro-custom-text-font" ).length;
 
 			if (checkLink > 0) {
-				$( "head" ).find( "#harrison-pro-custom-text-font" ).remove();
+				$( "head" ).find( "#kairos-pro-custom-text-font" ).remove();
 			}
 			$( "head" ).append( googleFontSource );
 
@@ -256,17 +256,17 @@
 		} );
 	} );
 
-	wp.customize( 'harrison_theme_options[title_font]', function( value ) {
+	wp.customize( 'kairos_theme_options[title_font]', function( value ) {
 		value.bind( function( newval ) {
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
 			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
-			var googleFontSource = "<link id='harrison-pro-custom-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
-			var checkLink = $( "head" ).find( "#harrison-pro-custom-title-font" ).length;
+			var googleFontSource = "<link id='kairos-pro-custom-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
+			var checkLink = $( "head" ).find( "#kairos-pro-custom-title-font" ).length;
 
 			if (checkLink > 0) {
-				$( "head" ).find( "#harrison-pro-custom-title-font" ).remove();
+				$( "head" ).find( "#kairos-pro-custom-title-font" ).remove();
 			}
 			$( "head" ).append( googleFontSource );
 
@@ -280,7 +280,7 @@
 	} );
 
 	/* Title Font Weight */
-	wp.customize( 'harrison_theme_options[title_is_bold]', function( value ) {
+	wp.customize( 'kairos_theme_options[title_is_bold]', function( value ) {
 		value.bind( function( newval ) {
 			var fontWeight = newval ? 'bold' : 'normal';
 			document.documentElement.style.setProperty( '--title-font-weight', fontWeight );
@@ -288,24 +288,24 @@
 	} );
 
 	/* Title Text Transform */
-	wp.customize( 'harrison_theme_options[title_is_uppercase]', function( value ) {
+	wp.customize( 'kairos_theme_options[title_is_uppercase]', function( value ) {
 		value.bind( function( newval ) {
 			var textTransform = newval ? 'uppercase' : 'none';
 			document.documentElement.style.setProperty( '--title-text-transform', textTransform );
 		} );
 	} );
 
-	wp.customize( 'harrison_theme_options[navi_font]', function( value ) {
+	wp.customize( 'kairos_theme_options[navi_font]', function( value ) {
 		value.bind( function( newval ) {
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
 			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
-			var googleFontSource = "<link id='harrison-pro-custom-navi-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
-			var checkLink = $( "head" ).find( "#harrison-pro-custom-navi-font" ).length;
+			var googleFontSource = "<link id='kairos-pro-custom-navi-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
+			var checkLink = $( "head" ).find( "#kairos-pro-custom-navi-font" ).length;
 
 			if (checkLink > 0) {
-				$( "head" ).find( "#harrison-pro-custom-navi-font" ).remove();
+				$( "head" ).find( "#kairos-pro-custom-navi-font" ).remove();
 			}
 			$( "head" ).append( googleFontSource );
 
@@ -319,7 +319,7 @@
 	} );
 
 	/* Navi Font Weight */
-	wp.customize( 'harrison_theme_options[navi_is_bold]', function( value ) {
+	wp.customize( 'kairos_theme_options[navi_is_bold]', function( value ) {
 		value.bind( function( newval ) {
 			var fontWeight = newval ? 'bold' : 'normal';
 			document.documentElement.style.setProperty( '--navi-font-weight', fontWeight );
@@ -327,7 +327,7 @@
 	} );
 
 	/* Navi Text Transform */
-	wp.customize( 'harrison_theme_options[navi_is_uppercase]', function( value ) {
+	wp.customize( 'kairos_theme_options[navi_is_uppercase]', function( value ) {
 		value.bind( function( newval ) {
 			var textTransform = newval ? 'uppercase' : 'none';
 			document.documentElement.style.setProperty( '--navi-text-transform', textTransform );

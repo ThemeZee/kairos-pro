@@ -2,9 +2,9 @@
 /**
  * Widget Areas
  *
- * Registers various widget areas and hooks into the Harrison theme to display widgets
+ * Registers various widget areas and hooks into the Kairos theme to display widgets
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Footer Widgets Class
  */
-class Harrison_Pro_Widget_Areas {
+class Kairos_Pro_Widget_Areas {
 
 	/**
 	 * Footer Widgets Setup
@@ -24,18 +24,18 @@ class Harrison_Pro_Widget_Areas {
 	 */
 	static function setup() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
 		// Display widgets.
-		add_action( 'harrison_before_header', array( __CLASS__, 'display_before_header_widgets' ), 20 );
-		add_action( 'harrison_after_header', array( __CLASS__, 'display_after_header_widgets' ), 20 );
-		add_action( 'harrison_before_blog', array( __CLASS__, 'display_before_blog_widgets' ), 20 );
-		add_action( 'harrison_after_posts', array( __CLASS__, 'display_after_posts_widgets' ), 20 );
-		add_action( 'harrison_after_pages', array( __CLASS__, 'display_after_pages_widgets' ), 20 );
-		add_action( 'harrison_before_footer', array( __CLASS__, 'display_before_footer_widgets' ), 20 );
+		add_action( 'kairos_before_header', array( __CLASS__, 'display_before_header_widgets' ), 20 );
+		add_action( 'kairos_after_header', array( __CLASS__, 'display_after_header_widgets' ), 20 );
+		add_action( 'kairos_before_blog', array( __CLASS__, 'display_before_blog_widgets' ), 20 );
+		add_action( 'kairos_after_posts', array( __CLASS__, 'display_after_posts_widgets' ), 20 );
+		add_action( 'kairos_after_pages', array( __CLASS__, 'display_after_pages_widgets' ), 20 );
+		add_action( 'kairos_before_footer', array( __CLASS__, 'display_before_footer_widgets' ), 20 );
 	}
 
 	/**
@@ -102,16 +102,16 @@ class Harrison_Pro_Widget_Areas {
 	 */
 	static function register_widgets() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
 		// Register Before Header widget area.
 		register_sidebar( array(
-			'name'          => esc_html__( 'Before Header', 'harrison-pro' ),
+			'name'          => esc_html__( 'Before Header', 'kairos-pro' ),
 			'id'            => 'before-header',
-			'description'   => esc_html_x( 'Appears above the header area.', 'widget area description', 'harrison-pro' ),
+			'description'   => esc_html_x( 'Appears above the header area.', 'widget area description', 'kairos-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -120,9 +120,9 @@ class Harrison_Pro_Widget_Areas {
 
 		// Register After Header widget area.
 		register_sidebar( array(
-			'name'          => esc_html__( 'After Header', 'harrison-pro' ),
+			'name'          => esc_html__( 'After Header', 'kairos-pro' ),
 			'id'            => 'after-header',
-			'description'   => esc_html_x( 'Appears below the header area.', 'widget area description', 'harrison-pro' ),
+			'description'   => esc_html_x( 'Appears below the header area.', 'widget area description', 'kairos-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -131,9 +131,9 @@ class Harrison_Pro_Widget_Areas {
 
 		// Register Before Blog widget area.
 		register_sidebar( array(
-			'name'          => esc_html__( 'Before Blog Posts', 'harrison-pro' ),
+			'name'          => esc_html__( 'Before Blog Posts', 'kairos-pro' ),
 			'id'            => 'before-blog',
-			'description'   => esc_html_x( 'Appears on the blog page above the latest posts.', 'widget area description', 'harrison-pro' ),
+			'description'   => esc_html_x( 'Appears on the blog page above the latest posts.', 'widget area description', 'kairos-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -142,9 +142,9 @@ class Harrison_Pro_Widget_Areas {
 
 		// Register After Posts widget area.
 		register_sidebar( array(
-			'name'          => esc_html__( 'After Posts', 'harrison-pro' ),
+			'name'          => esc_html__( 'After Posts', 'kairos-pro' ),
 			'id'            => 'after-posts',
-			'description'   => esc_html_x( 'Appears below single posts.', 'widget area description', 'harrison-pro' ),
+			'description'   => esc_html_x( 'Appears below single posts.', 'widget area description', 'kairos-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -153,9 +153,9 @@ class Harrison_Pro_Widget_Areas {
 
 		// Register After Pages widget area.
 		register_sidebar( array(
-			'name'          => esc_html__( 'After Pages', 'harrison-pro' ),
+			'name'          => esc_html__( 'After Pages', 'kairos-pro' ),
 			'id'            => 'after-pages',
-			'description'   => esc_html_x( 'Appears below static pages.', 'widget area description', 'harrison-pro' ),
+			'description'   => esc_html_x( 'Appears below static pages.', 'widget area description', 'kairos-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -164,9 +164,9 @@ class Harrison_Pro_Widget_Areas {
 
 		// Register Before Footer widget area.
 		register_sidebar( array(
-			'name'          => esc_html__( 'Before Footer', 'harrison-pro' ),
+			'name'          => esc_html__( 'Before Footer', 'kairos-pro' ),
 			'id'            => 'before-footer',
-			'description'   => esc_html_x( 'Appears above the footer area.', 'widget area description', 'harrison-pro' ),
+			'description'   => esc_html_x( 'Appears above the footer area.', 'widget area description', 'kairos-pro' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -176,7 +176,7 @@ class Harrison_Pro_Widget_Areas {
 }
 
 // Run Class.
-add_action( 'init', array( 'Harrison_Pro_Widget_Areas', 'setup' ) );
+add_action( 'init', array( 'Kairos_Pro_Widget_Areas', 'setup' ) );
 
 // Register widgets in backend.
-add_action( 'widgets_init', array( 'Harrison_Pro_Widget_Areas', 'register_widgets' ), 10 );
+add_action( 'widgets_init', array( 'Kairos_Pro_Widget_Areas', 'register_widgets' ), 10 );

@@ -2,7 +2,7 @@
 /**
  * License Key
  *
- * @package Harrison Pro
+ * @package Kairos Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * License Key Class
  */
-class Harrison_Pro_License_Key {
+class Kairos_Pro_License_Key {
 	/**
 	 * Init Function
 	 *
@@ -37,13 +37,13 @@ class Harrison_Pro_License_Key {
 	 */
 	static function setup() {
 
-		// Return early if Harrison Theme is not active.
-		if ( ! current_theme_supports( 'harrison-pro' ) ) {
+		// Return early if Kairos Theme is not active.
+		if ( ! current_theme_supports( 'kairos-pro' ) ) {
 			return;
 		}
 
 		// Include Customizer Control Files.
-		require_once HARRISON_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-license-control.php';
+		require_once KAIROS_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-license-control.php';
 
 		// Add License Settings in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'license_settings' ) );
@@ -57,18 +57,18 @@ class Harrison_Pro_License_Key {
 	static function license_settings( $wp_customize ) {
 
 		// Add License Key setting.
-		$wp_customize->add_setting( 'harrison_theme_options[license_key]', array(
+		$wp_customize->add_setting( 'kairos_theme_options[license_key]', array(
 			'default'           => '',
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		) );
 
-		$wp_customize->add_control( new Harrison_Pro_Customize_License_Control(
-			$wp_customize, 'harrison_theme_options[license_key]', array(
-				'label'    => esc_html__( 'License Key', 'harrison-pro' ),
-				'section'  => 'harrison_section_theme_info',
-				'settings' => 'harrison_theme_options[license_key]',
+		$wp_customize->add_control( new Kairos_Pro_Customize_License_Control(
+			$wp_customize, 'kairos_theme_options[license_key]', array(
+				'label'    => esc_html__( 'License Key', 'kairos-pro' ),
+				'section'  => 'kairos_section_theme_info',
+				'settings' => 'kairos_theme_options[license_key]',
 				'priority' => 30,
 			)
 		) );
@@ -85,14 +85,14 @@ class Harrison_Pro_License_Key {
 		}
 
 		// Get theme options from database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		$license = trim( sanitize_text_field( $_REQUEST['license_key'] ) );	
 
 		if ( '' === $license ) {
 			$theme_options['license_status'] = 'inactive';
 			$theme_options['license_key']    = '';
-			update_option( 'harrison_theme_options', $theme_options );
+			update_option( 'kairos_theme_options', $theme_options );
 			die();
 		}
 
@@ -100,12 +100,12 @@ class Harrison_Pro_License_Key {
 		$api_params = array(
 			'edd_action' => 'activate_license',
 			'license'    => $license,
-			'item_id'    => HARRISON_PRO_PRODUCT_ID,
+			'item_id'    => KAIROS_PRO_PRODUCT_ID,
 			'url'        => home_url(),
 		);
 
 		// Call the custom API.
-		$response = wp_remote_post( HARRISON_PRO_STORE_API_URL, array(
+		$response = wp_remote_post( KAIROS_PRO_STORE_API_URL, array(
 			'timeout'   => 25,
 			'sslverify' => true,
 			'body'      => $api_params,
@@ -123,9 +123,9 @@ class Harrison_Pro_License_Key {
 		// Update License Key and Status.
 		$theme_options['license_status'] = $license_data->license;
 		$theme_options['license_key']    = $license;
-		update_option( 'harrison_theme_options', $theme_options );
+		update_option( 'kairos_theme_options', $theme_options );
 
-		delete_transient( 'harrison_license_check' );
+		delete_transient( 'kairos_license_check' );
 
 		echo $license_data->license;
 
@@ -152,12 +152,12 @@ class Harrison_Pro_License_Key {
 		$api_params = array(
 			'edd_action' => 'deactivate_license',
 			'license'    => $license,
-			'item_id'    => HARRISON_PRO_PRODUCT_ID,
+			'item_id'    => KAIROS_PRO_PRODUCT_ID,
 			'url'        => home_url(),
 		);
 
 		// Call the custom API.
-		$response = wp_remote_post( HARRISON_PRO_STORE_API_URL, array(
+		$response = wp_remote_post( KAIROS_PRO_STORE_API_URL, array(
 			'timeout'   => 25,
 			'sslverify' => true,
 			'body'      => $api_params,
@@ -170,13 +170,13 @@ class Harrison_Pro_License_Key {
 		}
 
 		// Get theme options from database.
-		$theme_options = Harrison_Pro_Customizer::get_theme_options();
+		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
 		// Update License Status.
 		$theme_options['license_status'] = 'inactive';
-		update_option( 'harrison_theme_options', $theme_options );
+		update_option( 'kairos_theme_options', $theme_options );
 
-		delete_transient( 'harrison_license_check' );
+		delete_transient( 'kairos_license_check' );
 
 		echo 'inactive';
 
@@ -195,13 +195,13 @@ class Harrison_Pro_License_Key {
 			return;
 		}
 
-		$status = get_transient( 'harrison_license_check' );
+		$status = get_transient( 'kairos_license_check' );
 
 		// Run the license check a maximum of once per day.
 		if ( false === $status ) {
 
 			// Get theme options from database.
-			$theme_options = Harrison_Pro_Customizer::get_theme_options();
+			$theme_options = Kairos_Pro_Customizer::get_theme_options();
 			$license_key   = $theme_options['license_key'];
 
 			if ( '' !== $license_key and 'inactive' !== $theme_options['license_status'] ) {
@@ -210,12 +210,12 @@ class Harrison_Pro_License_Key {
 				$api_params = array(
 					'edd_action' => 'check_license',
 					'license'    => $license_key,
-					'item_id'    => HARRISON_PRO_PRODUCT_ID,
+					'item_id'    => KAIROS_PRO_PRODUCT_ID,
 					'url'        => home_url(),
 				);
 
 				// Call the custom API.
-				$response = wp_remote_post( HARRISON_PRO_STORE_API_URL, array(
+				$response = wp_remote_post( KAIROS_PRO_STORE_API_URL, array(
 					'timeout'   => 25,
 					'sslverify' => true,
 					'body'      => $api_params,
@@ -238,10 +238,10 @@ class Harrison_Pro_License_Key {
 
 			// Update License Status.
 			$theme_options['license_status'] = $status;
-			update_option( 'harrison_theme_options', $theme_options );
+			update_option( 'kairos_theme_options', $theme_options );
 
 			// Cache license check with transient.
-			set_transient( 'harrison_license_check', $status, DAY_IN_SECONDS );
+			set_transient( 'kairos_license_check', $status, DAY_IN_SECONDS );
 		}
 
 		return $status;
@@ -249,4 +249,4 @@ class Harrison_Pro_License_Key {
 }
 
 // Run Class.
-Harrison_Pro_License_Key::init();
+Kairos_Pro_License_Key::init();
