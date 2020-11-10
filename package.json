@@ -1,0 +1,57 @@
+{
+  "name": "harrison-pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "export": "git archive HEAD -9 --prefix harrison-pro/ --format=zip > ../../harrison-pro.zip",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThemeZee/harrison-pro.git"
+  },
+  "author": "Thomas Weichselbaumer <contact@themezee.com> (https://themezee.com)",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/ThemeZee/harrison-pro.git#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-rtlcss": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "postcss-sorting": "^5.0.1",
+    "stylelint": "^11.0.0",
+    "stylelint-config-wordpress": "^14.0.0"
+  },
+  "stylelint": {
+    "extends": [
+		"stylelint-config-wordpress",
+		"stylelint-config-wordpress/scss"
+    ],
+    "rules": {
+	  "indentation": "tab",
+	  "no-descending-specificity": null,
+	  "font-weight-notation": "named-where-possible",
+	  "rule-empty-line-before": [ "always", {
+		"ignore": [
+		  "first-nested",
+		  "after-comment"
+		]
+	  } ],
+	  "at-rule-empty-line-before": [ "always", {
+		"except": [
+		  "inside-block"
+		],
+		"ignore": [
+			"after-comment",
+			"blockless-after-same-name-blockless"
+		  ]
+	  } ]
+    }
+  }
+}

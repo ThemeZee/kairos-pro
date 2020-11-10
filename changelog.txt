@@ -1,0 +1,20 @@
+===================================
+Harrison Pro Changelog
+===================================
+
+= 1.1.1 - 2020-10-10 =
+* added AMP dropdown toggles for sub menus
+* improved position and styling of header search
+
+= 1.1 - 2020-09-18 =
+* added support for the official AMP plugin
+
+= 1.0.2 - 2020-03-12 =
+* updated social icons and added support for Telegram and WhatsApp
+* fixed undefined variable warning in Customizer
+
+= 1.0.1 - 2020-01-28 =
+* fixed non-static method PHP warnings for social icons menu
+
+= 1.0 - 2019-11-20 =
+First Release

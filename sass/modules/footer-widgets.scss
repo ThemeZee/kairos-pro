@@ -1,0 +1,196 @@
+.footer-widgets-background {
+	display: flex;
+	padding: 1.5rem 1.5rem 0;
+	@include color(--footer-widgets-text-color);
+	@include background(--footer-widgets-background-color);
+}
+
+/* Footer Widget Styling */
+.footer-widgets .widget {
+	margin-bottom: 1.5rem;
+
+	.widget-title {
+		@include color(--footer-widgets-text-color);
+		font-weight: normal;
+	}
+
+	a:link,
+	a:visited {
+		@include color(--footer-widgets-link-color);
+	}
+
+	a:hover,
+	a:active {
+		@include color(--footer-widgets-link-hover-color);
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="submit"],
+	textarea {
+		border: 1px solid;
+		@include border-color(--footer-widgets-border-color);
+		@include color(--footer-widgets-link-hover-color);
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="url"]:focus,
+	input[type="password"]:focus,
+	input[type="search"]:focus,
+	textarea:focus {
+		@include color(--footer-widgets-text-color);
+	}
+
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		@include color(--footer-widgets-link-hover-color);
+	}
+
+	button:hover,
+	input[type="button"]:hover,
+	input[type="reset"]:hover,
+	input[type="submit"]:hover,
+	button:focus,
+	input[type="button"]:focus,
+	input[type="reset"]:focus,
+	input[type="submit"]:focus,
+	button:active,
+	input[type="button"]:active,
+	input[type="reset"]:active,
+	input[type="submit"]:active {
+		@include color(--footer-widgets-border-color);
+	}
+
+	.tzwb-posts-list .tzwb-entry-meta,
+	.tzwb-posts-list .tzwb-entry-meta span::after,
+	.tzwb-posts-list .tzwb-entry-meta a:link,
+	.tzwb-posts-list .tzwb-entry-meta a:visited,
+	.tzwb-comments-list .tzwb-comment-date {
+		@include color(--footer-widgets-link-hover-color);
+	}
+
+	.tzwb-posts-list .tzwb-entry-meta a:hover,
+	.tzwb-posts-list .tzwb-entry-meta a:active {
+		@include color(--footer-widgets-text-color);
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	.footer-widgets-background {
+		padding: 2rem 2rem 0;
+	}
+
+	.footer-widgets .widget {
+		margin-bottom: 2rem;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.footer-widgets {
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-right: -2rem;
+	}
+
+	.footer-widget-column {
+		display: flex;
+		flex-grow: 1;
+		box-sizing: border-box;
+		padding-right: 2rem;
+		width: 50%;
+		flex-direction: column;
+	}
+
+	.footer-widget-column .widget:last-child {
+		flex-grow: 1;
+	}
+
+	/* Three Column Footer Widgets */
+	.footer-widget-column:nth-child(1):nth-last-child(3),
+	.footer-widget-column:nth-child(2):nth-last-child(2),
+	.footer-widget-column:nth-child(3):nth-last-child(1) {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.footer-widgets-background {
+		padding: 3rem 3rem 0;
+	}
+
+	.footer-widgets {
+		margin-right: -3rem;
+	}
+
+	.footer-widget-column {
+		padding-right: 3rem;
+	}
+
+	.footer-widgets .widget {
+		margin-bottom: 3rem;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+
+	/* Three Column Footer Widgets */
+	.footer-widget-column:nth-child(1):nth-last-child(3),
+	.footer-widget-column:nth-child(2):nth-last-child(2),
+	.footer-widget-column:nth-child(3):nth-last-child(1) {
+		width: 33.3333333333333%;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.footer-widgets-background {
+		padding: 4rem 4rem 0;
+	}
+
+	.footer-widgets {
+		margin-right: -4rem;
+	}
+
+	.footer-widget-column {
+		padding-right: 4rem;
+	}
+
+	.footer-widgets .widget {
+		margin-bottom: 4rem;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.footer-widgets-background {
+		padding: 5rem 5rem 0;
+	}
+
+	.footer-widgets {
+		margin-right: -5rem;
+	}
+
+	.footer-widget-column {
+		padding-right: 5rem;
+	}
+
+	.footer-widgets .widget {
+		margin-bottom: 5rem;
+	}
+}
+
+@media only screen and (min-width: 1120px) {
+
+	/* Four Column Footer Widgets */
+	.footer-widget-column:nth-child(1):nth-last-child(4),
+	.footer-widget-column:nth-child(2):nth-last-child(3),
+	.footer-widget-column:nth-child(3):nth-last-child(2),
+	.footer-widget-column:nth-child(4):nth-last-child(1) {
+		width: 25%;
+	}
+}

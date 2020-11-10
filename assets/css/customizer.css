@@ -1,0 +1,96 @@
+/*
+ * Customizer CSS
+ *
+ * Adjusts styling for theme option controls in the Customizer
+ *
+ * @package Harrison Pro
+ */
+
+#customize-control-harrison_theme_options-scroll_top_title {
+	margin-top: 16px;
+}
+
+#customize-control-harrison_theme_options-header_search_title,
+#customize-control-harrison_theme_options-scroll_top_title {
+	margin-bottom: 0;
+}
+
+#customize-control-harrison_theme_options-author_bio {
+	margin-bottom: 4px;
+}
+
+/* Custom Font Control */
+.customize-control-harrison_pro_custom_font {
+	margin-top: 24px;
+}
+
+#customize-control-text_font {
+	margin-top: 0;
+}
+
+.customize-control-harrison_pro_custom_font .actions .button.previous {
+	margin-right: 4px;
+}
+
+.customize-control-harrison_pro_custom_font .actions .button.standard {
+	float: right;
+}
+
+.customize-control-harrison_pro_custom_font select {
+	width: 100%;
+}
+
+.customize-control-harrison_pro_custom_font div:hover {
+	cursor: default;
+}
+
+.customize-control-harrison_pro_custom_font .actions .button:hover {
+	cursor: pointer;
+}
+
+/* Typography Checkbox Controls */
+#sub-accordion-section-harrison_pro_section_typography .customize-control-checkbox {
+	margin-bottom: 0;
+}
+
+/* Plugin Control Styling */
+#customize-control-gt_local_fonts_plugin {
+	margin-top: 24px;
+}
+
+/* License Control */
+.customize-control-harrison_pro_license_key {
+	margin-bottom: 36px;
+}
+
+.customize-control-harrison_pro_license_key label {
+	margin-top: 16px;
+}
+
+.customize-control-harrison_pro_license_key .license-status span {
+	display: inline-block;
+	margin: 0 0 12px;
+	padding: 5px 10px;
+	color: #fff;
+	background: #777;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.customize-control-harrison_pro_license_key .license-status .inactive {
+	background: #444;
+}
+
+.customize-control-harrison_pro_license_key .license-status .valid {
+	background: #008000;
+}
+
+.customize-control-harrison_pro_license_key .license-status .invalid,
+.customize-control-harrison_pro_license_key .license-status .expired {
+	background: #b22222;
+}
+
+.customize-control-harrison_pro_license_key .license-note {
+	margin: 2em 0 0;
+}

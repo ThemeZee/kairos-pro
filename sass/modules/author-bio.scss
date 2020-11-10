@@ -1,0 +1,77 @@
+.entry-author {
+	margin: 3rem 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+.entry-author .author-avatar {
+	margin: 0 auto 1rem;
+	max-width: 128px;
+}
+
+.entry-author .author-avatar img {
+	vertical-align: top;
+}
+
+.entry-author .author-heading .author-title {
+	margin: 0 0 0.5rem;
+	@include font-size(18);
+}
+
+.entry-author .author-heading .author-link {
+	display: inline-block;
+	margin: 0 0 0.5rem;
+}
+
+.entry-author .author-bio {
+	margin: 0;
+}
+
+@media only screen and (min-width: 480px) {
+	.entry-author {
+		display: flex;
+		text-align: left;
+	}
+
+	.entry-author .author-avatar {
+		margin-left: 0;
+		margin-right: 1.5rem;
+		margin-bottom: 0;
+		width: 30%;
+		max-width: 128px;
+		min-width: 64px;
+	}
+
+	.entry-author .author-heading .author-title {
+		display: inline-block;
+		margin-right: 1rem;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.entry-author .author-heading .author-title {
+		@include font-size(20);
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.entry-author {
+		margin-top: 4rem;
+	}
+
+	.entry-author .author-avatar {
+		margin-right: 2rem;
+		min-width: 128px;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.entry-author {
+		margin-top: 5rem;
+	}
+}
+
+/* Hide Author Bio in Customizer for instant live preview */
+.author-bio-hidden .type-post .entry-author {
+	display: none;
+}

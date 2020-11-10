@@ -1,0 +1,145 @@
+.header-search-enabled .header-main {
+	position: relative;
+	align-items: center;
+
+	.primary-menu-toggle {
+		order: 3;
+		margin-left: 0;
+	}
+
+	.primary-navigation {
+		order: 4;
+	}
+
+	.header-search-button {
+		order: 2;
+		margin-left: auto;
+		@include font-size(17);
+		@include font-family(--navi-font);
+		@include font-weight(--navi-font-weight);
+		@include text-transform(--navi-text-transform);
+
+		.header-search-icon {
+			margin: 0;
+			padding: 1rem;
+			@include color(--header-text-color);
+			background: none;
+			border: none;
+
+			&:hover,
+			&:active {
+				cursor: pointer;
+				@include color(--header-text-hover-color);
+			}
+
+			&:focus {
+				outline: thin dotted;
+				@include color(--header-text-color);
+			}
+
+			.icon-search {
+				margin: 0;
+				padding: 0;
+				width: 28px;
+				height: 28px;
+				vertical-align: middle;
+				fill: currentColor;
+				transition: fill 0.15s ease;
+			}
+		}
+	}
+}
+
+/* Header Search Form */
+.header-search-dropdown {
+	display: none;
+	margin: 0;
+	box-sizing: border-box;
+	z-index: 999;
+
+	&.active,
+	&.toggled-on {
+		display: flex;
+	}
+
+	.header-search-main {
+		flex-grow: 1;
+	}
+
+	.header-search-form {
+		display: flex;
+		padding: 1.5rem;
+		border-bottom: 1px solid;
+		@include border-color(--header-border-color);
+		@include background(--header-background-color);
+
+		.search-form {
+			flex-grow: 1;
+
+			.search-field {
+				background: #fff;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.header-search-dropdown .header-search-form {
+		padding: 2rem;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.header-search-and-main-navigation-active .header-main {
+		.primary-navigation {
+			order: 2;
+		}
+
+		.header-search-button {
+			order: 3;
+			margin-left: 1rem;
+			margin-top: -3px;
+
+			.header-search-icon {
+
+				.icon-search {
+					width: 22px;
+					height: 22px;
+				}
+			}
+		}
+	}
+
+	.vertical-header-layout .header-main {
+		.header-search-button {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			margin: 0.5rem 1rem;
+
+			.header-search-icon {
+
+				.icon-search {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
+
+	.header-search-dropdown .header-search-form {
+		padding: 2.5rem;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.header-search-dropdown .header-search-form {
+		padding: 3rem;
+	}
+}
+
+/* Hide Header Search in Customizer for instant live preview */
+.header-search-hidden .site-header .header-search,
+.header-search-hidden .header-search-dropdown {
+	display: none;
+}

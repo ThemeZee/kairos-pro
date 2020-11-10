@@ -1,0 +1,447 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Harrison Pro\n"
+"Report-Msgid-Bugs-To: https://themezee.com/\n"
+"POT-Creation-Date: 2019-11-19 22:10+0100\n"
+"PO-Revision-Date: 2016-09-15 21:02+0100\n"
+"Last-Translator: \n"
+"Language-Team: ThemeZee <support@themezee.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: harrison-pro.php:206
+msgid "Theme Options"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:54
+#, php-format
+msgid ""
+"Please enter your license key for the %1$s add-on in order to receive "
+"updates and support. <a href=\"%2$s\">Enter License Key</a>"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:59
+#: includes/admin/class-admin-notices.php:89
+msgid "Dismiss Notice"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:84
+#, php-format
+msgid ""
+"Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
+"continue getting updates and support!"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:110
+msgid "Security check failed"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:110
+#: includes/admin/class-plugin-updater.php:395
+msgid "Error"
+msgstr ""
+
+#: includes/admin/class-license-key.php:69
+msgid "License Key"
+msgstr ""
+
+#: includes/admin/class-plugin-updater.php:201
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: includes/admin/class-plugin-updater.php:209
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: includes/admin/class-plugin-updater.php:395
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:58
+msgid "Previous Font"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:59
+msgid "Next Font"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:60
+msgctxt "default font button"
+msgid "Default"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:97
+msgid "Local Fonts (GDPR)"
+msgstr ""
+
+#: includes/customizer/class-customize-font-control.php:105
+msgid "Google Web Fonts"
+msgstr ""
+
+#: includes/customizer/class-customize-gt-plugin-control.php:33
+msgid "Install Plugin"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:51
+msgid "Activate License"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:52
+msgid "Deactivate License"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:53
+msgid "Loading..."
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:54
+msgid "Active"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:55
+msgid "Invalid"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:56
+msgid "Expired"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:57
+msgid "Inactive"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:58
+msgid "You are receiving updates."
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:59
+msgid ""
+"Please make sure you have not reached site limits and/or expiration date."
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:60
+msgid ""
+"Your license has expired, renew today to continue getting updates and "
+"support!"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:92
+msgid "Pro Version License"
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:104
+#, php-format
+msgid ""
+"You can find your license keys and manage your active sites on <a href=\"%s"
+"\" target=\"_blank\">themezee.com</a>."
+msgstr ""
+
+#: includes/customizer/class-customize-license-control.php:104
+msgid "https://themezee.com/license-keys/"
+msgstr ""
+
+#: includes/modules/class-author-bio.php:64
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: includes/modules/class-author-bio.php:66
+msgid "View all posts"
+msgstr ""
+
+#: includes/modules/class-author-bio.php:97
+msgid "Display author bio"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:130
+msgid "Block Colors"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:147
+msgctxt "Color Option"
+msgid "Primary"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:163
+msgctxt "Color Option"
+msgid "Secondary"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:179
+msgctxt "Color Option"
+msgid "Accent"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:195
+msgctxt "Color Option"
+msgid "Highlight"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:211
+msgctxt "Color Option"
+msgid "Light Gray"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:227
+msgctxt "Color Option"
+msgid "Gray"
+msgstr ""
+
+#: includes/modules/class-block-colors.php:243
+msgctxt "Color Option"
+msgid "Dark Gray"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:192
+msgid "Typography"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:210
+msgid "Body Font"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:227
+msgctxt "Font Setting"
+msgid "Headings"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:243
+#: includes/modules/class-custom-fonts.php:292
+msgctxt "Font Setting"
+msgid "Bold"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:259
+#: includes/modules/class-custom-fonts.php:308
+msgctxt "Font Setting"
+msgid "Uppercase"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:276
+msgctxt "Font Setting"
+msgid "Navigation"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:319
+msgid "More Local Fonts"
+msgstr ""
+
+#: includes/modules/class-custom-fonts.php:320
+msgid ""
+"You can install the GT Local Fonts plugin to extend the typography options "
+"with additional local GDPR-compatible fonts."
+msgstr ""
+
+#: includes/modules/class-footer-menu.php:97
+msgid "Footer Navigation"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:111
+msgid "Footer Column 1"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:113
+msgctxt "widget area description"
+msgid "Appears in the first column in footer."
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:122
+msgid "Footer Column 2"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:124
+msgctxt "widget area description"
+msgid "Appears in the second column in footer."
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:133
+msgid "Footer Column 3"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:135
+msgctxt "widget area description"
+msgid "Appears in the third column in footer."
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:144
+msgid "Footer Column 4"
+msgstr ""
+
+#: includes/modules/class-footer-widgets.php:146
+msgctxt "widget area description"
+msgid "Appears in the fourth column in footer."
+msgstr ""
+
+#: includes/modules/class-header-bar.php:74
+msgid "Menu"
+msgstr ""
+
+#: includes/modules/class-header-bar.php:79
+msgid "Secondary Menu"
+msgstr ""
+
+#: includes/modules/class-header-bar.php:119
+msgid "Top Navigation"
+msgstr ""
+
+#: includes/modules/class-header-search.php:83
+msgid "Search"
+msgstr ""
+
+#: includes/modules/class-header-search.php:109
+msgid "Close"
+msgstr ""
+
+#: includes/modules/class-header-search.php:131
+msgid "Header Search"
+msgstr ""
+
+#: includes/modules/class-header-search.php:147
+msgid "Enable search field in header"
+msgstr ""
+
+#: includes/modules/class-scroll-to-top.php:70
+msgid "Scroll to Top"
+msgstr ""
+
+#: includes/modules/class-scroll-to-top.php:86
+msgid "Display Scroll to Top Button"
+msgstr ""
+
+#: includes/modules/class-social-icons.php:170
+msgid "Social Icons (Header)"
+msgstr ""
+
+#: includes/modules/class-social-icons.php:171
+msgid "Social Icons (Footer)"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:159
+msgid "Theme Colors"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:176
+msgctxt "Color Option"
+msgid "Page Background"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:192
+msgctxt "Color Option"
+msgid "Header Background"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:208
+msgctxt "Color Option"
+msgid "Navigation"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:224
+msgctxt "Color Option"
+msgid "Links"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:240
+msgctxt "Color Option"
+msgid "Link Hover"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:256
+msgctxt "Color Option"
+msgid "Buttons"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:272
+msgctxt "Color Option"
+msgid "Button Hover"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:288
+msgctxt "Color Option"
+msgid "Titles"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:304
+msgctxt "Color Option"
+msgid "Title Hover"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:320
+msgctxt "Color Option"
+msgid "Footer Widgets"
+msgstr ""
+
+#: includes/modules/class-theme-colors.php:336
+msgctxt "Color Option"
+msgid "Footer Copyright"
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:112
+msgid "Before Header"
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:114
+msgctxt "widget area description"
+msgid "Appears above the header area."
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:123
+msgid "After Header"
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:125
+msgctxt "widget area description"
+msgid "Appears below the header area."
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:134
+msgid "Before Blog Posts"
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:136
+msgctxt "widget area description"
+msgid "Appears on the blog page above the latest posts."
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:145
+msgid "After Posts"
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:147
+msgctxt "widget area description"
+msgid "Appears below single posts."
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:156
+msgid "After Pages"
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:158
+msgctxt "widget area description"
+msgid "Appears below static pages."
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:167
+msgid "Before Footer"
+msgstr ""
+
+#: includes/modules/class-widget-areas.php:169
+msgctxt "widget area description"
+msgid "Appears above the footer area."
+msgstr ""
