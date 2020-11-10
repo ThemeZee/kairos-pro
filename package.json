@@ -30,28 +30,34 @@
   },
   "stylelint": {
     "extends": [
-		"stylelint-config-wordpress",
-		"stylelint-config-wordpress/scss"
+      "stylelint-config-wordpress",
+      "stylelint-config-wordpress/scss"
     ],
     "rules": {
-	  "indentation": "tab",
-	  "no-descending-specificity": null,
-	  "font-weight-notation": "named-where-possible",
-	  "rule-empty-line-before": [ "always", {
-		"ignore": [
-		  "first-nested",
-		  "after-comment"
-		]
-	  } ],
-	  "at-rule-empty-line-before": [ "always", {
-		"except": [
-		  "inside-block"
-		],
-		"ignore": [
-			"after-comment",
-			"blockless-after-same-name-blockless"
-		  ]
-	  } ]
+      "indentation": "tab",
+      "no-descending-specificity": null,
+      "font-weight-notation": "named-where-possible",
+      "rule-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "first-nested",
+            "after-comment"
+          ]
+        }
+      ],
+      "at-rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "inside-block"
+          ],
+          "ignore": [
+            "after-comment",
+            "blockless-after-same-name-blockless"
+          ]
+        }
+      ]
     }
   }
 }
