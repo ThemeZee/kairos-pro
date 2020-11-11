@@ -255,6 +255,12 @@
 		padding-right: 0.5rem;
 	}
 
+	body.wide-theme-layout .site .header-bar {
+		max-width: calc(1240px - 2rem);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.secondary-menu-toggle,
 	.top-navigation .dropdown-toggle {
 		display: none;
