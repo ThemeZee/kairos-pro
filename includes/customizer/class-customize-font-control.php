@@ -34,7 +34,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		 *
 		 * @var array
 		 */
-		private $local_fonts = false;
+		private $browser_fonts = false;
 
 		/**
 		 * Google Fonts Array
@@ -61,8 +61,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 			);
 
 			// Set Fonts.
-			$this->local_fonts  = Kairos_Pro_Custom_Fonts::get_local_fonts();
-			$this->google_fonts = Kairos_Pro_Custom_Fonts::get_google_fonts();
+			$this->browser_fonts = Kairos_Pro_Custom_Fonts::get_browser_fonts();
+			$this->google_fonts  = Kairos_Pro_Custom_Fonts::get_google_fonts();
 
 			parent::__construct( $manager, $id, $args );
 		}
@@ -85,7 +85,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		public function render_content() {
 			$l10n = json_encode( $this->l10n );
 
-			if ( ! empty( $this->local_fonts ) && ! empty( $this->google_fonts ) ) :
+			if ( ! empty( $this->browser_fonts ) && ! empty( $this->google_fonts ) ) :
 				?>
 
 				<label>
@@ -94,9 +94,9 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 					</span>
 					<div class="customize-font-select-control">
 						<select <?php $this->link(); ?>>
-							<optgroup label="<?php esc_html_e( 'Local Fonts (GDPR)', 'kairos-pro' ); ?>">
+							<optgroup label="<?php esc_html_e( 'Browser Fonts', 'kairos-pro' ); ?>">
 								<?php
-								foreach ( $this->local_fonts as $k => $v ) :
+								foreach ( $this->browser_fonts as $k => $v ) :
 									printf( '<option value="%s" %s>%s</option>', $k, selected( $this->value(), $k, false ), $v );
 								endforeach;
 								?>

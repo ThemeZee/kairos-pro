@@ -31,21 +31,15 @@ class Kairos_Pro_Custom_Fonts {
 
 		// Include Customizer Control Files.
 		require_once KAIROS_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-font-control.php';
-		require_once KAIROS_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-gt-plugin-control.php';
 
 		// Add Custom Fonts CSS code to custom stylesheet output.
 		add_filter( 'kairos_pro_custom_css_stylesheet', array( __CLASS__, 'get_custom_fonts_css' ) );
 
-		// Load custom fonts from Google web font API.
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'load_google_fonts' ), 1 );
-		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'load_google_fonts' ), 1 );
+		// Load Custom Fonts with the built-in theme functions.
+		add_filter( 'kairos_get_fonts_url', array( __CLASS__, 'get_custom_fonts_url' ) );
 
 		// Add Font Settings in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'font_settings' ) );
-
-		// Remove default theme fonts if they are not used.
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'remove_default_theme_fonts' ), 2 );
-		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'remove_default_theme_fonts' ), 2 );
 	}
 
 	/**
@@ -128,60 +122,62 @@ class Kairos_Pro_Custom_Fonts {
 	 *
 	 * @return void
 	 */
-	static function load_google_fonts() {
+	static function get_custom_fonts_url( $fonts_url ) {
 
 		// Get Theme Options from Database.
 		$theme_options = Kairos_Pro_Customizer::get_theme_options();
 
-		// Get Local Fonts which haven't to be load from Google.
-		$local_fonts = self::get_local_fonts();
+		// Get Default Fonts from settings.
+		$default_options = Kairos_Pro_Customizer::get_default_options();
 
-		// Set Google Font Array.
-		$google_font_families = array();
+		// Return early if no font was changed.
+		if ( $theme_options['text_font'] === $default_options['text_font']
+			&& $theme_options['title_font'] === $default_options['title_font']
+			&& $theme_options['navi_font'] === $default_options['navi_font']
+		) {
+			return $fonts_url;
+		}
+
+		// Get Browser Fonts which haven't to be load from Google.
+		$browser_fonts = self::get_browser_fonts();
+
+		// Set Font Families Array.
+		$font_families = array();
 
 		// Set Font Styles.
 		$font_styles = ':400,400italic,700,700italic';
 
 		// Add Text Font.
-		if ( isset( $theme_options['text_font'] ) and ! array_key_exists( $theme_options['text_font'], $local_fonts ) ) {
-
-			$google_font_families[] = $theme_options['text_font'] . $font_styles;
-			$local_fonts[]          = $theme_options['text_font']; // Make sure font is not loaded twice.
-
+		if ( isset( $theme_options['text_font'] ) and ! array_key_exists( $theme_options['text_font'], $browser_fonts ) ) {
+			$font_families[] = $theme_options['text_font'] . $font_styles;
+			$browser_fonts[] = $theme_options['text_font']; // Make sure font is not loaded twice.
 		}
 
 		// Add Title Font.
-		if ( isset( $theme_options['title_font'] ) and ! array_key_exists( $theme_options['title_font'], $local_fonts ) ) {
-
-			$google_font_families[] = $theme_options['title_font'] . $font_styles;
-			$local_fonts[]          = $theme_options['title_font']; // Make sure font is not loaded twice.
-
+		if ( isset( $theme_options['title_font'] ) and ! array_key_exists( $theme_options['title_font'], $browser_fonts ) ) {
+			$font_families[] = $theme_options['title_font'] . $font_styles;
+			$browser_fonts[] = $theme_options['title_font']; // Make sure font is not loaded twice.
 		}
 
 		// Add Navigation Font.
-		if ( isset( $theme_options['navi_font'] ) and ! array_key_exists( $theme_options['navi_font'], $local_fonts ) ) {
-
-			$google_font_families[] = $theme_options['navi_font'] . $font_styles;
-			$local_fonts[]          = $theme_options['navi_font']; // Make sure font is not loaded twice.
-
+		if ( isset( $theme_options['navi_font'] ) and ! array_key_exists( $theme_options['navi_font'], $browser_fonts ) ) {
+			$font_families[] = $theme_options['navi_font'] . $font_styles;
+			$browser_fonts[] = $theme_options['navi_font']; // Make sure font is not loaded twice.
 		}
 
-		// Return early if google font array is empty.
-		if ( empty( $google_font_families ) ) {
-			return;
+		// Return early if font family array is empty.
+		if ( empty( $font_families ) ) {
+			return false;
 		}
 
 		// Setup Google Font URLs.
 		$query_args = array(
-			'family'  => urlencode( implode( '|', $google_font_families ) ),
+			'family'  => urlencode( implode( '|', $font_families ) ),
 			'subset'  => urlencode( 'latin,latin-ext' ),
 			'display' => urlencode( 'swap' ),
 		);
 
-		$google_fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
-
-		// Register and Enqueue Google Fonts.
-		wp_enqueue_style( 'kairos-pro-custom-fonts', $google_fonts_url, array(), null );
+		return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 	/**
@@ -315,60 +311,6 @@ class Kairos_Pro_Custom_Fonts {
 			'type'     => 'checkbox',
 			'priority' => 70,
 		) );
-
-		// Add GT Local Fonts control.
-		if ( ! class_exists( 'GermanThemes_Local_Fonts' ) ) {
-			$wp_customize->add_control( new Kairos_Pro_Customize_GT_Plugin_Control(
-				$wp_customize, 'gt_local_fonts_plugin', array(
-					'label'       => esc_html__( 'More Local Fonts', 'kairos-pro' ),
-					'description' => esc_html__( 'You can install the GT Local Fonts plugin to extend the typography options with additional local GDPR-compatible fonts.', 'kairos-pro' ),
-					'section'     => 'kairos_pro_section_typography',
-					'settings'    => array(),
-					'priority'    => 80,
-				)
-			) );
-		}
-	}
-
-	/**
-	 * Retrieve selected fonts from Customizer options.
-	 */
-	static function get_selected_fonts() {
-
-		// Get theme options from database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
-
-		// Get selected fonts.
-		$selected_fonts = array(
-			$theme_options['text_font'],
-			$theme_options['title_font'],
-			$theme_options['navi_font'],
-		);
-
-		return $selected_fonts;
-	}
-
-	/**
-	 * Remove default theme fonts.
-	 */
-	static function remove_default_theme_fonts() {
-		$selected_fonts = self::get_selected_fonts();
-
-		// Remove default Barlow font if not needed.
-		if ( ! in_array( 'Barlow', $selected_fonts ) ) {
-			wp_dequeue_style( 'kairos-theme-fonts' );
-		}
-	}
-
-	/**
-	 * Register support for GT Typography plugin.
-	 */
-	static function add_typography_theme_support() {
-		$selected_fonts = self::get_selected_fonts();
-
-		add_theme_support( 'gt-typography', array(
-			'selected_fonts' => $selected_fonts,
-		) );
 	}
 
 	/**
@@ -376,8 +318,7 @@ class Kairos_Pro_Custom_Fonts {
 	 *
 	 * @return array List of local fonts.
 	 */
-	static function get_local_fonts() {
-
+	static function get_browser_fonts() {
 		$fonts = array(
 			'Arial'                       => 'Arial',
 			'Arial Black'                 => 'Arial Black',
@@ -392,31 +333,6 @@ class Kairos_Pro_Custom_Fonts {
 			'Times New Roman, Times'      => 'Times New Roman',
 			'Verdana'                     => 'Verdana',
 		);
-
-		// Allow GT Local Font plugin to add fonts.
-		$fonts = apply_filters( 'gt_typography_fonts', $fonts );
-
-		// Get Theme Options from Database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
-
-		// Get Default Fonts from settings.
-		$default_options = Kairos_Pro_Customizer::get_default_options();
-
-		// Add default fonts to local fonts.
-		if ( isset( $default_options['text_font'] ) and ! array_key_exists( $default_options['text_font'], $fonts ) ) :
-			$fonts[ trim( $default_options['text_font'] ) ] = esc_attr( trim( $default_options['text_font'] ) );
-		endif;
-
-		if ( isset( $default_options['title_font'] ) and ! array_key_exists( $default_options['title_font'], $fonts ) ) :
-			$fonts[ trim( $default_options['title_font'] ) ] = esc_attr( trim( $default_options['title_font'] ) );
-		endif;
-
-		if ( isset( $default_options['navi_font'] ) and ! array_key_exists( $default_options['navi_font'], $fonts ) ) :
-			$fonts[ trim( $default_options['navi_font'] ) ] = esc_attr( trim( $default_options['navi_font'] ) );
-		endif;
-
-		// Sort fonts alphabetically.
-		asort( $fonts );
 
 		return $fonts;
 	}
@@ -1157,17 +1073,6 @@ class Kairos_Pro_Custom_Fonts {
 			'Zeyada'                   => 'Zeyada',
 		);
 
-		// Get Theme Options from Database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
-
-		// Get Local Fonts.
-		$local_fonts = self::get_local_fonts();
-
-		// Remove local fonts from Google fonts.
-		foreach ( $local_fonts as $font_key => $font_val ) {
-			unset( $fonts[ $font_key ] );
-		}
-
 		// Sort fonts alphabetically.
 		asort( $fonts );
 
@@ -1177,4 +1082,3 @@ class Kairos_Pro_Custom_Fonts {
 
 // Run Class.
 add_action( 'init', array( 'Kairos_Pro_Custom_Fonts', 'setup' ) );
-add_action( 'after_setup_theme', array( 'Kairos_Pro_Custom_Fonts', 'add_typography_theme_support' ) );
