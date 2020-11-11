@@ -66,7 +66,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		 */
 		public function enqueue() {
 			// Register and Enqueue Custom Font JS Constructor.
-			wp_enqueue_script( 'kairos-pro-custom-font-control', KAIROS_PRO_PLUGIN_URL . 'assets/js/custom-font-control.min.js', array( 'customize-controls' ), '20191114', true );
+			wp_enqueue_script( 'kairos-pro-custom-font-control', KAIROS_PRO_PLUGIN_URL . 'assets/js/custom-font-control.min.js', array( 'customize-controls' ), '20201101', true );
 		}
 
 		/**
