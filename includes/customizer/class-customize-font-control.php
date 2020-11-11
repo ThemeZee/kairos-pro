@@ -30,18 +30,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		public $l10n = array();
 
 		/**
-		 * Local Fonts Array
+		 * Custom Fonts Array
 		 *
 		 * @var array
 		 */
-		private $browser_fonts = false;
-
-		/**
-		 * Google Fonts Array
-		 *
-		 * @var array
-		 */
-		private $google_fonts = false;
+		private $fonts = false;
 
 		/**
 		 * Setup Font Control
@@ -61,8 +54,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 			);
 
 			// Set Fonts.
-			$this->browser_fonts = Kairos_Pro_Custom_Fonts::get_browser_fonts();
-			$this->google_fonts  = Kairos_Pro_Custom_Fonts::get_google_fonts();
+			$this->fonts = Kairos_Pro_Custom_Fonts::get_available_fonts();
 
 			parent::__construct( $manager, $id, $args );
 		}
@@ -85,8 +77,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		public function render_content() {
 			$l10n = json_encode( $this->l10n );
 
-			if ( ! empty( $this->browser_fonts ) && ! empty( $this->google_fonts ) ) :
-				?>
+			if ( ! empty( $this->fonts ) ) : ?>
 
 				<label>
 					<span class="customize-control-title" data-l10n="<?php echo esc_attr( $l10n ); ?>" data-font="<?php echo esc_attr( $this->setting->default ); ?>">
@@ -94,21 +85,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 					</span>
 					<div class="customize-font-select-control">
 						<select <?php $this->link(); ?>>
-							<optgroup label="<?php esc_html_e( 'Browser Fonts', 'kairos-pro' ); ?>">
-								<?php
-								foreach ( $this->browser_fonts as $k => $v ) :
-									printf( '<option value="%s" %s>%s</option>', $k, selected( $this->value(), $k, false ), $v );
-								endforeach;
-								?>
-							</optgroup>
-
-							<optgroup label="<?php esc_html_e( 'Google Web Fonts', 'kairos-pro' ); ?>">
-								<?php
-								foreach ( $this->google_fonts as $k => $v ) :
-									printf( '<option value="%s" %s>%s</option>', $k, selected( $this->value(), $k, false ), $v );
-								endforeach;
-								?>
-							</optgroup>
+							<?php
+							foreach ( $this->fonts as $k => $v ) :
+								printf( '<option value="%s" %s>%s</option>', $k, selected( $this->value(), $k, false ), $v );
+							endforeach;
+							?>
 						</select>
 					</div>
 					<div class="actions"></div>

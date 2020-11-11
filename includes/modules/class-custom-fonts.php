@@ -139,7 +139,7 @@ class Kairos_Pro_Custom_Fonts {
 		}
 
 		// Get Browser Fonts which haven't to be load from Google.
-		$browser_fonts = self::get_browser_fonts();
+		$system_fonts = self::get_system_fonts();
 
 		// Set Font Families Array.
 		$font_families = array();
@@ -148,21 +148,21 @@ class Kairos_Pro_Custom_Fonts {
 		$font_styles = ':400,400italic,700,700italic';
 
 		// Add Text Font.
-		if ( isset( $theme_options['text_font'] ) and ! array_key_exists( $theme_options['text_font'], $browser_fonts ) ) {
+		if ( isset( $theme_options['text_font'] ) and ! array_key_exists( $theme_options['text_font'], $system_fonts ) ) {
 			$font_families[] = $theme_options['text_font'] . $font_styles;
-			$browser_fonts[] = $theme_options['text_font']; // Make sure font is not loaded twice.
+			$system_fonts[]  = $theme_options['text_font']; // Make sure font is not loaded twice.
 		}
 
 		// Add Title Font.
-		if ( isset( $theme_options['title_font'] ) and ! array_key_exists( $theme_options['title_font'], $browser_fonts ) ) {
+		if ( isset( $theme_options['title_font'] ) and ! array_key_exists( $theme_options['title_font'], $system_fonts ) ) {
 			$font_families[] = $theme_options['title_font'] . $font_styles;
-			$browser_fonts[] = $theme_options['title_font']; // Make sure font is not loaded twice.
+			$system_fonts[]  = $theme_options['title_font']; // Make sure font is not loaded twice.
 		}
 
 		// Add Navigation Font.
-		if ( isset( $theme_options['navi_font'] ) and ! array_key_exists( $theme_options['navi_font'], $browser_fonts ) ) {
+		if ( isset( $theme_options['navi_font'] ) and ! array_key_exists( $theme_options['navi_font'], $system_fonts ) ) {
 			$font_families[] = $theme_options['navi_font'] . $font_styles;
-			$browser_fonts[] = $theme_options['navi_font']; // Make sure font is not loaded twice.
+			$system_fonts[]  = $theme_options['navi_font']; // Make sure font is not loaded twice.
 		}
 
 		// Return early if font family array is empty.
@@ -314,12 +314,27 @@ class Kairos_Pro_Custom_Fonts {
 	}
 
 	/**
-	 * Get local fonts
+	 * Get available fonts
 	 *
-	 * @return array List of local fonts.
+	 * @return array List of system fonts.
 	 */
-	static function get_browser_fonts() {
-		$fonts = array(
+	static function get_available_fonts() {
+		// Combine System Fonts and Google Fonts.
+		$fonts = array_merge( self::get_system_fonts(), self::get_google_fonts() );
+
+		// Sort fonts alphabetically.
+		asort( $fonts );
+
+		return $fonts;
+	}
+
+	/**
+	 * Get system fonts
+	 *
+	 * @return array List of system fonts.
+	 */
+	static function get_system_fonts() {
+		return array(
 			'Arial'                       => 'Arial',
 			'Arial Black'                 => 'Arial Black',
 			'Courier New'                 => 'Courier New',
@@ -333,17 +348,15 @@ class Kairos_Pro_Custom_Fonts {
 			'Times New Roman, Times'      => 'Times New Roman',
 			'Verdana'                     => 'Verdana',
 		);
-
-		return $fonts;
 	}
 
 	/**
-	 * Get all google fonts
+	 * Get Google Fonts
 	 *
 	 * @return array List of Google Fonts.
 	 */
 	static function get_google_fonts() {
-		$fonts = array(
+		return array(
 			'ABeeZee'                  => 'ABeeZee',
 			'Abel'                     => 'Abel',
 			'Abril'                    => 'Abril',
@@ -1072,11 +1085,6 @@ class Kairos_Pro_Custom_Fonts {
 			'Yesteryear'               => 'Yesteryear',
 			'Zeyada'                   => 'Zeyada',
 		);
-
-		// Sort fonts alphabetically.
-		asort( $fonts );
-
-		return $fonts;
 	}
 }
 
