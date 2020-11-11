@@ -98,7 +98,7 @@ class Kairos_Pro_Author_Bio {
 			'section'  => 'kairos_section_post',
 			'settings' => 'kairos_theme_options[author_bio]',
 			'type'     => 'checkbox',
-			'priority' => 85,
+			'priority' => 145,
 		) );
 	}
 

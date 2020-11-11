@@ -1,5 +1,5 @@
 .entry-author {
-	margin: 3rem 0 0;
+	margin: 1.25rem 0 0;
 	padding: 0;
 	text-align: center;
 }
@@ -31,6 +31,7 @@
 	.entry-author {
 		display: flex;
 		text-align: left;
+		margin-top: 1.5rem;
 	}
 
 	.entry-author .author-avatar {
@@ -49,6 +50,10 @@
 }
 
 @media only screen and (min-width: 640px) {
+	.entry-author {
+		margin-top: 1.75rem;
+	}
+
 	.entry-author .author-heading .author-title {
 		@include font-size(20);
 	}
@@ -56,7 +61,7 @@
 
 @media only screen and (min-width: 960px) {
 	.entry-author {
-		margin-top: 4rem;
+		margin-top: 2rem;
 	}
 
 	.entry-author .author-avatar {
@@ -67,7 +72,7 @@
 
 @media only screen and (min-width: 1280px) {
 	.entry-author {
-		margin-top: 5rem;
+		margin-top: 2.5rem;
 	}
 }
 
