@@ -256,6 +256,7 @@
 		} );
 	} );
 
+	/* Title Font */
 	wp.customize( 'kairos_theme_options[title_font]', function( value ) {
 		value.bind( function( newval ) {
 
@@ -295,6 +296,7 @@
 		} );
 	} );
 
+	/* Navigation Font */
 	wp.customize( 'kairos_theme_options[navi_font]', function( value ) {
 		value.bind( function( newval ) {
 
@@ -331,6 +333,46 @@
 		value.bind( function( newval ) {
 			var textTransform = newval ? 'uppercase' : 'none';
 			document.documentElement.style.setProperty( '--navi-text-transform', textTransform );
+		} );
+	} );
+
+	/* Widget Title Font */
+	wp.customize( 'kairos_theme_options[widget_title_font]', function( value ) {
+		value.bind( function( newval ) {
+
+			// Embed Font.
+			var fontFamilyUrl = newval.split( " " ).join( "+" );
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontSource = "<link id='kairos-pro-custom-widget-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
+			var checkLink = $( "head" ).find( "#kairos-pro-custom-widget-title-font" ).length;
+
+			if (checkLink > 0) {
+				$( "head" ).find( "#kairos-pro-custom-widget-title-font" ).remove();
+			}
+			$( "head" ).append( googleFontSource );
+
+			// Set Font.
+			var systemFont = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif';
+			var newFont = newval === 'SystemFontStack' ? systemFont : newval;
+
+			// Set CSS.
+			document.documentElement.style.setProperty( '--widget-title-font', newFont );
+		} );
+	} );
+
+	/* Widget Title Font Weight */
+	wp.customize( 'kairos_theme_options[widget_title_is_bold]', function( value ) {
+		value.bind( function( newval ) {
+			var fontWeight = newval ? 'bold' : 'normal';
+			document.documentElement.style.setProperty( '--widget-title-font-weight', fontWeight );
+		} );
+	} );
+
+	/* Widget Title Text Transform */
+	wp.customize( 'kairos_theme_options[widget_title_is_uppercase]', function( value ) {
+		value.bind( function( newval ) {
+			var textTransform = newval ? 'uppercase' : 'none';
+			document.documentElement.style.setProperty( '--widget-title-text-transform', textTransform );
 		} );
 	} );
 

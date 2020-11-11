@@ -109,6 +109,21 @@ class Kairos_Pro_Custom_Fonts {
 			$font_variables .= '--navi-text-transform: ' . ( $theme_options['navi_is_uppercase'] ? 'uppercase' : 'none' ) . '; ';
 		}
 
+		// Set Widget Title Font.
+		if ( $theme_options['widget_title_font'] !== $default_options['widget_title_font'] ) {
+			$font_variables .= '--widget-title-font: ' . self::get_font_family( $theme_options['widget_title_font'] );
+		}
+
+		// Set Widget Title Font Weight.
+		if ( $theme_options['widget_title_is_bold'] !== $default_options['widget_title_is_bold'] ) {
+			$font_variables .= '--widget-title-font-weight: ' . ( $theme_options['widget_title_is_bold'] ? 'bold' : 'normal' ) . '; ';
+		}
+
+		// Set Widget Title Text Transform.
+		if ( $theme_options['widget_title_is_uppercase'] !== $default_options['widget_title_is_uppercase'] ) {
+			$font_variables .= '--widget-title-text-transform: ' . ( $theme_options['widget_title_is_uppercase'] ? 'uppercase' : 'none' ) . '; ';
+		}
+
 		// Add Font Variables.
 		if ( '' !== $font_variables ) {
 			$custom_css .= ':root {' . $font_variables . '}';
@@ -134,6 +149,7 @@ class Kairos_Pro_Custom_Fonts {
 		if ( $theme_options['text_font'] === $default_options['text_font']
 			&& $theme_options['title_font'] === $default_options['title_font']
 			&& $theme_options['navi_font'] === $default_options['navi_font']
+			&& $theme_options['widget_title_font'] === $default_options['widget_title_font']
 		) {
 			return $fonts_url;
 		}
@@ -163,6 +179,12 @@ class Kairos_Pro_Custom_Fonts {
 		if ( isset( $theme_options['navi_font'] ) and ! array_key_exists( $theme_options['navi_font'], $system_fonts ) ) {
 			$font_families[] = $theme_options['navi_font'] . $font_styles;
 			$system_fonts[]  = $theme_options['navi_font']; // Make sure font is not loaded twice.
+		}
+
+		// Add Widget Title Font.
+		if ( isset( $theme_options['widget_title_font'] ) and ! array_key_exists( $theme_options['widget_title_font'], $system_fonts ) ) {
+			$font_families[] = $theme_options['widget_title_font'] . $font_styles;
+			$system_fonts[]  = $theme_options['widget_title_font']; // Make sure font is not loaded twice.
 		}
 
 		// Return early if font family array is empty.
@@ -310,6 +332,55 @@ class Kairos_Pro_Custom_Fonts {
 			'settings' => 'kairos_theme_options[navi_is_uppercase]',
 			'type'     => 'checkbox',
 			'priority' => 70,
+		) );
+
+		// Add Widget Title Font setting.
+		$wp_customize->add_setting( 'kairos_theme_options[widget_title_font]', array(
+			'default'           => $default_options['widget_title_font'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'esc_attr',
+		) );
+
+		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
+			$wp_customize, 'widget_title_font', array(
+				'label'    => esc_html_x( 'Widget Titles', 'Font Setting', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_typography',
+				'settings' => 'kairos_theme_options[widget_title_font]',
+				'priority' => 80,
+			)
+		) );
+
+		// Add Widget Title Font Weight setting.
+		$wp_customize->add_setting( 'kairos_theme_options[widget_title_is_bold]', array(
+			'default'           => $default_options['widget_title_is_bold'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
+		) );
+
+		$wp_customize->add_control( 'kairos_theme_options[widget_title_is_bold]', array(
+			'label'    => esc_html_x( 'Bold', 'Font Setting', 'kairos-pro' ),
+			'section'  => 'kairos_pro_section_typography',
+			'settings' => 'kairos_theme_options[widget_title_is_bold]',
+			'type'     => 'checkbox',
+			'priority' => 90,
+		) );
+
+		// Add Widget Title Uppercase setting.
+		$wp_customize->add_setting( 'kairos_theme_options[widget_title_is_uppercase]', array(
+			'default'           => $default_options['widget_title_is_uppercase'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'kairos_sanitize_checkbox',
+		) );
+
+		$wp_customize->add_control( 'kairos_theme_options[widget_title_is_uppercase]', array(
+			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'kairos-pro' ),
+			'section'  => 'kairos_pro_section_typography',
+			'settings' => 'kairos_theme_options[widget_title_is_uppercase]',
+			'type'     => 'checkbox',
+			'priority' => 100,
 		) );
 	}
 
