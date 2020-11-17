@@ -60,13 +60,14 @@ class Kairos_Pro_Customizer {
 			'header_search'             => false,
 			'author_bio'                => false,
 			'scroll_to_top'             => false,
-			'primary_color'             => '#c9493b',
-			'secondary_color'           => '#e36355',
-			'accent_color'              => '#078896',
-			'highlight_color'           => '#5bb021',
-			'light_gray_color'          => '#e4e4e4',
-			'gray_color'                => '#848484',
-			'dark_gray_color'           => '#242424',
+			'primary_color'             => '#2a4861',
+			'secondary_color'           => '#5d7b94',
+			'tertiary_color'            => '#90aec7',
+			'accent_color'              => '#60945d',
+			'highlight_color'           => '#915d94',
+			'light_gray_color'          => '#ededef',
+			'gray_color'                => '#84848f',
+			'dark_gray_color'           => '#24242f',
 			'page_color'                => '#ffffff',
 			'header_color'              => '#ffffff',
 			'navi_color'                => '#e36355',
@@ -97,7 +98,7 @@ class Kairos_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'kairos-pro-customize-preview', KAIROS_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20191116', true );
+		wp_enqueue_script( 'kairos-pro-customize-preview', KAIROS_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20201117', true );
 	}
 
 	/**

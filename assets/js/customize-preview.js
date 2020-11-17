@@ -51,6 +51,13 @@
 		} );
 	} );
 
+	/* Tertiary Color Option */
+	wp.customize( 'kairos_theme_options[tertiary_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--tertiary-color', newval );
+		} );
+	} );
+
 	/* Accent Color Option */
 	wp.customize( 'kairos_theme_options[accent_color]', function( value ) {
 		value.bind( function( newval ) {

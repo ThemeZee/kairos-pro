@@ -50,6 +50,7 @@ class Kairos_Pro_Block_Colors {
 		return array(
 			'primary_color'    => sanitize_hex_color( $theme_options['primary_color'] ),
 			'secondary_color'  => sanitize_hex_color( $theme_options['secondary_color'] ),
+			'tertiary_color'   => sanitize_hex_color( $theme_options['tertiary_color'] ),
 			'accent_color'     => sanitize_hex_color( $theme_options['accent_color'] ),
 			'highlight_color'  => sanitize_hex_color( $theme_options['highlight_color'] ),
 			'light_gray_color' => sanitize_hex_color( $theme_options['light_gray_color'] ),
@@ -83,6 +84,11 @@ class Kairos_Pro_Block_Colors {
 		// Set Secondary Color.
 		if ( $theme_options['secondary_color'] !== $default_options['secondary_color'] ) {
 			$color_variables .= '--secondary-color: ' . $theme_options['secondary_color'] . ';';
+		}
+
+		// Set Tertiary Color.
+		if ( $theme_options['tertiary_color'] !== $default_options['tertiary_color'] ) {
+			$color_variables .= '--tertiary-color: ' . $theme_options['tertiary_color'] . ';';
 		}
 
 		// Set Accent Color.
@@ -167,6 +173,22 @@ class Kairos_Pro_Block_Colors {
 			)
 		) );
 
+		// Add Tertiary Color setting.
+		$wp_customize->add_setting( 'kairos_theme_options[tertiary_color]', array(
+			'default'           => $default_options['tertiary_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'kairos_theme_options[tertiary_color]', array(
+				'label'    => esc_html_x( 'Tertiary', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_block_colors',
+				'settings' => 'kairos_theme_options[tertiary_color]',
+				'priority' => 30,
+			)
+		) );
+
 		// Add Accent Color setting.
 		$wp_customize->add_setting( 'kairos_theme_options[accent_color]', array(
 			'default'           => $default_options['accent_color'],
@@ -179,7 +201,7 @@ class Kairos_Pro_Block_Colors {
 				'label'    => esc_html_x( 'Accent', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_block_colors',
 				'settings' => 'kairos_theme_options[accent_color]',
-				'priority' => 30,
+				'priority' => 40,
 			)
 		) );
 
@@ -195,7 +217,7 @@ class Kairos_Pro_Block_Colors {
 				'label'    => esc_html_x( 'Highlight', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_block_colors',
 				'settings' => 'kairos_theme_options[highlight_color]',
-				'priority' => 40,
+				'priority' => 50,
 			)
 		) );
 
@@ -211,7 +233,7 @@ class Kairos_Pro_Block_Colors {
 				'label'    => esc_html_x( 'Light Gray', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_block_colors',
 				'settings' => 'kairos_theme_options[light_gray_color]',
-				'priority' => 50,
+				'priority' => 60,
 			)
 		) );
 
@@ -227,7 +249,7 @@ class Kairos_Pro_Block_Colors {
 				'label'    => esc_html_x( 'Gray', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_block_colors',
 				'settings' => 'kairos_theme_options[gray_color]',
-				'priority' => 60,
+				'priority' => 70,
 			)
 		) );
 
@@ -243,7 +265,7 @@ class Kairos_Pro_Block_Colors {
 				'label'    => esc_html_x( 'Dark Gray', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_block_colors',
 				'settings' => 'kairos_theme_options[dark_gray_color]',
-				'priority' => 70,
+				'priority' => 80,
 			)
 		) );
 	}
