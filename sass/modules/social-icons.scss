@@ -29,8 +29,8 @@
 
 .social-menu-wrap .social-icons-menu li a .icon {
 	margin: 0;
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	vertical-align: middle;
 	fill: currentColor;
 }
@@ -46,6 +46,8 @@
 }
 
 .footer-social-menu-wrap .social-icons-menu li a {
+	display: flex;
+	padding: 0.6rem;
 	@include color(--footer-link-color);
 }
 
@@ -54,9 +56,14 @@
 	@include color(--footer-link-hover-color);
 }
 
+.footer-social-menu-wrap .social-icons-menu li a .icon {
+	width: 17px;
+	height: 17px;
+}
+
 @media only screen and (min-width: 960px) {
 	.footer-social-menu-wrap .social-icons-menu {
-		margin: 0;
+		margin-left: 1.5rem;
 		margin-right: -0.5rem;
 		justify-content: flex-end;
 	}

@@ -607,19 +607,26 @@
 }
 
 .footer-social-menu-wrap .social-icons-menu li a {
+	display: flex;
+	padding: 0.6rem;
 	color: #fff;
 	color: var(--footer-link-color);
 }
 
 .footer-social-menu-wrap .social-icons-menu li a:hover,
 .footer-social-menu-wrap .social-icons-menu li a:active {
-	color: #fff;
+	color: rgba(255, 255, 255, 0.6);
 	color: var(--footer-link-hover-color);
+}
+
+.footer-social-menu-wrap .social-icons-menu li a .icon {
+	width: 17px;
+	height: 17px;
 }
 
 @media only screen and (min-width: 960px) {
 	.footer-social-menu-wrap .social-icons-menu {
-		margin: 0;
+		margin-left: 1.5rem;
 		margin-right: -0.5rem;
 		justify-content: flex-end;
 	}
@@ -941,6 +948,11 @@
 }
 
 @media only screen and (min-width: 640px) {
+	.footer-menus {
+		display: flex;
+		align-items: center;
+	}
+
 	.footer-navigation-menu {
 		display: flex;
 		flex-flow: row wrap;
