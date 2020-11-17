@@ -1,17 +1,18 @@
 .footer-widgets-background {
 	display: flex;
-	padding: 1.5rem 1.5rem 0;
+	padding: 1.25rem 1.25rem 0;
 	@include color(--footer-widgets-text-color);
 	@include background(--footer-widgets-background-color);
+	border-bottom: 1px solid;
+	@include border-color(--footer-widgets-border-color);
 }
 
 /* Footer Widget Styling */
 .footer-widgets .widget {
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.25rem;
 
 	.widget-title {
 		@include color(--footer-widgets-text-color);
-		font-weight: normal;
 	}
 
 	a:link,
@@ -83,11 +84,11 @@
 
 @media only screen and (min-width: 480px) {
 	.footer-widgets-background {
-		padding: 2rem 2rem 0;
+		padding: 1.5rem 1.5rem 0;
 	}
 
 	.footer-widgets .widget {
-		margin-bottom: 2rem;
+		margin-bottom: 1.5rem;
 	}
 }
 
@@ -96,14 +97,14 @@
 		display: flex;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		margin-right: -2rem;
+		margin-right: -1.5rem;
 	}
 
 	.footer-widget-column {
 		display: flex;
 		flex-grow: 1;
 		box-sizing: border-box;
-		padding-right: 2rem;
+		padding-right: 1.5rem;
 		width: 50%;
 		flex-direction: column;
 	}
@@ -122,19 +123,19 @@
 
 @media only screen and (min-width: 640px) {
 	.footer-widgets-background {
-		padding: 3rem 3rem 0;
+		padding: 1.75rem 1.75rem 0;
 	}
 
 	.footer-widgets {
-		margin-right: -3rem;
+		margin-right: -1.75rem;
 	}
 
 	.footer-widget-column {
-		padding-right: 3rem;
+		padding-right: 1.75rem;
 	}
 
 	.footer-widgets .widget {
-		margin-bottom: 3rem;
+		margin-bottom: 1.75rem;
 	}
 }
 
@@ -150,37 +151,19 @@
 
 @media only screen and (min-width: 960px) {
 	.footer-widgets-background {
-		padding: 4rem 4rem 0;
+		padding: 2rem 2rem 0;
 	}
 
 	.footer-widgets {
-		margin-right: -4rem;
+		margin-right: -2rem;
 	}
 
 	.footer-widget-column {
-		padding-right: 4rem;
+		padding-right: 2rem;
 	}
 
 	.footer-widgets .widget {
-		margin-bottom: 4rem;
-	}
-}
-
-@media only screen and (min-width: 1280px) {
-	.footer-widgets-background {
-		padding: 5rem 5rem 0;
-	}
-
-	.footer-widgets {
-		margin-right: -5rem;
-	}
-
-	.footer-widget-column {
-		padding-right: 5rem;
-	}
-
-	.footer-widgets .widget {
-		margin-bottom: 5rem;
+		margin-bottom: 2rem;
 	}
 }
 
@@ -192,5 +175,23 @@
 	.footer-widget-column:nth-child(3):nth-last-child(2),
 	.footer-widget-column:nth-child(4):nth-last-child(1) {
 		width: 25%;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.footer-widgets-background {
+		padding: 2.5rem 2.5rem 0;
+	}
+
+	.footer-widgets {
+		margin-right: -2.5rem;
+	}
+
+	.footer-widget-column {
+		padding-right: 2.5rem;
+	}
+
+	.footer-widgets .widget {
+		margin-bottom: 2.5rem;
 	}
 }

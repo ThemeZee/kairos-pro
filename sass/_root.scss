@@ -1,7 +1,15 @@
+$addonColors: (
+	--footer-widgets-background-color: #2a4861,
+	--footer-widgets-text-color      : #fff,
+	--footer-widgets-link-color      : rgba(255, 255, 255, 0.7),
+	--footer-widgets-link-hover-color: #fff,
+	--footer-widgets-border-color    : rgba(255, 255, 255, 0.1),
+);
+
 :root {
-	@include variable(--footer-widgets-background-color, $themeColors);
-	@include variable(--footer-widgets-text-color, $themeColors);
-	@include variable(--footer-widgets-link-color, $themeColors);
-	@include variable(--footer-widgets-link-hover-color, $themeColors);
-	@include variable(--footer-widgets-border-color, $themeColors);
+	@include variable(--footer-widgets-background-color, $addonColors);
+	@include variable(--footer-widgets-text-color, $addonColors);
+	@include variable(--footer-widgets-link-color, $addonColors);
+	@include variable(--footer-widgets-link-hover-color, $addonColors);
+	@include variable(--footer-widgets-border-color, $addonColors);
 }
