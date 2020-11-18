@@ -93,57 +93,47 @@
 		} );
 	} );
 
-	/* Page Background Color Option */
-	wp.customize( 'kairos_theme_options[page_color]', function( value ) {
+	/* Header Bar Color Option */
+	wp.customize( 'kairos_theme_options[header_bar_color]', function( value ) {
 		value.bind( function( newval ) {
-			var text_color, medium_text_color, light_text_color, border_color, light_bg_color;
+			var text_color, hover_color, border_color;
 
-			if( isColorDark( newval ) ) {
-				text_color        = 'rgba(255, 255, 255, 0.9)';
-				medium_text_color = 'rgba(255, 255, 255, 0.7)';
-				light_text_color  = 'rgba(255, 255, 255, 0.5)';
-				border_color      = 'rgba(255, 255, 255, 0.1)';
-				light_bg_color    = 'rgba(255, 255, 255, 0.05)';
+			if( isColorLight( newval ) ) {
+				text_color = '#151515';
+				hover_color = 'rgba(0, 0, 0, 0.5)';
+				border_color = 'rgba(0, 0, 0, 0.1)';
 			} else {
-				text_color        = 'rgba(0, 0, 0, 0.9)';
-				medium_text_color = 'rgba(0, 0, 0, 0.7)';
-				light_text_color  = 'rgba(0, 0, 0, 0.5)';
-				border_color      = 'rgba(0, 0, 0, 0.1)';
-				light_bg_color    = 'rgba(0, 0, 0, 0.05)';
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.5)';
+				border_color = 'rgba(255, 255, 255, 0.1)';
 			}
 
-			document.documentElement.style.setProperty( '--page-background-color', newval );
-			document.documentElement.style.setProperty( '--text-color', text_color );
-			document.documentElement.style.setProperty( '--medium-text-color', medium_text_color );
-			document.documentElement.style.setProperty( '--light-text-color', light_text_color );
-			document.documentElement.style.setProperty( '--page-border-color', border_color );
-			document.documentElement.style.setProperty( '--page-light-bg-color', light_bg_color );
+			document.documentElement.style.setProperty( '--header-bar-background-color', newval );
+			document.documentElement.style.setProperty( '--header-bar-text-color', text_color );
+			document.documentElement.style.setProperty( '--header-bar-text-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--header-bar-border-color', border_color );
 		} );
 	} );
 
 	/* Header Color Option */
 	wp.customize( 'kairos_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
-			var text_color, border_color;
+			var text_color, hover_color, border_color;
 
-			if( isColorDark( newval ) ) {
-				text_color = 'rgba(255, 255, 255, 0.9)';
-				border_color = 'rgba(255, 255, 255, 0.1)';
-			} else {
-				text_color = 'rgba(0, 0, 0, 0.9)';
+			if( isColorLight( newval ) ) {
+				text_color = '#151515';
+				hover_color = 'rgba(0, 0, 0, 0.5)';
 				border_color = 'rgba(0, 0, 0, 0.1)';
+			} else {
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.5)';
+				border_color = 'rgba(255, 255, 255, 0.1)';
 			}
 
 			document.documentElement.style.setProperty( '--header-background-color', newval );
 			document.documentElement.style.setProperty( '--header-text-color', text_color );
+			document.documentElement.style.setProperty( '--header-text-hover-color', hover_color );
 			document.documentElement.style.setProperty( '--header-border-color', border_color );
-		} );
-	} );
-
-	/* Navigation Color Option */
-	wp.customize( 'kairos_theme_options[navi_color]', function( value ) {
-		value.bind( function( newval ) {
-			document.documentElement.style.setProperty( '--header-text-hover-color', newval );
 		} );
 	} );
 
@@ -179,6 +169,7 @@
 	wp.customize( 'kairos_theme_options[title_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--title-color', newval );
+			document.documentElement.style.setProperty( '--widget-title-color', newval );
 		} );
 	} );
 
@@ -186,6 +177,16 @@
 	wp.customize( 'kairos_theme_options[title_hover_color]', function( value ) {
 		value.bind( function( newval ) {
 			document.documentElement.style.setProperty( '--title-hover-color', newval );
+			document.documentElement.style.setProperty( '--widget-title-hover-color', newval );
+		} );
+	} );
+
+	/* Sidebar & Comments Color Option */
+	wp.customize( 'kairos_theme_options[sidebar_comments_color]', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty( '--widget-background-color', newval );
+			document.documentElement.style.setProperty( '--post-meta-background-color', newval );
+			document.documentElement.style.setProperty( '--comments-background-color', newval );
 		} );
 	} );
 
@@ -195,14 +196,14 @@
 			var text_color, link_color, link_hover_color, border_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = 'rgba(0, 0, 0, 0.5)';
-				link_color = 'rgba(0, 0, 0, 0.95)';
-				link_hover_color = 'rgba(0, 0, 0, 0.5)';
+				text_color = '#151515';
+				link_color = 'rgba(0, 0, 0, 0.6)';
+				link_hover_color = '#151515';
 				border_color = 'rgba(0, 0, 0, 0.1)';
 			} else {
-				text_color = 'rgba(255, 255, 255, 0.5)';
-				link_color = 'rgba(255, 255, 255, 0.95)';
-				link_hover_color = 'rgba(255, 255, 255, 0.5)';
+				text_color = '#fff';
+				link_color = 'rgba(255, 255, 255, 0.6)';
+				link_hover_color = '#fff';
 				border_color = 'rgba(255, 255, 255, 0.1)';
 			}
 
@@ -221,12 +222,12 @@
 
 			if( isColorLight( newval ) ) {
 				text_color = 'rgba(0, 0, 0, 0.5)';
-				link_color = 'rgba(0, 0, 0, 0.95)';
+				link_color = '#151515';
 				link_hover_color = 'rgba(0, 0, 0, 0.5)';
 				border_color = 'rgba(0, 0, 0, 0.1)';
 			} else {
 				text_color = 'rgba(255, 255, 255, 0.5)';
-				link_color = 'rgba(255, 255, 255, 0.95)';
+				link_color = '#fff';
 				link_hover_color = 'rgba(255, 255, 255, 0.5)';
 				border_color = 'rgba(255, 255, 255, 0.1)';
 			}

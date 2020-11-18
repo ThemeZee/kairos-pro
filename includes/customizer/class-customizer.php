@@ -68,17 +68,17 @@ class Kairos_Pro_Customizer {
 			'light_gray_color'          => '#ededef',
 			'gray_color'                => '#84848f',
 			'dark_gray_color'           => '#24242f',
-			'page_color'                => '#ffffff',
-			'header_color'              => '#ffffff',
-			'navi_color'                => '#e36355',
-			'link_color'                => '#c9493b',
-			'link_hover_color'          => '#e36355',
-			'button_color'              => '#c9493b',
-			'button_hover_color'        => '#e36355',
-			'title_color'               => '#202020',
-			'title_hover_color'         => '#e36355',
-			'footer_widgets_color'      => '#252525',
-			'footer_color'              => '#202020',
+			'header_bar_color'          => '#2a4861',
+			'header_color'              => '#2a4861',
+			'link_color'                => '#5d7b94',
+			'link_hover_color'          => '#2a4861',
+			'button_color'              => '#2a4861',
+			'button_hover_color'        => '#5d7b94',
+			'title_color'               => '#2a4861',
+			'title_hover_color'         => '#5d7b94',
+			'sidebar_comments_color'    => '#ededef',
+			'footer_widgets_color'      => '#2a4861',
+			'footer_color'              => '#2a4861',
 			'text_font'                 => 'Barlow',
 			'title_font'                => 'Barlow',
 			'title_is_bold'             => true,
@@ -98,7 +98,7 @@ class Kairos_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'kairos-pro-customize-preview', KAIROS_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20201117', true );
+		wp_enqueue_script( 'kairos-pro-customize-preview', KAIROS_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20201119', true );
 	}
 
 	/**
@@ -107,7 +107,7 @@ class Kairos_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_css() {
-		wp_enqueue_style( 'kairos-pro-customizer-css', KAIROS_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), KAIROS_PRO_VERSION );
+		wp_enqueue_style( 'kairos-pro-customizer-css', KAIROS_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20201119' );
 	}
 }
 

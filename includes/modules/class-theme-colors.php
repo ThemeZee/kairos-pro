@@ -53,17 +53,15 @@ class Kairos_Pro_Theme_Colors {
 		// Color Variables.
 		$color_variables = '';
 
-		// Set Page Background Color.
-		if ( $theme_options['page_color'] !== $default_options['page_color'] ) {
-			$color_variables .= '--page-background-color: ' . $theme_options['page_color'] . ';';
+		// Set Header Bar Background Color.
+		if ( $theme_options['header_bar_color'] !== $default_options['header_bar_color'] ) {
+			$color_variables .= '--header-bar-background-color: ' . $theme_options['header_bar_color'] . ';';
 
 			// Check if a dark background color was chosen.
-			if ( self::is_color_dark( $theme_options['page_color'] ) ) {
-				$color_variables .= '--text-color: rgba(255, 255, 255, 0.9);';
-				$color_variables .= '--medium-text-color: rgba(255, 255, 255, 0.7);';
-				$color_variables .= '--light-text-color: rgba(255, 255, 255, 0.5);';
-				$color_variables .= '--page-border-color: rgba(255, 255, 255, 0.1);';
-				$color_variables .= '--page-light-bg-color: rgba(255, 255, 255, 0.05);';
+			if ( self::is_color_light( $theme_options['header_bar_color'] ) ) {
+				$color_variables .= '--header-bar-text-color: #151515;';
+				$color_variables .= '--header-bar-text-hover-color: rgba(0, 0, 0, 0.5);';
+				$color_variables .= '--header-bar-border-color: rgba(0, 0, 0, 0.1);';
 			}
 		}
 
@@ -72,15 +70,11 @@ class Kairos_Pro_Theme_Colors {
 			$color_variables .= '--header-background-color: ' . $theme_options['header_color'] . ';';
 
 			// Check if a dark background color was chosen.
-			if ( self::is_color_dark( $theme_options['header_color'] ) ) {
-				$color_variables .= '--header-text-color: rgba(255, 255, 255, 0.9);';
-				$color_variables .= '--header-border-color: rgba(255, 255, 255, 0.1);';
+			if ( self::is_color_light( $theme_options['header_color'] ) ) {
+				$color_variables .= '--header-text-color: #151515;';
+				$color_variables .= '--header-text-hover-color: rgba(0, 0, 0, 0.5);';
+				$color_variables .= '--header-border-color: rgba(0, 0, 0, 0.1);';
 			}
-		}
-
-		// Set Navigation Color.
-		if ( $theme_options['navi_color'] !== $default_options['navi_color'] ) {
-			$color_variables .= '--header-text-hover-color: ' . $theme_options['navi_color'] . ';';
 		}
 
 		// Set Link Color.
@@ -106,11 +100,20 @@ class Kairos_Pro_Theme_Colors {
 		// Set Title Color.
 		if ( $theme_options['title_color'] !== $default_options['title_color'] ) {
 			$color_variables .= '--title-color: ' . $theme_options['title_color'] . ';';
+			$color_variables .= '--widget-title-color: ' . $theme_options['title_color'] . ';';
 		}
 
 		// Set Title Hover Color.
 		if ( $theme_options['title_hover_color'] !== $default_options['title_hover_color'] ) {
 			$color_variables .= '--title-hover-color: ' . $theme_options['title_hover_color'] . ';';
+			$color_variables .= '--widget-title-hover-color: ' . $theme_options['title_hover_color'] . ';';
+		}
+
+		// Set Sidebar & Comments Color.
+		if ( $theme_options['sidebar_comments_color'] !== $default_options['sidebar_comments_color'] ) {
+			$color_variables .= '--widget-background-color: ' . $theme_options['sidebar_comments_color'] . ';';
+			$color_variables .= '--post-meta-background-color: ' . $theme_options['sidebar_comments_color'] . ';';
+			$color_variables .= '--comments-background-color: ' . $theme_options['sidebar_comments_color'] . ';';
 		}
 
 		// Set Footer Widgets Color.
@@ -119,9 +122,9 @@ class Kairos_Pro_Theme_Colors {
 
 			// Check if a light background color was chosen.
 			if ( self::is_color_light( $theme_options['footer_widgets_color'] ) ) {
-				$color_variables .= '--footer-widgets-text-color: rgba(0, 0, 0, 0.5);';
-				$color_variables .= '--footer-widgets-link-color: rgba(0, 0, 0, 0.95);';
-				$color_variables .= '--footer-widgets-link-hover-color: rgba(0, 0, 0, 0.5);';
+				$color_variables .= '--footer-widgets-text-color: #151515;';
+				$color_variables .= '--footer-widgets-link-color: rgba(0, 0, 0, 0.6);';
+				$color_variables .= '--footer-widgets-link-hover-color: #151515;';
 				$color_variables .= '--footer-widgets-border-color: rgba(0, 0, 0, 0.1);';
 			}
 		}
@@ -132,9 +135,9 @@ class Kairos_Pro_Theme_Colors {
 
 			// Check if a light background color was chosen.
 			if ( self::is_color_light( $theme_options['footer_color'] ) ) {
-				$color_variables .= '--footer-text-color: rgba(0, 0, 0, 0.5);';
-				$color_variables .= '--footer-link-color: rgba(0, 0, 0, 0.95);';
-				$color_variables .= '--footer-link-hover-color: rgba(0, 0, 0, 0.5);';
+				$color_variables .= '--footer-text-color: rgba(0, 0, 0, 0.6);';
+				$color_variables .= '--footer-link-color: #151515;';
+				$color_variables .= '--footer-link-hover-color: rgba(0, 0, 0, 0.6);';
 				$color_variables .= '--footer-border-color: rgba(0, 0, 0, 0.1);';
 			}
 		}
@@ -164,18 +167,18 @@ class Kairos_Pro_Theme_Colors {
 		// Get Default Colors from settings.
 		$default_options = Kairos_Pro_Customizer::get_default_options();
 
-		// Add Page Background Color setting.
-		$wp_customize->add_setting( 'kairos_theme_options[page_color]', array(
-			'default'           => $default_options['page_color'],
+		// Add Header Bar Color setting.
+		$wp_customize->add_setting( 'kairos_theme_options[header_bar_color]', array(
+			'default'           => $default_options['header_bar_color'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'kairos_theme_options[page_color]', array(
-				'label'    => esc_html_x( 'Page Background', 'Color Option', 'kairos-pro' ),
+			$wp_customize, 'kairos_theme_options[header_bar_color]', array(
+				'label'    => esc_html_x( 'Top Navigation', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_theme_colors',
-				'settings' => 'kairos_theme_options[page_color]',
+				'settings' => 'kairos_theme_options[header_bar_color]',
 				'priority' => 10,
 			)
 		) );
@@ -189,26 +192,10 @@ class Kairos_Pro_Theme_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'kairos_theme_options[header_color]', array(
-				'label'    => esc_html_x( 'Header Background', 'Color Option', 'kairos-pro' ),
+				'label'    => esc_html_x( 'Header', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_theme_colors',
 				'settings' => 'kairos_theme_options[header_color]',
 				'priority' => 20,
-			)
-		) );
-
-		// Add Navigation Color setting.
-		$wp_customize->add_setting( 'kairos_theme_options[navi_color]', array(
-			'default'           => $default_options['navi_color'],
-			'type'              => 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		) );
-		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'kairos_theme_options[navi_color]', array(
-				'label'    => esc_html_x( 'Navigation', 'Color Option', 'kairos-pro' ),
-				'section'  => 'kairos_pro_section_theme_colors',
-				'settings' => 'kairos_theme_options[navi_color]',
-				'priority' => 30,
 			)
 		) );
 
@@ -308,6 +295,22 @@ class Kairos_Pro_Theme_Colors {
 			)
 		) );
 
+		// Add Sidebar & Comments Color setting.
+		$wp_customize->add_setting( 'kairos_theme_options[sidebar_comments_color]', array(
+			'default'           => $default_options['sidebar_comments_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'kairos_theme_options[sidebar_comments_color]', array(
+				'label'    => esc_html_x( 'Sidebar & Comments', 'Color Option', 'kairos-pro' ),
+				'section'  => 'kairos_pro_section_theme_colors',
+				'settings' => 'kairos_theme_options[sidebar_comments_color]',
+				'priority' => 100,
+			)
+		) );
+
 		// Add Footer Widgets Color setting.
 		$wp_customize->add_setting( 'kairos_theme_options[footer_widgets_color]', array(
 			'default'           => $default_options['footer_widgets_color'],
@@ -320,7 +323,7 @@ class Kairos_Pro_Theme_Colors {
 				'label'    => esc_html_x( 'Footer Widgets', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_theme_colors',
 				'settings' => 'kairos_theme_options[footer_widgets_color]',
-				'priority' => 100,
+				'priority' => 110,
 			)
 		) );
 
@@ -336,7 +339,7 @@ class Kairos_Pro_Theme_Colors {
 				'label'    => esc_html_x( 'Footer Copyright', 'Color Option', 'kairos-pro' ),
 				'section'  => 'kairos_pro_section_theme_colors',
 				'settings' => 'kairos_theme_options[footer_color]',
-				'priority' => 110,
+				'priority' => 120,
 			)
 		) );
 	}
