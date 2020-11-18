@@ -1,7 +1,7 @@
 .header-bar-wrap {
-	@include background(--header-background-color);
+	@include background(--header-bar-background-color);
 	border-bottom: 1px solid;
-	@include border-color(--header-border-color);
+	@include border-color(--header-bar-border-color);
 }
 
 .header-bar {
@@ -24,7 +24,7 @@
 .top-navigation ul {
 	margin: 0;
 	padding: 0;
-	@include color(--header-text-color);
+	@include color(--header-bar-text-color);
 	list-style: none;
 	@include font-size(15);
 	@include font-family(--navi-font);
@@ -55,14 +55,14 @@
 	margin: 0;
 	padding: 0.75rem 1.5rem;
 	border-top: 1px solid;
-	@include border-color(--header-border-color);
+	@include border-color(--header-bar-border-color);
 	text-decoration: none;
 }
 
 .top-navigation ul a,
 .top-navigation ul a:link,
 .top-navigation ul a:visited {
-	@include color(--header-text-color);
+	@include color(--header-bar-text-color);
 	text-decoration: none;
 	transition: all 0.15s ease;
 }
@@ -70,7 +70,7 @@
 .top-navigation ul a:hover,
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
-	@include color(--header-text-hover-color);
+	@include color(--header-bar-text-hover-color);
 }
 
 .top-navigation ul li.current-menu-item > a {
@@ -80,7 +80,7 @@
 /* Submenus */
 .top-navigation ul ul {
 	@include font-size(15);
-	@include background(--header-background-color);
+	@include background(--header-bar-background-color);
 }
 
 .is-amp-page .top-navigation ul button.toggled-on + ul,
@@ -108,7 +108,7 @@
 	padding: 0.75rem 1.25rem;
 	border: none;
 	background: none;
-	@include color(--header-text-color);
+	@include color(--header-bar-text-color);
 	text-decoration: none;
 	@include font-size(15);
 	@include font-family(--navi-font);
@@ -124,13 +124,13 @@
 
 .secondary-menu-toggle:focus {
 	outline: thin dotted;
-	@include color(--header-text-color);
+	@include color(--header-bar-text-color);
 	background: none;
 }
 
 .secondary-menu-toggle:hover,
 .secondary-menu-toggle:active {
-	@include color(--header-text-hover-color);
+	@include color(--header-bar-text-hover-color);
 	background: none;
 	cursor: pointer;
 }
@@ -140,13 +140,13 @@
 	width: 20px;
 	height: 20px;
 	vertical-align: top;
-	@include fill(--header-text-color);
+	@include fill(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
 
 .secondary-menu-toggle:hover .icon,
 .secondary-menu-toggle:active .icon {
-	@include fill(--header-text-hover-color);
+	@include fill(--header-bar-text-hover-color);
 }
 
 .secondary-menu-toggle[aria-expanded="true"] .icon-ellipsis,
@@ -171,7 +171,7 @@
 
 .top-navigation .dropdown-toggle:focus {
 	outline: thin dotted;
-	@include color(--header-text-color);
+	@include color(--header-bar-text-color);
 	background: none;
 }
 
@@ -185,14 +185,14 @@
 	width: 18px;
 	height: 18px;
 	vertical-align: top;
-	@include fill(--header-text-color);
+	@include fill(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
 
 .top-navigation .dropdown-toggle:hover .icon,
 .top-navigation .dropdown-toggle:active .icon,
 .top-navigation .dropdown-toggle:focus .icon {
-	@include fill(--header-text-hover-color);
+	@include fill(--header-bar-text-hover-color);
 }
 
 .top-navigation .dropdown-toggle.toggled-on .icon {
@@ -265,7 +265,7 @@
 		z-index: 99999;
 		padding: 0.25rem 0;
 		border: 1px solid;
-		@include border-color(--header-border-color);
+		@include border-color(--header-bar-border-color);
 	}
 
 	.top-navigation ul li:hover > ul,
@@ -306,7 +306,7 @@
 		top: 0.1rem;
 		width: 12px;
 		height: 12px;
-		@include fill(--header-text-color);
+		@include fill(--header-bar-text-color);
 		transition: fill 0.15s ease;
 	}
 
@@ -324,6 +324,6 @@
 
 	.top-navigation ul .menu-item-has-children > a:hover > .icon,
 	.top-navigation ul .page_item_has_children > a:hover > .icon {
-		@include fill(--header-text-hover-color);
+		@include fill(--header-bar-text-hover-color);
 	}
 }

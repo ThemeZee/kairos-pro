@@ -12,9 +12,13 @@
 # - CSS Variables
 --------------------------------------------------------------*/
 :root {
+	--header-bar-background-color: #2a4861;
+	--header-bar-text-color: #fff;
+	--header-bar-text-hover-color: rgba(255, 255, 255, 0.5);
+	--header-bar-border-color: rgba(255, 255, 255, 0.1);
 	--footer-widgets-background-color: #2a4861;
 	--footer-widgets-text-color: #fff;
-	--footer-widgets-link-color: rgba(255, 255, 255, 0.7);
+	--footer-widgets-link-color: rgba(255, 255, 255, 0.6);
 	--footer-widgets-link-hover-color: #fff;
 	--footer-widgets-border-color: rgba(255, 255, 255, 0.1);
 }
@@ -23,11 +27,9 @@
 # Header Bar
 --------------------------------------------------------------*/
 .header-bar-wrap {
-	background-color: #2a4861;
-	background-color: var(--header-background-color);
+	background-color: var(--header-bar-background-color);
 	border-bottom: 1px solid;
-	border-color: rgba(255, 255, 255, 0.1);
-	border-color: var(--header-border-color);
+	border-color: var(--header-bar-border-color);
 }
 
 .header-bar {
@@ -50,8 +52,7 @@
 .top-navigation ul {
 	margin: 0;
 	padding: 0;
-	color: #fff;
-	color: var(--header-text-color);
+	color: var(--header-bar-text-color);
 	list-style: none;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -86,16 +87,14 @@
 	margin: 0;
 	padding: 0.75rem 1.5rem;
 	border-top: 1px solid;
-	border-color: rgba(255, 255, 255, 0.1);
-	border-color: var(--header-border-color);
+	border-color: var(--header-bar-border-color);
 	text-decoration: none;
 }
 
 .top-navigation ul a,
 .top-navigation ul a:link,
 .top-navigation ul a:visited {
-	color: #fff;
-	color: var(--header-text-color);
+	color: var(--header-bar-text-color);
 	text-decoration: none;
 	transition: all 0.15s ease;
 }
@@ -103,8 +102,7 @@
 .top-navigation ul a:hover,
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--header-text-hover-color);
+	color: var(--header-bar-text-hover-color);
 }
 
 .top-navigation ul li.current-menu-item > a {
@@ -115,8 +113,7 @@
 .top-navigation ul ul {
 	font-size: 15px;
 	font-size: 0.9375rem;
-	background-color: #2a4861;
-	background-color: var(--header-background-color);
+	background-color: var(--header-bar-background-color);
 }
 
 .is-amp-page .top-navigation ul button.toggled-on + ul,
@@ -144,8 +141,7 @@
 	padding: 0.75rem 1.25rem;
 	border: none;
 	background: none;
-	color: #fff;
-	color: var(--header-text-color);
+	color: var(--header-bar-text-color);
 	text-decoration: none;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -165,15 +161,13 @@
 
 .secondary-menu-toggle:focus {
 	outline: thin dotted;
-	color: #fff;
-	color: var(--header-text-color);
+	color: var(--header-bar-text-color);
 	background: none;
 }
 
 .secondary-menu-toggle:hover,
 .secondary-menu-toggle:active {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--header-text-hover-color);
+	color: var(--header-bar-text-hover-color);
 	background: none;
 	cursor: pointer;
 }
@@ -183,15 +177,13 @@
 	width: 20px;
 	height: 20px;
 	vertical-align: top;
-	fill: #fff;
-	fill: var(--header-text-color);
+	fill: var(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
 
 .secondary-menu-toggle:hover .icon,
 .secondary-menu-toggle:active .icon {
-	fill: rgba(255, 255, 255, 0.5);
-	fill: var(--header-text-hover-color);
+	fill: var(--header-bar-text-hover-color);
 }
 
 .secondary-menu-toggle[aria-expanded="true"] .icon-ellipsis,
@@ -216,8 +208,7 @@
 
 .top-navigation .dropdown-toggle:focus {
 	outline: thin dotted;
-	color: #fff;
-	color: var(--header-text-color);
+	color: var(--header-bar-text-color);
 	background: none;
 }
 
@@ -231,16 +222,14 @@
 	width: 18px;
 	height: 18px;
 	vertical-align: top;
-	fill: #fff;
-	fill: var(--header-text-color);
+	fill: var(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
 
 .top-navigation .dropdown-toggle:hover .icon,
 .top-navigation .dropdown-toggle:active .icon,
 .top-navigation .dropdown-toggle:focus .icon {
-	fill: rgba(255, 255, 255, 0.5);
-	fill: var(--header-text-hover-color);
+	fill: var(--header-bar-text-hover-color);
 }
 
 .top-navigation .dropdown-toggle.toggled-on .icon {
@@ -314,8 +303,7 @@
 		z-index: 99999;
 		padding: 0.25rem 0;
 		border: 1px solid;
-		border-color: rgba(255, 255, 255, 0.1);
-		border-color: var(--header-border-color);
+		border-color: var(--header-bar-border-color);
 	}
 
 	.top-navigation ul li:hover > ul,
@@ -356,8 +344,7 @@
 		top: 0.1rem;
 		width: 12px;
 		height: 12px;
-		fill: #fff;
-		fill: var(--header-text-color);
+		fill: var(--header-bar-text-color);
 		transition: fill 0.15s ease;
 	}
 
@@ -375,8 +362,7 @@
 
 	.top-navigation ul .menu-item-has-children > a:hover > .icon,
 	.top-navigation ul .page_item_has_children > a:hover > .icon {
-		fill: rgba(255, 255, 255, 0.5);
-		fill: var(--header-text-hover-color);
+		fill: var(--header-bar-text-hover-color);
 	}
 }
 
@@ -577,14 +563,10 @@
 	display: block;
 	margin: 0;
 	padding: 0.65rem;
-	color: #fff;
-	color: var(--header-text-color);
 }
 
 .social-menu-wrap .social-icons-menu li a:hover,
 .social-menu-wrap .social-icons-menu li a:active {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--header-text-hover-color);
 	text-decoration: none;
 }
 
@@ -599,6 +581,15 @@
 /* Header Social Menu */
 .header-social-menu-wrap {
 	padding-right: 0.5rem;
+}
+
+.header-social-menu-wrap .social-icons-menu li a {
+	color: var(--header-bar-text-color);
+}
+
+.header-social-menu-wrap .social-icons-menu li a:hover,
+.header-social-menu-wrap .social-icons-menu li a:active {
+	color: var(--header-bar-text-hover-color);
 }
 
 /* Footer Social Icons */

@@ -18,12 +18,10 @@
 	display: block;
 	margin: 0;
 	padding: 0.65rem;
-	@include color(--header-text-color);
 }
 
 .social-menu-wrap .social-icons-menu li a:hover,
 .social-menu-wrap .social-icons-menu li a:active {
-	@include color(--header-text-hover-color);
 	text-decoration: none;
 }
 
@@ -38,6 +36,15 @@
 /* Header Social Menu */
 .header-social-menu-wrap {
 	padding-right: 0.5rem;
+}
+
+.header-social-menu-wrap .social-icons-menu li a {
+	@include color(--header-bar-text-color);
+}
+
+.header-social-menu-wrap .social-icons-menu li a:hover,
+.header-social-menu-wrap .social-icons-menu li a:active {
+	@include color(--header-bar-text-hover-color);
 }
 
 /* Footer Social Icons */
