@@ -437,6 +437,10 @@
 	z-index: 999;
 }
 
+.header-search-enabled .header-search-dropdown.active, .header-search-enabled .header-search-dropdown.toggled-on {
+	display: block;
+}
+
 .header-search-enabled .header-search-dropdown .header-search-form {
 	display: flex;
 	padding: 1.5rem 0;

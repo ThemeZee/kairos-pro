@@ -59,6 +59,11 @@
 		box-sizing: border-box;
 		z-index: 999;
 
+		&.active,
+		&.toggled-on {
+			display: block;
+		}
+
 		.header-search-form {
 			display: flex;
 			padding: 1.5rem 0;
