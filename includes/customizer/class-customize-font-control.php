@@ -2,7 +2,7 @@
 /**
  * Custom Font Control for the Customizer
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 /**
@@ -13,14 +13,14 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	/**
 	 * Displays a custom Font control. Allows to switch fonts for particular elements on the theme.
 	 */
-	class Kairos_Pro_Customize_Font_Control extends WP_Customize_Control {
+	class Occasio_Pro_Customize_Font_Control extends WP_Customize_Control {
 
 		/**
 		 * Declare the control type. Critical for JS constructor.
 		 *
 		 * @var string
 		 */
-		public $type = 'kairos_pro_custom_font';
+		public $type = 'occasio_pro_custom_font';
 
 		/**
 		 * Localization Strings.
@@ -48,13 +48,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 			// Make Buttons translateable.
 			$this->l10n = array(
-				'previous' => esc_html__( 'Previous Font', 'kairos-pro' ),
-				'next'     => esc_html__( 'Next Font', 'kairos-pro' ),
-				'standard' => esc_html_x( 'Default', 'default font button', 'kairos-pro' ),
+				'previous' => esc_html__( 'Previous Font', 'occasio-pro' ),
+				'next'     => esc_html__( 'Next Font', 'occasio-pro' ),
+				'standard' => esc_html_x( 'Default', 'default font button', 'occasio-pro' ),
 			);
 
 			// Set Fonts.
-			$this->fonts = Kairos_Pro_Custom_Fonts::get_available_fonts();
+			$this->fonts = Occasio_Pro_Custom_Fonts::get_available_fonts();
 
 			parent::__construct( $manager, $id, $args );
 		}
@@ -66,7 +66,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		 */
 		public function enqueue() {
 			// Register and Enqueue Custom Font JS Constructor.
-			wp_enqueue_script( 'kairos-pro-custom-font-control', KAIROS_PRO_PLUGIN_URL . 'assets/js/custom-font-control.min.js', array( 'customize-controls' ), '20201101', true );
+			wp_enqueue_script( 'occasio-pro-custom-font-control', OCCASIO_PRO_PLUGIN_URL . 'assets/js/custom-font-control.min.js', array( 'customize-controls' ), '20201101', true );
 		}
 
 		/**

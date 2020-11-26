@@ -2,7 +2,7 @@
 /**
  * Header Bar
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Header Bar Class
  */
-class Kairos_Pro_Header_Bar {
+class Occasio_Pro_Header_Bar {
 
 	/**
 	 * Class Setup
@@ -22,13 +22,13 @@ class Kairos_Pro_Header_Bar {
 	 */
 	static function setup() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
 		// Display Header Bar.
-		add_action( 'kairos_before_header', array( __CLASS__, 'display_header_bar' ), 20 );
+		add_action( 'occasio_before_header', array( __CLASS__, 'display_header_bar' ), 20 );
 	}
 
 	/**
@@ -39,7 +39,7 @@ class Kairos_Pro_Header_Bar {
 	static function display_header_bar() {
 
 		// Get theme options.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
+		$theme_options = Occasio_Pro_Customizer::get_theme_options();
 
 		// Check if there is content for the header bar.
 		if ( has_nav_menu( 'secondary' ) || has_nav_menu( 'social-header' ) ) : ?>
@@ -55,7 +55,7 @@ class Kairos_Pro_Header_Bar {
 
 						<div class="header-social-menu-wrap social-menu-wrap">
 
-							<?php Kairos_Pro_Social_Icons::display_social_icons_menu( 'social-header' ); ?>
+							<?php Occasio_Pro_Social_Icons::display_social_icons_menu( 'social-header' ); ?>
 
 						</div>
 
@@ -68,15 +68,15 @@ class Kairos_Pro_Header_Bar {
 
 						<button class="secondary-menu-toggle menu-toggle" aria-controls="secondary-menu" aria-expanded="false" <?php self::amp_menu_toggle(); ?>>
 							<?php
-							echo kairos_get_svg( 'ellipsis' );
-							echo kairos_get_svg( 'close' );
+							echo occasio_get_svg( 'ellipsis' );
+							echo occasio_get_svg( 'close' );
 							?>
-							<span class="menu-toggle-text"><?php esc_html_e( 'Menu', 'kairos-pro' ); ?></span>
+							<span class="menu-toggle-text"><?php esc_html_e( 'Menu', 'occasio-pro' ); ?></span>
 						</button>
 
 						<div class="secondary-navigation">
 
-							<nav class="top-navigation" role="navigation" <?php self::amp_menu_is_toggled(); ?> aria-label="<?php esc_attr_e( 'Secondary Menu', 'kairos-pro' ); ?>">
+							<nav class="top-navigation" role="navigation" <?php self::amp_menu_is_toggled(); ?> aria-label="<?php esc_attr_e( 'Secondary Menu', 'occasio-pro' ); ?>">
 
 								<?php
 								wp_nav_menu(
@@ -110,13 +110,13 @@ class Kairos_Pro_Header_Bar {
 	 */
 	static function register_nav_menus() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
 		register_nav_menus( array(
-			'secondary' => esc_html__( 'Top Navigation', 'kairos-pro' ),
+			'secondary' => esc_html__( 'Top Navigation', 'occasio-pro' ),
 		) );
 	}
 
@@ -141,7 +141,7 @@ class Kairos_Pro_Header_Bar {
 }
 
 // Run Class.
-add_action( 'init', array( 'Kairos_Pro_Header_Bar', 'setup' ) );
+add_action( 'init', array( 'Occasio_Pro_Header_Bar', 'setup' ) );
 
 // Register navigation menus in backend.
-add_action( 'after_setup_theme', array( 'Kairos_Pro_Header_Bar', 'register_nav_menus' ), 20 );
+add_action( 'after_setup_theme', array( 'Occasio_Pro_Header_Bar', 'register_nav_menus' ), 20 );

@@ -4,7 +4,7 @@
  *
  * Adds custom font settings to Customizer and generates font CSS code
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Custom Fonts Class
  */
-class Kairos_Pro_Custom_Fonts {
+class Occasio_Pro_Custom_Fonts {
 
 	/**
 	 * Custom Fonts Setup
@@ -24,19 +24,19 @@ class Kairos_Pro_Custom_Fonts {
 	 */
 	static function setup() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
 		// Include Customizer Control Files.
-		require_once KAIROS_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-font-control.php';
+		require_once OCCASIO_PRO_PLUGIN_DIR . 'includes/customizer/class-customize-font-control.php';
 
 		// Add Custom Fonts CSS code to custom stylesheet output.
-		add_filter( 'kairos_pro_custom_css_stylesheet', array( __CLASS__, 'get_custom_fonts_css' ) );
+		add_filter( 'occasio_pro_custom_css_stylesheet', array( __CLASS__, 'get_custom_fonts_css' ) );
 
 		// Load Custom Fonts with the built-in theme functions.
-		add_filter( 'kairos_get_fonts_url', array( __CLASS__, 'get_custom_fonts_url' ) );
+		add_filter( 'occasio_get_fonts_url', array( __CLASS__, 'get_custom_fonts_url' ) );
 
 		// Add Font Settings in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'font_settings' ) );
@@ -66,10 +66,10 @@ class Kairos_Pro_Custom_Fonts {
 	static function get_custom_fonts_css( $custom_css ) {
 
 		// Get Theme Options from Database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
+		$theme_options = Occasio_Pro_Customizer::get_theme_options();
 
 		// Get Default Fonts from settings.
-		$default_options = Kairos_Pro_Customizer::get_default_options();
+		$default_options = Occasio_Pro_Customizer::get_default_options();
 
 		// Font Variables.
 		$font_variables = '';
@@ -140,10 +140,10 @@ class Kairos_Pro_Custom_Fonts {
 	static function get_custom_fonts_url( $fonts_url ) {
 
 		// Get Theme Options from Database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
+		$theme_options = Occasio_Pro_Customizer::get_theme_options();
 
 		// Get Default Fonts from settings.
-		$default_options = Kairos_Pro_Customizer::get_default_options();
+		$default_options = Occasio_Pro_Customizer::get_default_options();
 
 		// Return early if no font was changed.
 		if ( $theme_options['text_font'] === $default_options['text_font']
@@ -210,175 +210,175 @@ class Kairos_Pro_Custom_Fonts {
 	static function font_settings( $wp_customize ) {
 
 		// Add Section for Theme Fonts.
-		$wp_customize->add_section( 'kairos_pro_section_typography', array(
-			'title'    => __( 'Typography', 'kairos-pro' ),
+		$wp_customize->add_section( 'occasio_pro_section_typography', array(
+			'title'    => __( 'Typography', 'occasio-pro' ),
 			'priority' => 120,
-			'panel'    => 'kairos_options_panel',
+			'panel'    => 'occasio_options_panel',
 		) );
 
 		// Get Default Fonts from settings.
-		$default_options = Kairos_Pro_Customizer::get_default_options();
+		$default_options = Occasio_Pro_Customizer::get_default_options();
 
 		// Add Text Font setting.
-		$wp_customize->add_setting( 'kairos_theme_options[text_font]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[text_font]', array(
 			'default'           => $default_options['text_font'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 		) );
 
-		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Occasio_Pro_Customize_Font_Control(
 			$wp_customize, 'text_font', array(
-				'label'    => esc_html__( 'Body Font', 'kairos-pro' ),
-				'section'  => 'kairos_pro_section_typography',
-				'settings' => 'kairos_theme_options[text_font]',
+				'label'    => esc_html__( 'Body Font', 'occasio-pro' ),
+				'section'  => 'occasio_pro_section_typography',
+				'settings' => 'occasio_theme_options[text_font]',
 				'priority' => 10,
 			)
 		) );
 
 		// Add Title Font setting.
-		$wp_customize->add_setting( 'kairos_theme_options[title_font]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[title_font]', array(
 			'default'           => $default_options['title_font'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 		) );
 
-		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Occasio_Pro_Customize_Font_Control(
 			$wp_customize, 'title_font', array(
-				'label'    => esc_html_x( 'Headings', 'Font Setting', 'kairos-pro' ),
-				'section'  => 'kairos_pro_section_typography',
-				'settings' => 'kairos_theme_options[title_font]',
+				'label'    => esc_html_x( 'Headings', 'Font Setting', 'occasio-pro' ),
+				'section'  => 'occasio_pro_section_typography',
+				'settings' => 'occasio_theme_options[title_font]',
 				'priority' => 20,
 			)
 		) );
 
 		// Add Title Font Weight setting.
-		$wp_customize->add_setting( 'kairos_theme_options[title_is_bold]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[title_is_bold]', array(
 			'default'           => $default_options['title_is_bold'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[title_is_bold]', array(
-			'label'    => esc_html_x( 'Bold', 'Font Setting', 'kairos-pro' ),
-			'section'  => 'kairos_pro_section_typography',
-			'settings' => 'kairos_theme_options[title_is_bold]',
+		$wp_customize->add_control( 'occasio_theme_options[title_is_bold]', array(
+			'label'    => esc_html_x( 'Bold', 'Font Setting', 'occasio-pro' ),
+			'section'  => 'occasio_pro_section_typography',
+			'settings' => 'occasio_theme_options[title_is_bold]',
 			'type'     => 'checkbox',
 			'priority' => 30,
 		) );
 
 		// Add Title Uppercase setting.
-		$wp_customize->add_setting( 'kairos_theme_options[title_is_uppercase]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[title_is_uppercase]', array(
 			'default'           => $default_options['title_is_uppercase'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[title_is_uppercase]', array(
-			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'kairos-pro' ),
-			'section'  => 'kairos_pro_section_typography',
-			'settings' => 'kairos_theme_options[title_is_uppercase]',
+		$wp_customize->add_control( 'occasio_theme_options[title_is_uppercase]', array(
+			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'occasio-pro' ),
+			'section'  => 'occasio_pro_section_typography',
+			'settings' => 'occasio_theme_options[title_is_uppercase]',
 			'type'     => 'checkbox',
 			'priority' => 40,
 		) );
 
 		// Add Navigation Font setting.
-		$wp_customize->add_setting( 'kairos_theme_options[navi_font]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[navi_font]', array(
 			'default'           => $default_options['navi_font'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 		) );
 
-		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Occasio_Pro_Customize_Font_Control(
 			$wp_customize, 'navi_font', array(
-				'label'    => esc_html_x( 'Navigation', 'Font Setting', 'kairos-pro' ),
-				'section'  => 'kairos_pro_section_typography',
-				'settings' => 'kairos_theme_options[navi_font]',
+				'label'    => esc_html_x( 'Navigation', 'Font Setting', 'occasio-pro' ),
+				'section'  => 'occasio_pro_section_typography',
+				'settings' => 'occasio_theme_options[navi_font]',
 				'priority' => 50,
 			)
 		) );
 
 		// Add Navi Font Weight setting.
-		$wp_customize->add_setting( 'kairos_theme_options[navi_is_bold]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[navi_is_bold]', array(
 			'default'           => $default_options['navi_is_bold'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[navi_is_bold]', array(
-			'label'    => esc_html_x( 'Bold', 'Font Setting', 'kairos-pro' ),
-			'section'  => 'kairos_pro_section_typography',
-			'settings' => 'kairos_theme_options[navi_is_bold]',
+		$wp_customize->add_control( 'occasio_theme_options[navi_is_bold]', array(
+			'label'    => esc_html_x( 'Bold', 'Font Setting', 'occasio-pro' ),
+			'section'  => 'occasio_pro_section_typography',
+			'settings' => 'occasio_theme_options[navi_is_bold]',
 			'type'     => 'checkbox',
 			'priority' => 60,
 		) );
 
 		// Add Navi Uppercase setting.
-		$wp_customize->add_setting( 'kairos_theme_options[navi_is_uppercase]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[navi_is_uppercase]', array(
 			'default'           => $default_options['navi_is_uppercase'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[navi_is_uppercase]', array(
-			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'kairos-pro' ),
-			'section'  => 'kairos_pro_section_typography',
-			'settings' => 'kairos_theme_options[navi_is_uppercase]',
+		$wp_customize->add_control( 'occasio_theme_options[navi_is_uppercase]', array(
+			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'occasio-pro' ),
+			'section'  => 'occasio_pro_section_typography',
+			'settings' => 'occasio_theme_options[navi_is_uppercase]',
 			'type'     => 'checkbox',
 			'priority' => 70,
 		) );
 
 		// Add Widget Title Font setting.
-		$wp_customize->add_setting( 'kairos_theme_options[widget_title_font]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[widget_title_font]', array(
 			'default'           => $default_options['widget_title_font'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_attr',
 		) );
 
-		$wp_customize->add_control( new Kairos_Pro_Customize_Font_Control(
+		$wp_customize->add_control( new Occasio_Pro_Customize_Font_Control(
 			$wp_customize, 'widget_title_font', array(
-				'label'    => esc_html_x( 'Widget Titles', 'Font Setting', 'kairos-pro' ),
-				'section'  => 'kairos_pro_section_typography',
-				'settings' => 'kairos_theme_options[widget_title_font]',
+				'label'    => esc_html_x( 'Widget Titles', 'Font Setting', 'occasio-pro' ),
+				'section'  => 'occasio_pro_section_typography',
+				'settings' => 'occasio_theme_options[widget_title_font]',
 				'priority' => 80,
 			)
 		) );
 
 		// Add Widget Title Font Weight setting.
-		$wp_customize->add_setting( 'kairos_theme_options[widget_title_is_bold]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[widget_title_is_bold]', array(
 			'default'           => $default_options['widget_title_is_bold'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[widget_title_is_bold]', array(
-			'label'    => esc_html_x( 'Bold', 'Font Setting', 'kairos-pro' ),
-			'section'  => 'kairos_pro_section_typography',
-			'settings' => 'kairos_theme_options[widget_title_is_bold]',
+		$wp_customize->add_control( 'occasio_theme_options[widget_title_is_bold]', array(
+			'label'    => esc_html_x( 'Bold', 'Font Setting', 'occasio-pro' ),
+			'section'  => 'occasio_pro_section_typography',
+			'settings' => 'occasio_theme_options[widget_title_is_bold]',
 			'type'     => 'checkbox',
 			'priority' => 90,
 		) );
 
 		// Add Widget Title Uppercase setting.
-		$wp_customize->add_setting( 'kairos_theme_options[widget_title_is_uppercase]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[widget_title_is_uppercase]', array(
 			'default'           => $default_options['widget_title_is_uppercase'],
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[widget_title_is_uppercase]', array(
-			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'kairos-pro' ),
-			'section'  => 'kairos_pro_section_typography',
-			'settings' => 'kairos_theme_options[widget_title_is_uppercase]',
+		$wp_customize->add_control( 'occasio_theme_options[widget_title_is_uppercase]', array(
+			'label'    => esc_html_x( 'Uppercase', 'Font Setting', 'occasio-pro' ),
+			'section'  => 'occasio_pro_section_typography',
+			'settings' => 'occasio_theme_options[widget_title_is_uppercase]',
 			'type'     => 'checkbox',
 			'priority' => 100,
 		) );
@@ -1160,4 +1160,4 @@ class Kairos_Pro_Custom_Fonts {
 }
 
 // Run Class.
-add_action( 'init', array( 'Kairos_Pro_Custom_Fonts', 'setup' ) );
+add_action( 'init', array( 'Occasio_Pro_Custom_Fonts', 'setup' ) );

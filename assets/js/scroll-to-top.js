@@ -3,7 +3,7 @@
  *
  * Shows Scroll to Top Button
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 ( function( $ ) {
@@ -46,7 +46,7 @@
 	$( document ).ready( function() {
 
 		/* Add Button to HTML DOM */
-		$( 'body' ).append( '<button id=\"scroll-to-top\" class=\"scroll-to-top-button\">' + kairos_pro_scroll_button + '</button>' );
+		$( 'body' ).append( '<button id=\"scroll-to-top\" class=\"scroll-to-top-button\">' + occasio_pro_scroll_button + '</button>' );
 
 		/* Add Scroll To Top Functionality */
 		$( '#scroll-to-top' ).scrollToTop();

@@ -31,7 +31,7 @@ gulp.task( 'cleancss', function() {
 
 // RTL CSS
 gulp.task( 'rtlcss', function () {
-	return gulp.src( 'assets/css/kairos-pro.css' )
+	return gulp.src( 'assets/css/occasio-pro.css' )
 		.pipe( rtlcss() )
 		.pipe( rename( {
 			suffix: '-rtl'
@@ -43,7 +43,7 @@ gulp.task( 'rtlcss', function () {
 gulp.task( 'sass', function() {
     return gulp.src( 'sass/style.scss' )
         .pipe( sass( { outputStyle: 'expanded' } ).on( 'error', sass.logError ) )
-		.pipe( rename( 'assets/css/kairos-pro.css' ) )
+		.pipe( rename( 'assets/css/occasio-pro.css' ) )
 		.pipe( postcss( [ sorting() ] ) )
 		.pipe( replace( '  ', '	' ) )
 		.pipe( replace( '}\n	', '}\n\n	' ) )

@@ -4,7 +4,7 @@
  *
  * Setup the Customizer and theme options for the Pro plugin
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Customizer Class
  */
-class Kairos_Pro_Customizer {
+class Occasio_Pro_Customizer {
 
 	/**
 	 * Customizer Setup
@@ -24,8 +24,8 @@ class Kairos_Pro_Customizer {
 	 */
 	static function setup() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
@@ -34,7 +34,7 @@ class Kairos_Pro_Customizer {
 		add_action( 'customize_controls_print_styles', array( __CLASS__, 'customize_preview_css' ) );
 
 		// Remove Upgrade section.
-		remove_action( 'customize_register', 'kairos_customize_register_upgrade_settings' );
+		remove_action( 'customize_register', 'occasio_customize_register_upgrade_settings' );
 	}
 
 	/**
@@ -45,7 +45,7 @@ class Kairos_Pro_Customizer {
 	static function get_theme_options() {
 
 		// Merge Theme Options Array from Database with Default Options Array.
-		return wp_parse_args( get_option( 'kairos_theme_options', array() ), self::get_default_options() );
+		return wp_parse_args( get_option( 'occasio_theme_options', array() ), self::get_default_options() );
 	}
 
 	/**
@@ -98,7 +98,7 @@ class Kairos_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-		wp_enqueue_script( 'kairos-pro-customize-preview', KAIROS_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20201119', true );
+		wp_enqueue_script( 'occasio-pro-customize-preview', OCCASIO_PRO_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), '20201119', true );
 	}
 
 	/**
@@ -107,9 +107,9 @@ class Kairos_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_css() {
-		wp_enqueue_style( 'kairos-pro-customizer-css', KAIROS_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20201119' );
+		wp_enqueue_style( 'occasio-pro-customizer-css', OCCASIO_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20201119' );
 	}
 }
 
 // Run Class.
-add_action( 'init', array( 'Kairos_Pro_Customizer', 'setup' ) );
+add_action( 'init', array( 'Occasio_Pro_Customizer', 'setup' ) );

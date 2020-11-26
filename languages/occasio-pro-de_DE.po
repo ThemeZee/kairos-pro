@@ -1,25 +1,20 @@
-#, fuzzy
+# Translation of Themes + Pro Versions + Add-ons in German
+# This file is distributed under the same license as the Themes + Pro Versions + Add-ons package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Kairos Pro\n"
+"Project-Id-Version: Occasio Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2020-11-18 12:17+0100\n"
-"PO-Revision-Date: 2016-09-15 21:02+0100\n"
+"POT-Creation-Date: 2020-11-26 13:43+0100\n"
+"PO-Revision-Date: 2020-11-26 13:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
-"Language: en_US\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 2.4.2\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
-"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
-"esc_html_x:1,2c\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ..\n"
-"X-Textdomain-Support: yes\n"
-"X-Poedit-SearchPath-0: .\n"
 
 #: includes/admin/class-admin-notices.php:54
 #, php-format
@@ -27,11 +22,14 @@ msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
 "updates and support. <a href=\"%2$s\">Enter License Key</a>"
 msgstr ""
+"Bitte trage deinen Lizenzschlüssel für das %1$s Add-on ein, um automatische "
+"Updates und Support zu erhalten. <a href=\"%2$s\">Lizenzschlüssel eingeben</"
+"a>"
 
 #: includes/admin/class-admin-notices.php:59
 #: includes/admin/class-admin-notices.php:89
 msgid "Dismiss Notice"
-msgstr ""
+msgstr "Nachricht verbergen"
 
 #: includes/admin/class-admin-notices.php:84
 #, php-format
@@ -39,25 +37,29 @@ msgid ""
 "Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
 "continue getting updates and support!"
 msgstr ""
+"Deine Lizenz für %1$s  ist abgelaufen. Bitte <a href=\"%2$s\">erneuere "
+"diese</a>, um weiterhin Updates und Support zu erhalten!"
 
 #: includes/admin/class-admin-notices.php:110
 msgid "Security check failed"
-msgstr ""
+msgstr "Sicherheitscheck fehlgeschlagen"
 
 #: includes/admin/class-admin-notices.php:110
 #: includes/admin/class-plugin-updater.php:395
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: includes/admin/class-license-key.php:69
 msgid "License Key"
-msgstr ""
+msgstr "Lizenzschlüssel"
 
 #: includes/admin/class-plugin-updater.php:201
 #, php-format
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
 msgstr ""
+"Es ist eine neue Version von %1$s verfügbar. %2$sDetails zu Version %3$s "
+"ansehen%4$s."
 
 #: includes/admin/class-plugin-updater.php:209
 #, php-format
@@ -65,70 +67,76 @@ msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s "
 "or %5$supdate now%6$s."
 msgstr ""
+"Es ist eine neue Version von %1$s verfügbar. %2$sDetails zu Version %3$s "
+"ansehen%4$s oder %5$sjetzt aktualisieren%6$s."
 
 #: includes/admin/class-plugin-updater.php:395
 msgid "You do not have permission to install plugin updates"
-msgstr ""
+msgstr "Du hast keine Berechtigung zur Installation von Plugin Updates"
 
 #: includes/customizer/class-customize-font-control.php:51
 msgid "Previous Font"
-msgstr ""
+msgstr "Vorherige Schriftart"
 
 #: includes/customizer/class-customize-font-control.php:52
 msgid "Next Font"
-msgstr ""
+msgstr "Nächste Schriftart"
 
 #: includes/customizer/class-customize-font-control.php:53
 msgctxt "default font button"
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: includes/customizer/class-customize-license-control.php:51
 msgid "Activate License"
-msgstr ""
+msgstr "Lizenz aktivieren"
 
 #: includes/customizer/class-customize-license-control.php:52
 msgid "Deactivate License"
-msgstr ""
+msgstr "Lizenz deaktivieren"
 
 #: includes/customizer/class-customize-license-control.php:53
 msgid "Loading..."
-msgstr ""
+msgstr "Wird geladen..."
 
 #: includes/customizer/class-customize-license-control.php:54
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #: includes/customizer/class-customize-license-control.php:55
 msgid "Invalid"
-msgstr ""
+msgstr "Ungültig"
 
 #: includes/customizer/class-customize-license-control.php:56
 msgid "Expired"
-msgstr ""
+msgstr "Abgelaufen"
 
 #: includes/customizer/class-customize-license-control.php:57
 msgid "Inactive"
-msgstr ""
+msgstr "Inaktiv"
 
 #: includes/customizer/class-customize-license-control.php:58
 msgid "You are receiving updates."
-msgstr ""
+msgstr "Du erhältst Updates."
 
 #: includes/customizer/class-customize-license-control.php:59
 msgid ""
 "Please make sure you have not reached site limits and/or expiration date."
 msgstr ""
+"Bitte stelle sicher, dass du nicht das Seiten-Limit und/oder Ablaufdatum "
+"erreicht hast."
 
 #: includes/customizer/class-customize-license-control.php:60
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
 msgstr ""
+"Deine Lizenz ist abgelaufen. Bitte erneuere sie, um weiterhin Updates und "
+"Support zu erhalten!"
 
 #: includes/customizer/class-customize-license-control.php:92
 msgid "Pro Version License"
-msgstr ""
+msgstr "Pro-Version-Lizenz"
 
 #: includes/customizer/class-customize-license-control.php:104
 #, php-format
@@ -136,298 +144,335 @@ msgid ""
 "You can find your license keys and manage your active sites on <a href=\"%s"
 "\" target=\"_blank\">themezee.com</a>."
 msgstr ""
+"Du kannst deine Lizenzschlüssel und aktive Seiten unter <a href=\"%s\" "
+"target=\"_blank\">themezee.com</a> einsehen."
 
 #: includes/customizer/class-customize-license-control.php:104
 msgid "https://themezee.com/license-keys/"
-msgstr ""
+msgstr "https://themezee.com/de/lizenzschluessel/"
 
 #: includes/modules/class-author-bio.php:64
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Über %s"
 
 #: includes/modules/class-author-bio.php:66
 msgid "View all posts"
-msgstr ""
+msgstr "Alle Beiträge ansehen"
 
 #: includes/modules/class-author-bio.php:97
 msgid "Display author bio"
-msgstr ""
+msgstr "Autor Bio anzeigen"
 
 #: includes/modules/class-block-colors.php:136
 msgid "Block Colors"
-msgstr ""
+msgstr "Block Farben"
 
 #: includes/modules/class-block-colors.php:153
 msgctxt "Color Option"
 msgid "Primary"
-msgstr ""
+msgstr "Primär"
 
 #: includes/modules/class-block-colors.php:169
 msgctxt "Color Option"
 msgid "Secondary"
-msgstr ""
+msgstr "Sekundär"
 
 #: includes/modules/class-block-colors.php:185
 msgctxt "Color Option"
 msgid "Tertiary"
-msgstr ""
+msgstr "Tertiär"
 
 #: includes/modules/class-block-colors.php:201
 msgctxt "Color Option"
 msgid "Accent"
-msgstr ""
+msgstr "Akzent"
 
 #: includes/modules/class-block-colors.php:217
 msgctxt "Color Option"
 msgid "Highlight"
-msgstr ""
+msgstr "Highlight"
 
 #: includes/modules/class-block-colors.php:233
 msgctxt "Color Option"
 msgid "Light Gray"
-msgstr ""
+msgstr "Hellgrau"
 
 #: includes/modules/class-block-colors.php:249
 msgctxt "Color Option"
 msgid "Gray"
-msgstr ""
+msgstr "Grau"
 
 #: includes/modules/class-block-colors.php:265
 msgctxt "Color Option"
 msgid "Dark Gray"
-msgstr ""
+msgstr "Dunkelgrau"
 
 #: includes/modules/class-custom-fonts.php:214
 msgid "Typography"
-msgstr ""
+msgstr "Typografie"
 
 #: includes/modules/class-custom-fonts.php:232
 msgid "Body Font"
-msgstr ""
+msgstr "Basis Schriftart"
 
 #: includes/modules/class-custom-fonts.php:249
 msgctxt "Font Setting"
 msgid "Headings"
-msgstr ""
+msgstr "Überschriften"
 
 #: includes/modules/class-custom-fonts.php:265
 #: includes/modules/class-custom-fonts.php:314
 #: includes/modules/class-custom-fonts.php:363
 msgctxt "Font Setting"
 msgid "Bold"
-msgstr ""
+msgstr "Fett"
 
 #: includes/modules/class-custom-fonts.php:281
 #: includes/modules/class-custom-fonts.php:330
 #: includes/modules/class-custom-fonts.php:379
 msgctxt "Font Setting"
 msgid "Uppercase"
-msgstr ""
+msgstr "Großbuchstaben"
 
 #: includes/modules/class-custom-fonts.php:298
 msgctxt "Font Setting"
 msgid "Navigation"
-msgstr ""
+msgstr "Navigation"
 
 #: includes/modules/class-custom-fonts.php:347
 msgctxt "Font Setting"
 msgid "Widget Titles"
-msgstr ""
+msgstr "Widget-Titel"
 
 #: includes/modules/class-footer-menu.php:97
 msgid "Footer Navigation"
-msgstr ""
+msgstr "Footer Navigation"
 
 #: includes/modules/class-footer-widgets.php:111
 msgid "Footer Column 1"
-msgstr ""
+msgstr "Footer Spalte 1"
 
 #: includes/modules/class-footer-widgets.php:113
 msgctxt "widget area description"
 msgid "Appears in the first column in footer."
-msgstr ""
+msgstr "Erscheint in der ersten Spalte im Footer."
 
 #: includes/modules/class-footer-widgets.php:122
 msgid "Footer Column 2"
-msgstr ""
+msgstr "Footer Spalte 2"
 
 #: includes/modules/class-footer-widgets.php:124
 msgctxt "widget area description"
 msgid "Appears in the second column in footer."
-msgstr ""
+msgstr "Erscheint in der zweiten Spalte im Footer."
 
 #: includes/modules/class-footer-widgets.php:133
 msgid "Footer Column 3"
-msgstr ""
+msgstr "Footer Spalte 3"
 
 #: includes/modules/class-footer-widgets.php:135
 msgctxt "widget area description"
 msgid "Appears in the third column in footer."
-msgstr ""
+msgstr "Erscheint in der dritten Spalte im Footer."
 
 #: includes/modules/class-footer-widgets.php:144
 msgid "Footer Column 4"
-msgstr ""
+msgstr "Footer Spalte 4"
 
 #: includes/modules/class-footer-widgets.php:146
 msgctxt "widget area description"
 msgid "Appears in the fourth column in footer."
-msgstr ""
+msgstr "Erscheint in der vierten Spalte im Footer."
 
 #: includes/modules/class-header-bar.php:74
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: includes/modules/class-header-bar.php:79
 msgid "Secondary Menu"
-msgstr ""
+msgstr "Sekundäres Menü"
 
 #: includes/modules/class-header-bar.php:119
 msgid "Top Navigation"
-msgstr ""
+msgstr "Obere Navigation"
 
 #: includes/modules/class-header-search.php:83
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: includes/modules/class-header-search.php:128
 msgid "Header Search"
-msgstr ""
+msgstr "Header Suche"
 
 #: includes/modules/class-header-search.php:144
 msgid "Enable search field in header"
-msgstr ""
+msgstr "Suchfeld im Header aktivieren"
 
 #: includes/modules/class-scroll-to-top.php:70
 msgid "Scroll to Top"
-msgstr ""
+msgstr "Nach oben scrollen"
 
 #: includes/modules/class-scroll-to-top.php:86
 msgid "Display Scroll to Top Button"
-msgstr ""
+msgstr "Button zum Nach oben Scrollen anzeigen"
 
 #: includes/modules/class-social-icons.php:174
 msgid "Social Icons (Header)"
-msgstr ""
+msgstr "Social Icons (Header)"
 
 #: includes/modules/class-social-icons.php:175
 msgid "Social Icons (Footer)"
-msgstr ""
+msgstr "Social Icons (Footer)"
 
 #: includes/modules/class-theme-colors.php:162
 msgid "Theme Colors"
-msgstr ""
+msgstr "Theme Farben"
 
 #: includes/modules/class-theme-colors.php:179
 msgctxt "Color Option"
 msgid "Top Navigation"
-msgstr ""
+msgstr "Obere Navigation"
 
 #: includes/modules/class-theme-colors.php:195
 msgctxt "Color Option"
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
 #: includes/modules/class-theme-colors.php:211
 msgctxt "Color Option"
 msgid "Links"
-msgstr ""
+msgstr "Links"
 
 #: includes/modules/class-theme-colors.php:227
 msgctxt "Color Option"
 msgid "Link Hover"
-msgstr ""
+msgstr "Link-Hover"
 
 #: includes/modules/class-theme-colors.php:243
 msgctxt "Color Option"
 msgid "Buttons"
-msgstr ""
+msgstr "Buttons"
 
 #: includes/modules/class-theme-colors.php:259
 msgctxt "Color Option"
 msgid "Button Hover"
-msgstr ""
+msgstr "Button-Hover"
 
 #: includes/modules/class-theme-colors.php:275
 msgctxt "Color Option"
 msgid "Titles"
-msgstr ""
+msgstr "Titel"
 
 #: includes/modules/class-theme-colors.php:291
 msgctxt "Color Option"
 msgid "Title Hover"
-msgstr ""
+msgstr "Titel-Hover"
 
 #: includes/modules/class-theme-colors.php:307
 msgctxt "Color Option"
 msgid "Sidebar & Comments"
-msgstr ""
+msgstr "Sidebar & Kommentare"
 
 #: includes/modules/class-theme-colors.php:323
 msgctxt "Color Option"
 msgid "Footer Widgets"
-msgstr ""
+msgstr "Footer Widgets"
 
 #: includes/modules/class-theme-colors.php:339
 msgctxt "Color Option"
 msgid "Footer Copyright"
-msgstr ""
+msgstr "Footer Copyright"
 
 #: includes/modules/class-widget-areas.php:112
 msgid "Before Header"
-msgstr ""
+msgstr "Vor dem Header"
 
 #: includes/modules/class-widget-areas.php:114
 msgctxt "widget area description"
 msgid "Appears above the header area."
-msgstr ""
+msgstr "Erscheint über dem Header-Bereich."
 
 #: includes/modules/class-widget-areas.php:123
 msgid "After Header"
-msgstr ""
+msgstr "Nach dem Header"
 
 #: includes/modules/class-widget-areas.php:125
 msgctxt "widget area description"
 msgid "Appears below the header area."
-msgstr ""
+msgstr "Erscheint unter dem Header-Bereich."
 
 #: includes/modules/class-widget-areas.php:134
 msgid "Before Blog Posts"
-msgstr ""
+msgstr "Vor Blog-Beiträgen"
 
 #: includes/modules/class-widget-areas.php:136
 msgctxt "widget area description"
 msgid "Appears on the blog page above the latest posts."
-msgstr ""
+msgstr "Erscheint auf der Blog-Seite über den neuesten Beiträgen."
 
 #: includes/modules/class-widget-areas.php:145
 msgid "After Posts"
-msgstr ""
+msgstr "Nach einzelnen Beiträgen"
 
 #: includes/modules/class-widget-areas.php:147
 msgctxt "widget area description"
 msgid "Appears below single posts."
-msgstr ""
+msgstr "Erscheint unter einzelnen Beiträgen."
 
 #: includes/modules/class-widget-areas.php:156
 msgid "After Pages"
-msgstr ""
+msgstr "Nach Seiten"
 
 #: includes/modules/class-widget-areas.php:158
 msgctxt "widget area description"
 msgid "Appears below static pages."
-msgstr ""
+msgstr "Erscheint unter statischen Seiten."
 
 #: includes/modules/class-widget-areas.php:167
 msgid "Before Footer"
-msgstr ""
+msgstr "Vor dem Footer"
 
 #: includes/modules/class-widget-areas.php:169
 msgctxt "widget area description"
 msgid "Appears above the footer area."
-msgstr ""
+msgstr "Erscheint über dem Footer-Bereich."
 
-#: kairos-pro.php:206
+#: occasio-pro.php:206
 msgid "Theme Options"
-msgstr ""
+msgstr "Theme Optionen"
+
+#~ msgid "Local Fonts (GDPR)"
+#~ msgstr "Lokale Schriftarten (DSGVO)"
+
+#~ msgid "Google Web Fonts"
+#~ msgstr "Google Schriftarten"
+
+#~ msgid "Install Plugin"
+#~ msgstr "Plugin installieren"
+
+#~ msgid "More Local Fonts"
+#~ msgstr "Weitere Schriftarten"
+
+#~ msgid ""
+#~ "You can install the GT Local Fonts plugin to extend the typography "
+#~ "options with additional local GDPR-compatible fonts."
+#~ msgstr ""
+#~ "Du kannst das GT Local Fonts Plugin installieren, um die Typografie-"
+#~ "Optionen mit zusätzlichen, lokalen und DSGVO-kompatiblen Schriftarten zu "
+#~ "erweitern."
+
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+#~ msgctxt "Color Option"
+#~ msgid "Page Background"
+#~ msgstr "Seitenhintergrund"
+
+#~ msgctxt "Color Option"
+#~ msgid "Header Background"
+#~ msgstr "Header Hintergrund"
+
+#~ msgctxt "Color Option"
+#~ msgid "Navigation"
+#~ msgstr "Navigation"

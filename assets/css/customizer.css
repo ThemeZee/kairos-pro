@@ -3,24 +3,24 @@
  *
  * Adjusts styling for theme option controls in the Customizer
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
-#customize-control-kairos_theme_options-scroll_top_title {
+#customize-control-occasio_theme_options-scroll_top_title {
 	margin-top: 16px;
 }
 
-#customize-control-kairos_theme_options-header_search_title,
-#customize-control-kairos_theme_options-scroll_top_title {
+#customize-control-occasio_theme_options-header_search_title,
+#customize-control-occasio_theme_options-scroll_top_title {
 	margin-bottom: 0;
 }
 
-#customize-control-kairos_theme_options-author_bio {
+#customize-control-occasio_theme_options-author_bio {
 	margin-bottom: 4px;
 }
 
 /* Custom Font Control */
-.customize-control-kairos_pro_custom_font {
+.customize-control-occasio_pro_custom_font {
 	margin-top: 24px;
 }
 
@@ -28,28 +28,28 @@
 	margin-top: 0;
 }
 
-.customize-control-kairos_pro_custom_font .actions .button.previous {
+.customize-control-occasio_pro_custom_font .actions .button.previous {
 	margin-right: 4px;
 }
 
-.customize-control-kairos_pro_custom_font .actions .button.standard {
+.customize-control-occasio_pro_custom_font .actions .button.standard {
 	float: right;
 }
 
-.customize-control-kairos_pro_custom_font select {
+.customize-control-occasio_pro_custom_font select {
 	width: 100%;
 }
 
-.customize-control-kairos_pro_custom_font div:hover {
+.customize-control-occasio_pro_custom_font div:hover {
 	cursor: default;
 }
 
-.customize-control-kairos_pro_custom_font .actions .button:hover {
+.customize-control-occasio_pro_custom_font .actions .button:hover {
 	cursor: pointer;
 }
 
 /* Typography Checkbox Controls */
-#sub-accordion-section-kairos_pro_section_typography .customize-control-checkbox {
+#sub-accordion-section-occasio_pro_section_typography .customize-control-checkbox {
 	margin-bottom: 0;
 }
 
@@ -59,15 +59,15 @@
 }
 
 /* License Control */
-.customize-control-kairos_pro_license_key {
+.customize-control-occasio_pro_license_key {
 	margin-bottom: 36px;
 }
 
-.customize-control-kairos_pro_license_key label {
+.customize-control-occasio_pro_license_key label {
 	margin-top: 16px;
 }
 
-.customize-control-kairos_pro_license_key .license-status span {
+.customize-control-occasio_pro_license_key .license-status span {
 	display: inline-block;
 	margin: 0 0 12px;
 	padding: 5px 10px;
@@ -78,19 +78,19 @@
 	text-transform: uppercase;
 }
 
-.customize-control-kairos_pro_license_key .license-status .inactive {
+.customize-control-occasio_pro_license_key .license-status .inactive {
 	background: #444;
 }
 
-.customize-control-kairos_pro_license_key .license-status .valid {
+.customize-control-occasio_pro_license_key .license-status .valid {
 	background: #008000;
 }
 
-.customize-control-kairos_pro_license_key .license-status .invalid,
-.customize-control-kairos_pro_license_key .license-status .expired {
+.customize-control-occasio_pro_license_key .license-status .invalid,
+.customize-control-occasio_pro_license_key .license-status .expired {
 	background: #b22222;
 }
 
-.customize-control-kairos_pro_license_key .license-note {
+.customize-control-occasio_pro_license_key .license-note {
 	margin: 2em 0 0;
 }

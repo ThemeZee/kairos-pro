@@ -5,7 +5,7 @@
  * Displays author bio below single posts
  * Registers and displays footer navigation
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 // Exit if accessed directly.
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Author Bio Class
  */
-class Kairos_Pro_Author_Bio {
+class Occasio_Pro_Author_Bio {
 
 	/**
 	 * Author Bio Setup
@@ -25,13 +25,13 @@ class Kairos_Pro_Author_Bio {
 	 */
 	static function setup() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
 		// Remove default footer text function and replace it with new one.
-		add_action( 'kairos_author_bio', array( __CLASS__, 'author_bio' ) );
+		add_action( 'occasio_author_bio', array( __CLASS__, 'author_bio' ) );
 
 		// Add Author Bio checkbox in Customizer.
 		add_action( 'customize_register', array( __CLASS__, 'author_bio_settings' ) );
@@ -48,7 +48,7 @@ class Kairos_Pro_Author_Bio {
 	static function author_bio() {
 
 		// Get Theme Options from Database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
+		$theme_options = Occasio_Pro_Customizer::get_theme_options();
 
 		// Show author bio if activated.
 		if ( true === $theme_options['author_bio'] || is_customize_preview() ) : ?>
@@ -61,9 +61,9 @@ class Kairos_Pro_Author_Bio {
 				<div class="author-info">
 
 					<div class="author-heading">
-						<h4 class="author-title entry-title"><?php printf( esc_html__( 'About %s', 'kairos-pro' ), '<span class="author-name">' . get_the_author() . '</span>' ); ?></h4>
+						<h4 class="author-title entry-title"><?php printf( esc_html__( 'About %s', 'occasio-pro' ), '<span class="author-name">' . get_the_author() . '</span>' ); ?></h4>
 						<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-							<?php esc_html_e( 'View all posts', 'kairos-pro' ); ?>
+							<?php esc_html_e( 'View all posts', 'occasio-pro' ); ?>
 						</a>
 					</div>
 
@@ -86,17 +86,17 @@ class Kairos_Pro_Author_Bio {
 	static function author_bio_settings( $wp_customize ) {
 
 		// Add Author Bio setting and control.
-		$wp_customize->add_setting( 'kairos_theme_options[author_bio]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[author_bio]', array(
 			'default'           => false,
 			'type'              => 'option',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[author_bio]', array(
-			'label'    => __( 'Display author bio', 'kairos-pro' ),
-			'section'  => 'kairos_section_post',
-			'settings' => 'kairos_theme_options[author_bio]',
+		$wp_customize->add_control( 'occasio_theme_options[author_bio]', array(
+			'label'    => __( 'Display author bio', 'occasio-pro' ),
+			'section'  => 'occasio_section_post',
+			'settings' => 'occasio_theme_options[author_bio]',
 			'type'     => 'checkbox',
 			'priority' => 145,
 		) );
@@ -111,7 +111,7 @@ class Kairos_Pro_Author_Bio {
 	static function hide_author_bio( $classes ) {
 
 		// Get Theme Options from Database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
+		$theme_options = Occasio_Pro_Customizer::get_theme_options();
 
 		// Hide Author Bio in Customizer for instant live preview.
 		if ( is_customize_preview() && false === $theme_options['author_bio'] ) {
@@ -123,4 +123,4 @@ class Kairos_Pro_Author_Bio {
 }
 
 // Run Class.
-add_action( 'init', array( 'Kairos_Pro_Author_Bio', 'setup' ) );
+add_action( 'init', array( 'Occasio_Pro_Author_Bio', 'setup' ) );

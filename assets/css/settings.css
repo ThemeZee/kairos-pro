@@ -1,17 +1,17 @@
 /*
- * Kairos Settings CSS
+ * Occasio Settings CSS
  *
  * CSS Stylesheet for settings page on Appearance -> Pro Version
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 /* License Settings */
-.kairos-pro-settings-wrap {
+.occasio-pro-settings-wrap {
 	margin: 25px 0 0;
 }
 
-.kairos-pro-settings-wrap .license-status {
+.occasio-pro-settings-wrap .license-status {
 	display: inline-block;
 	margin: 0 12px 0 0;
 	padding: 4px 8px;
@@ -20,19 +20,19 @@
 	text-transform: uppercase;
 }
 
-.kairos-pro-settings-wrap .license-active {
+.occasio-pro-settings-wrap .license-active {
 	background: green;
 }
 
-.kairos-pro-settings-wrap .license-invalid,
-.kairos-pro-settings-wrap .license-expired {
+.occasio-pro-settings-wrap .license-invalid,
+.occasio-pro-settings-wrap .license-expired {
 	background: red;
 }
 
-.kairos-pro-settings-wrap .license-description {
+.occasio-pro-settings-wrap .license-description {
 	margin: 16px 0 0;
 }
 
-.kairos-pro-settings-wrap .license-renewal {
+.occasio-pro-settings-wrap .license-renewal {
 	margin: 16px 0 0;
 }

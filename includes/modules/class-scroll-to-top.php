@@ -4,7 +4,7 @@
  *
  * Displays scroll to top button based on theme options
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Scroll to Top Class
  */
-class Kairos_Pro_Scroll_To_Top {
+class Occasio_Pro_Scroll_To_Top {
 
 	/**
 	 * Scroll to Top Setup
@@ -24,8 +24,8 @@ class Kairos_Pro_Scroll_To_Top {
 	 */
 	static function setup() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
@@ -44,15 +44,15 @@ class Kairos_Pro_Scroll_To_Top {
 	static function enqueue_script() {
 
 		// Get Theme Options from Database.
-		$theme_options = Kairos_Pro_Customizer::get_theme_options();
+		$theme_options = Occasio_Pro_Customizer::get_theme_options();
 
 		// Call Credit Link function of theme if credit link is activated.
 		if ( true === $theme_options['scroll_to_top'] && ! self::is_amp() ) :
 
-			wp_enqueue_script( 'kairos-pro-scroll-to-top', KAIROS_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.js', array( 'jquery' ), KAIROS_PRO_VERSION, true );
+			wp_enqueue_script( 'occasio-pro-scroll-to-top', OCCASIO_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.js', array( 'jquery' ), OCCASIO_PRO_VERSION, true );
 
 			// Passing Parameters to navigation.js.
-			wp_localize_script( 'kairos-pro-scroll-to-top', 'kairos_pro_scroll_button', kairos_get_svg( 'collapse' ) );
+			wp_localize_script( 'occasio-pro-scroll-to-top', 'occasio_pro_scroll_button', occasio_get_svg( 'collapse' ) );
 
 		endif;
 	}
@@ -65,27 +65,27 @@ class Kairos_Pro_Scroll_To_Top {
 	static function scroll_to_top_settings( $wp_customize ) {
 
 		// Add Scroll to Top headline.
-		$wp_customize->add_control( new Kairos_Customize_Header_Control(
-			$wp_customize, 'kairos_theme_options[scroll_top_title]', array(
-				'label'    => esc_html__( 'Scroll to Top', 'kairos-pro' ),
-				'section'  => 'kairos_section_footer',
+		$wp_customize->add_control( new Occasio_Customize_Header_Control(
+			$wp_customize, 'occasio_theme_options[scroll_top_title]', array(
+				'label'    => esc_html__( 'Scroll to Top', 'occasio-pro' ),
+				'section'  => 'occasio_section_footer',
 				'settings' => array(),
 				'priority' => 40,
 			)
 		) );
 
 		// Add Scroll to Top setting.
-		$wp_customize->add_setting( 'kairos_theme_options[scroll_to_top]', array(
+		$wp_customize->add_setting( 'occasio_theme_options[scroll_to_top]', array(
 			'default'           => false,
 			'type'              => 'option',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'kairos_sanitize_checkbox',
+			'sanitize_callback' => 'occasio_sanitize_checkbox',
 		) );
 
-		$wp_customize->add_control( 'kairos_theme_options[scroll_to_top]', array(
-			'label'    => esc_html__( 'Display Scroll to Top Button', 'kairos-pro' ),
-			'section'  => 'kairos_section_footer',
-			'settings' => 'kairos_theme_options[scroll_to_top]',
+		$wp_customize->add_control( 'occasio_theme_options[scroll_to_top]', array(
+			'label'    => esc_html__( 'Display Scroll to Top Button', 'occasio-pro' ),
+			'section'  => 'occasio_section_footer',
+			'settings' => 'occasio_theme_options[scroll_to_top]',
 			'type'     => 'checkbox',
 			'priority' => 50,
 		) );
@@ -100,4 +100,4 @@ class Kairos_Pro_Scroll_To_Top {
 }
 
 // Run Class.
-add_action( 'init', array( 'Kairos_Pro_Scroll_To_Top', 'setup' ) );
+add_action( 'init', array( 'Occasio_Pro_Scroll_To_Top', 'setup' ) );

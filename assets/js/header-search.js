@@ -1,7 +1,7 @@
 /**
  * Header Search JS
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 ( function( $ ) {

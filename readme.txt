@@ -1,16 +1,16 @@
-=== Kairos Pro ===
-Plugin URL: https://themezee.com/addons/kairos-pro/
+=== Occasio Pro ===
+Plugin URL: https://themezee.com/addons/occasio-pro/
 Tags: theme colors, typography options, header search, author bio, custom menus, scroll-to-top button, footer widgets
 Requires at least: 5.2
 Tested up to: 5.6
 
 License: GPLv2 or later
 
-Adds additional features and customization options to the Kairos theme.
+Adds additional features and customization options to the Occasio theme.
 
 == Description ==
 
-The *Kairos Pro* plugin adds additional features to the Kairos theme.
+The *Occasio Pro* plugin adds additional features to the Occasio theme.
 
 = Features =
 * Theme Color Settings
@@ -25,7 +25,7 @@ The *Kairos Pro* plugin adds additional features to the Kairos theme.
 
 == Installation ==
 
-1. Install the Kairos Pro Plugin on Plugins -> Add New -> Upload Plugin by uploading the .ZIP plugin file.
+1. Install the Occasio Pro Plugin on Plugins -> Add New -> Upload Plugin by uploading the .ZIP plugin file.
 1. Enter your License Key on Appearance -> Pro Version to receive updates and support.
 1. Enjoy the new features.
 
@@ -34,14 +34,14 @@ Please also see our [Plugin Installation Tutorial](https://themezee.com/docs/ins
 == Frequently Asked Questions ==
 
 = Where do I get help to configure this plugin?  =
-Please see our [Kairos Theme Documentation](https://themezee.com/docs/kairos-documentation/ "Kairos Theme Documentation").
+Please see our [Occasio Theme Documentation](https://themezee.com/docs/occasio-documentation/ "Occasio Theme Documentation").
 
 = How do I get updates? =
 Please go to *Appearance -> Customize -> Theme Options -> Pro Version* and enter your license key in order to receive updates.
 
 == Ressources ==
 
-The Kairos Pro plugin includes the following third-party resources:
+The Occasio Pro plugin includes the following third-party resources:
 
 Font Awesome (for our social icons subset) - https://github.com/FortAwesome/Font-Awesome
 License: Distributed under the terms of the CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)

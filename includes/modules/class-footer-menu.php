@@ -5,7 +5,7 @@
  * Displays credit link and footer text based on theme options
  * Registers and displays footer navigation
  *
- * @package Kairos Pro
+ * @package Occasio Pro
  */
 
 // Exit if accessed directly.
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Footer Menu Class
  */
-class Kairos_Pro_Footer_Menu {
+class Occasio_Pro_Footer_Menu {
 
 	/**
 	 * Class Setup
@@ -25,13 +25,13 @@ class Kairos_Pro_Footer_Menu {
 	 */
 	static function setup() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
 		// Display footer navigation.
-		add_action( 'kairos_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
+		add_action( 'occasio_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Kairos_Pro_Footer_Menu {
 
 				echo '<div class="footer-social-menu-wrap social-menu-wrap">';
 
-				Kairos_Pro_Social_Icons::display_social_icons_menu( 'social-footer' );
+				Occasio_Pro_Social_Icons::display_social_icons_menu( 'social-footer' );
 
 				echo '</div>';
 
@@ -89,17 +89,17 @@ class Kairos_Pro_Footer_Menu {
 	 */
 	static function register_footer_menu() {
 
-		// Return early if Kairos Theme is not active.
-		if ( ! current_theme_supports( 'kairos-pro' ) ) {
+		// Return early if Occasio Theme is not active.
+		if ( ! current_theme_supports( 'occasio-pro' ) ) {
 			return;
 		}
 
-		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'kairos-pro' ) );
+		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'occasio-pro' ) );
 	}
 }
 
 // Run Class.
-add_action( 'init', array( 'Kairos_Pro_Footer_Menu', 'setup' ) );
+add_action( 'init', array( 'Occasio_Pro_Footer_Menu', 'setup' ) );
 
 // Register footer navigation in backend.
-add_action( 'after_setup_theme', array( 'Kairos_Pro_Footer_Menu', 'register_footer_menu' ), 30 );
+add_action( 'after_setup_theme', array( 'Occasio_Pro_Footer_Menu', 'register_footer_menu' ), 30 );
