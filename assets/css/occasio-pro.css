@@ -27,8 +27,10 @@
 # Header Bar
 --------------------------------------------------------------*/
 .header-bar-wrap {
+	background-color: #2a4861;
 	background-color: var(--header-bar-background-color);
 	border-bottom: 1px solid;
+	border-color: rgba(255, 255, 255, 0.1);
 	border-color: var(--header-bar-border-color);
 }
 
@@ -52,6 +54,7 @@
 .top-navigation ul {
 	margin: 0;
 	padding: 0;
+	color: #fff;
 	color: var(--header-bar-text-color);
 	list-style: none;
 	font-size: 15px;
@@ -87,6 +90,7 @@
 	margin: 0;
 	padding: 0.75rem 1.5rem;
 	border-top: 1px solid;
+	border-color: rgba(255, 255, 255, 0.1);
 	border-color: var(--header-bar-border-color);
 	text-decoration: none;
 }
@@ -94,6 +98,7 @@
 .top-navigation ul a,
 .top-navigation ul a:link,
 .top-navigation ul a:visited {
+	color: #fff;
 	color: var(--header-bar-text-color);
 	text-decoration: none;
 	transition: all 0.15s ease;
@@ -102,6 +107,7 @@
 .top-navigation ul a:hover,
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
+	color: rgba(255, 255, 255, 0.5);
 	color: var(--header-bar-text-hover-color);
 }
 
@@ -113,6 +119,7 @@
 .top-navigation ul ul {
 	font-size: 15px;
 	font-size: 0.9375rem;
+	background-color: #2a4861;
 	background-color: var(--header-bar-background-color);
 }
 
@@ -141,6 +148,7 @@
 	padding: 0.75rem 1.25rem;
 	border: none;
 	background: none;
+	color: #fff;
 	color: var(--header-bar-text-color);
 	text-decoration: none;
 	font-size: 15px;
@@ -161,12 +169,14 @@
 
 .secondary-menu-toggle:focus {
 	outline: thin dotted;
+	color: #fff;
 	color: var(--header-bar-text-color);
 	background: none;
 }
 
 .secondary-menu-toggle:hover,
 .secondary-menu-toggle:active {
+	color: rgba(255, 255, 255, 0.5);
 	color: var(--header-bar-text-hover-color);
 	background: none;
 	cursor: pointer;
@@ -177,12 +187,14 @@
 	width: 20px;
 	height: 20px;
 	vertical-align: top;
+	fill: #fff;
 	fill: var(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
 
 .secondary-menu-toggle:hover .icon,
 .secondary-menu-toggle:active .icon {
+	fill: rgba(255, 255, 255, 0.5);
 	fill: var(--header-bar-text-hover-color);
 }
 
@@ -208,6 +220,7 @@
 
 .top-navigation .dropdown-toggle:focus {
 	outline: thin dotted;
+	color: #fff;
 	color: var(--header-bar-text-color);
 	background: none;
 }
@@ -222,6 +235,7 @@
 	width: 18px;
 	height: 18px;
 	vertical-align: top;
+	fill: #fff;
 	fill: var(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
@@ -229,6 +243,7 @@
 .top-navigation .dropdown-toggle:hover .icon,
 .top-navigation .dropdown-toggle:active .icon,
 .top-navigation .dropdown-toggle:focus .icon {
+	fill: rgba(255, 255, 255, 0.5);
 	fill: var(--header-bar-text-hover-color);
 }
 
@@ -303,6 +318,7 @@
 		z-index: 99999;
 		padding: 0.25rem 0;
 		border: 1px solid;
+		border-color: rgba(255, 255, 255, 0.1);
 		border-color: var(--header-bar-border-color);
 	}
 
@@ -344,6 +360,7 @@
 		top: 0.1rem;
 		width: 12px;
 		height: 12px;
+		fill: #fff;
 		fill: var(--header-bar-text-color);
 		transition: fill 0.15s ease;
 	}
@@ -362,6 +379,7 @@
 
 	.top-navigation ul .menu-item-has-children > a:hover > .icon,
 	.top-navigation ul .page_item_has_children > a:hover > .icon {
+		fill: rgba(255, 255, 255, 0.5);
 		fill: var(--header-bar-text-hover-color);
 	}
 }
@@ -588,11 +606,13 @@
 }
 
 .header-social-menu-wrap .social-icons-menu li a {
+	color: #fff;
 	color: var(--header-bar-text-color);
 }
 
 .header-social-menu-wrap .social-icons-menu li a:hover,
 .header-social-menu-wrap .social-icons-menu li a:active {
+	color: rgba(255, 255, 255, 0.5);
 	color: var(--header-bar-text-hover-color);
 }
 
@@ -721,9 +741,12 @@
 .footer-widgets-background {
 	display: flex;
 	padding: 1.25rem 1.25rem 0;
+	color: #fff;
 	color: var(--footer-widgets-text-color);
+	background-color: #2a4861;
 	background-color: var(--footer-widgets-background-color);
 	border-bottom: 1px solid;
+	border-color: rgba(255, 255, 255, 0.1);
 	border-color: var(--footer-widgets-border-color);
 }
 
@@ -743,16 +766,19 @@ body.wide-theme-layout .site .footer-widgets-wrap {
 }
 
 .footer-widgets .widget .widget-title {
+	color: #fff;
 	color: var(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget a:link,
 .footer-widgets .widget a:visited {
+	color: rgba(255, 255, 255, 0.6);
 	color: var(--footer-widgets-link-color);
 }
 
 .footer-widgets .widget a:hover,
 .footer-widgets .widget a:active {
+	color: #fff;
 	color: var(--footer-widgets-link-hover-color);
 }
 
@@ -764,7 +790,9 @@ body.wide-theme-layout .site .footer-widgets-wrap {
 .footer-widgets .widget input[type="submit"],
 .footer-widgets .widget textarea {
 	border: 1px solid;
+	border-color: rgba(255, 255, 255, 0.1);
 	border-color: var(--footer-widgets-border-color);
+	color: #fff;
 	color: var(--footer-widgets-link-hover-color);
 }
 
@@ -774,6 +802,7 @@ body.wide-theme-layout .site .footer-widgets-wrap {
 .footer-widgets .widget input[type="password"]:focus,
 .footer-widgets .widget input[type="search"]:focus,
 .footer-widgets .widget textarea:focus {
+	color: #fff;
 	color: var(--footer-widgets-text-color);
 }
 
@@ -781,6 +810,7 @@ body.wide-theme-layout .site .footer-widgets-wrap {
 .footer-widgets .widget input[type="button"],
 .footer-widgets .widget input[type="reset"],
 .footer-widgets .widget input[type="submit"] {
+	color: #fff;
 	color: var(--footer-widgets-link-hover-color);
 }
 
@@ -796,6 +826,7 @@ body.wide-theme-layout .site .footer-widgets-wrap {
 .footer-widgets .widget input[type="button"]:active,
 .footer-widgets .widget input[type="reset"]:active,
 .footer-widgets .widget input[type="submit"]:active {
+	color: rgba(255, 255, 255, 0.1);
 	color: var(--footer-widgets-border-color);
 }
 
@@ -804,11 +835,13 @@ body.wide-theme-layout .site .footer-widgets-wrap {
 .footer-widgets .widget .tzwb-posts-list .tzwb-entry-meta a:link,
 .footer-widgets .widget .tzwb-posts-list .tzwb-entry-meta a:visited,
 .footer-widgets .widget .tzwb-comments-list .tzwb-comment-date {
+	color: #fff;
 	color: var(--footer-widgets-link-hover-color);
 }
 
 .footer-widgets .widget .tzwb-posts-list .tzwb-entry-meta a:hover,
 .footer-widgets .widget .tzwb-posts-list .tzwb-entry-meta a:active {
+	color: #fff;
 	color: var(--footer-widgets-text-color);
 }
 

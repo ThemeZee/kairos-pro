@@ -1,23 +1,11 @@
-$addonColors: (
-	--header-bar-background-color    : #2a4861,
-	--header-bar-text-color          : #fff,
-	--header-bar-text-hover-color    : rgba(255, 255, 255, 0.5),
-	--header-bar-border-color        : rgba(255, 255, 255, 0.1),
-	--footer-widgets-background-color: #2a4861,
-	--footer-widgets-text-color      : #fff,
-	--footer-widgets-link-color      : rgba(255, 255, 255, 0.6),
-	--footer-widgets-link-hover-color: #fff,
-	--footer-widgets-border-color    : rgba(255, 255, 255, 0.1),
-);
-
 :root {
-	@include variable(--header-bar-background-color, $addonColors);
-	@include variable(--header-bar-text-color, $addonColors);
-	@include variable(--header-bar-text-hover-color, $addonColors);
-	@include variable(--header-bar-border-color, $addonColors);
-	@include variable(--footer-widgets-background-color, $addonColors);
-	@include variable(--footer-widgets-text-color, $addonColors);
-	@include variable(--footer-widgets-link-color, $addonColors);
-	@include variable(--footer-widgets-link-hover-color, $addonColors);
-	@include variable(--footer-widgets-border-color, $addonColors);
+	@include variable(--header-bar-background-color, $themeColors);
+	@include variable(--header-bar-text-color, $themeColors);
+	@include variable(--header-bar-text-hover-color, $themeColors);
+	@include variable(--header-bar-border-color, $themeColors);
+	@include variable(--footer-widgets-background-color, $themeColors);
+	@include variable(--footer-widgets-text-color, $themeColors);
+	@include variable(--footer-widgets-link-color, $themeColors);
+	@include variable(--footer-widgets-link-hover-color, $themeColors);
+	@include variable(--footer-widgets-border-color, $themeColors);
 }
