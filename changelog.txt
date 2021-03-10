@@ -2,6 +2,9 @@
 Occasio Pro Changelog
 ===================================
 
+= 1.0.3 - 2021-03-10 =
+* fixed debug warning in Scroll to Top script
+
 = 1.0.2 - 2021-02-08 =
 * added missing RTL stylesheet
 * added support for Patreon to social icons menu
