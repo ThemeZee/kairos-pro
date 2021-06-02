@@ -79,20 +79,27 @@ class Occasio_Pro_Social_Icons {
 	 * @return string  $item_output The menu item output with social icon.
 	 */
 	static function social_icons_menu_walker( $item_output, $item, $depth, $args ) {
+		// Return early if no social menu is filtered.
+		if ( ! ( 'social-header' === $args->theme_location || 'social-footer' === $args->theme_location ) ) {
+			return $item_output;
+		}
 
 		// Get supported social icons.
 		$social_icons = self::supported_social_icons();
 
-		// Change SVG icon inside social links menu if there is supported URL.
-		if ( 'social-header' === $args->theme_location || 'social-footer' === $args->theme_location ) {
-			$icon = 'star';
-			foreach ( $social_icons as $attr => $value ) {
-				if ( false !== strpos( $item_output, $attr ) ) {
-					$icon = esc_attr( $value );
-				}
+		// Search if menu URL is in supported icons.
+		$icon = 'star';
+		foreach ( $social_icons as $attr => $value ) {
+			if ( false !== strpos( $item_output, $attr ) ) {
+				$icon = esc_attr( $value );
 			}
-			$item_output = str_replace( $args->link_after, '</span>' . self::get_social_svg( $icon ), $item_output );
 		}
+
+		// Get SVG.
+		$svg = apply_filters( 'occasio_pro_get_social_svg', self::get_social_svg( $icon ), $item_output );
+
+		// Add SVG to menu item.
+		$item_output = str_replace( $args->link_after, $args->link_after . $svg, $item_output );
 
 		return $item_output;
 	}
@@ -138,6 +145,7 @@ class Occasio_Pro_Social_Icons {
 			'snapchat.com'    => 'snapchat',
 			'soundcloud.com'  => 'soundcloud',
 			'spotify.com'     => 'spotify',
+			'strava'          => 'strava',
 			'stumbleupon.com' => 'stumbleupon',
 			'telegram'        => 'telegram',
 			't.me'            => 'telegram',
@@ -156,7 +164,7 @@ class Occasio_Pro_Social_Icons {
 			'youtube.com'     => 'youtube',
 		);
 
-		return $supported_social_icons;
+		return apply_filters( 'occasio_pro_supported_social_icons', $supported_social_icons );
 	}
 
 	/**
