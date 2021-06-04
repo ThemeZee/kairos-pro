@@ -2,6 +2,9 @@
 Occasio Pro Changelog
 ===================================
 
+= 1.0.4 - 2021-06-04 =
+* updated social icons menu
+
 = 1.0.3 - 2021-03-10 =
 * fixed debug warning in Scroll to Top script
 
