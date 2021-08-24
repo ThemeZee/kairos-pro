@@ -28,7 +28,7 @@ class Occasio_Pro_Header_Bar {
 		}
 
 		// Display Header Bar.
-		add_action( 'occasio_before_header', array( __CLASS__, 'display_header_bar' ), 20 );
+		add_action( 'occasio_before_header', array( __CLASS__, 'display_header_bar' ), 30 );
 	}
 
 	/**

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Occasio Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2020-11-26 13:43+0100\n"
+"POT-Creation-Date: 2021-08-24 11:59+0200\n"
 "PO-Revision-Date: 2016-09-15 21:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -307,11 +307,11 @@ msgstr ""
 msgid "Display Scroll to Top Button"
 msgstr ""
 
-#: includes/modules/class-social-icons.php:174
+#: includes/modules/class-social-icons.php:183
 msgid "Social Icons (Header)"
 msgstr ""
 
-#: includes/modules/class-social-icons.php:175
+#: includes/modules/class-social-icons.php:184
 msgid "Social Icons (Footer)"
 msgstr ""
 
@@ -393,7 +393,7 @@ msgid "Appears below the header area."
 msgstr ""
 
 #: includes/modules/class-widget-areas.php:134
-msgid "Before Blog Posts"
+msgid "Before Latest Blog Posts"
 msgstr ""
 
 #: includes/modules/class-widget-areas.php:136
@@ -402,7 +402,7 @@ msgid "Appears on the blog page above the latest posts."
 msgstr ""
 
 #: includes/modules/class-widget-areas.php:145
-msgid "After Posts"
+msgid "After Single Posts"
 msgstr ""
 
 #: includes/modules/class-widget-areas.php:147
@@ -411,7 +411,7 @@ msgid "Appears below single posts."
 msgstr ""
 
 #: includes/modules/class-widget-areas.php:156
-msgid "After Pages"
+msgid "After Static Pages"
 msgstr ""
 
 #: includes/modules/class-widget-areas.php:158

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Occasio Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2020-11-26 13:43+0100\n"
-"PO-Revision-Date: 2020-11-26 13:43+0100\n"
+"POT-Creation-Date: 2021-08-24 11:59+0200\n"
+"PO-Revision-Date: 2021-08-24 11:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -317,11 +317,11 @@ msgstr "Nach oben scrollen"
 msgid "Display Scroll to Top Button"
 msgstr "Button zum Nach oben Scrollen anzeigen"
 
-#: includes/modules/class-social-icons.php:174
+#: includes/modules/class-social-icons.php:183
 msgid "Social Icons (Header)"
 msgstr "Social Icons (Header)"
 
-#: includes/modules/class-social-icons.php:175
+#: includes/modules/class-social-icons.php:184
 msgid "Social Icons (Footer)"
 msgstr "Social Icons (Footer)"
 
@@ -403,8 +403,8 @@ msgid "Appears below the header area."
 msgstr "Erscheint unter dem Header-Bereich."
 
 #: includes/modules/class-widget-areas.php:134
-msgid "Before Blog Posts"
-msgstr "Vor Blog-Beiträgen"
+msgid "Before Latest Blog Posts"
+msgstr "Vor den letzten Blog-Beiträgen"
 
 #: includes/modules/class-widget-areas.php:136
 msgctxt "widget area description"
@@ -412,7 +412,7 @@ msgid "Appears on the blog page above the latest posts."
 msgstr "Erscheint auf der Blog-Seite über den neuesten Beiträgen."
 
 #: includes/modules/class-widget-areas.php:145
-msgid "After Posts"
+msgid "After Single Posts"
 msgstr "Nach einzelnen Beiträgen"
 
 #: includes/modules/class-widget-areas.php:147
@@ -421,8 +421,8 @@ msgid "Appears below single posts."
 msgstr "Erscheint unter einzelnen Beiträgen."
 
 #: includes/modules/class-widget-areas.php:156
-msgid "After Pages"
-msgstr "Nach Seiten"
+msgid "After Static Pages"
+msgstr "Nach statischen Seiten"
 
 #: includes/modules/class-widget-areas.php:158
 msgctxt "widget area description"
