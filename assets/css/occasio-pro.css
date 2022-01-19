@@ -1101,7 +1101,13 @@ body.wide-theme-layout .site .footer-widgets-wrap {
 	height: 50px;
 	cursor: pointer;
 	-webkit-transition: none;
-	transition: none;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.scroll-to-top-button.visible {
+	opacity: 1;
 }
 
 .scroll-to-top-button:focus {
