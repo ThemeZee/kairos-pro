@@ -58,7 +58,7 @@ class Occasio_Pro_Header_Search {
 		// Embed header search JS if enabled.
 		if ( ( true === $theme_options['header_search'] || is_customize_preview() ) && ! self::is_amp() ) :
 
-			wp_enqueue_script( 'occasio-pro-header-search', OCCASIO_PRO_PLUGIN_URL . 'assets/js/header-search.min.js', array( 'jquery' ), '20210212', true );
+			wp_enqueue_script( 'occasio-pro-header-search', OCCASIO_PRO_PLUGIN_URL . 'assets/js/header-search.min.js', array(), '20220121', true );
 
 		endif;
 	}
@@ -78,7 +78,7 @@ class Occasio_Pro_Header_Search {
 
 			<div class="header-search-button">
 
-				<button class="header-search-icon" aria-controls="header-search" aria-expanded="false" <?php self::amp_search_toggle(); ?>>
+				<button class="header-search-icon" aria-expanded="false" aria-controls="header-search-dropdown" <?php self::amp_search_toggle(); ?>>
 					<?php echo occasio_get_svg( 'search' ); ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'occasio-pro' ); ?></span>
 				</button>
@@ -103,7 +103,7 @@ class Occasio_Pro_Header_Search {
 		if ( true === $theme_options['header_search'] || is_customize_preview() ) :
 			?>
 
-			<div class="header-search-dropdown" <?php self::amp_search_is_toggled(); ?>>
+			<div id="header-search-dropdown" class="header-search-dropdown" <?php self::amp_search_is_toggled(); ?>>
 				<div class="header-search-main">
 					<div class="header-search-form">
 						<?php get_search_form(); ?>

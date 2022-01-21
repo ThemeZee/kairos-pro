@@ -4,45 +4,45 @@
  * @package Occasio Pro
  */
 
-( function( $ ) {
+( function() {
 
-	$( document ).ready( function() {
-		var searchToggle = $( '#masthead .header-main .header-search-button .header-search-icon' );
-		var searchForm = $( '.site .header-search-dropdown' );
+	document.addEventListener( 'DOMContentLoaded', function() {
 
-		function closeSearchForm() {
-			searchForm.removeClass( 'active' ).hide();
-			searchToggle.attr( 'aria-expanded', searchForm.hasClass( 'active' ) );
+		// Find header search elements.
+		var searchIcon = document.querySelector( '#masthead .header-main .header-search-button .header-search-icon' );
+		var searchForm = document.querySelector( '.site #header-search-dropdown' );
+
+		// Return early if header search is missing.
+		if ( searchIcon === null ) {
+			return;
 		}
 
-		// Add an initial value for the attribute.
-		searchToggle.attr( 'aria-expanded', 'false' );
-
-		/* Display and hide Search Form when search icon is clicked */
-		searchToggle.click( function(e) {
-			searchForm.toggle().toggleClass( 'active' );
-			searchForm.find( '.search-form .search-field' ).focus();
-
-			$( this ).attr( 'aria-expanded', searchForm.hasClass( 'active' ) );
+		// Display Search Form when search icon is clicked.
+		searchIcon.addEventListener( 'click', function(e) {
+			searchForm.classList.toggle( 'toggled-on' );
+			searchForm.querySelector( '.header-search-form .search-form .search-field' ).focus();
+			searchIcon.setAttribute( 'aria-expanded', searchForm.classList.contains( 'toggled-on' ) );
 			e.stopPropagation();
 		});
 
-		/* Close search form if Escape key is pressed */
-		$( document ).keyup(function(e) {
-			if ( e.which == 27 ) {
-				closeSearchForm();
+		// Do not close search form if click is inside header search element.
+		searchForm.addEventListener( 'click', function(e) {
+			e.stopPropagation();
+		});
+
+		// Close search form if click is outside header search element.
+		document.addEventListener( 'click', function() {
+			searchForm.classList.remove( 'toggled-on' );
+			searchIcon.setAttribute( 'aria-expanded', 'false' );
+		});
+
+		// Close search form if Escape key is pressed.
+		document.addEventListener( 'keyup', function(e) {
+			if ( 'Escape' === e.key ) {
+				searchForm.classList.remove( 'toggled-on' );
+				searchIcon.setAttribute( 'aria-expanded', 'false' );
 			}
-		});
-
-		/* Do not close search form if click is inside header search dropdown */
-		searchForm.find( '.header-search-form' ).click( function(e) {
-			e.stopPropagation();
-		});
-
-		/* Close search form if click is outside header search element */
-		$( document ).click( function() {
-			closeSearchForm();
 		});
 	} );
 
-} )( jQuery );
+} )();
