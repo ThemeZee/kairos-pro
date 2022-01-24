@@ -2,6 +2,11 @@
 Occasio Pro Changelog
 ===================================
 
+= 1.0.6 - 2022-01-24 =
+* added Steam and Discord to social icons
+* updated Header Search script to use vanilla js
+* updated Scroll to Top button script to use vanilla js
+
 = 1.0.5 - 2021-08-24 =
 * updated styling for widget areas
 
