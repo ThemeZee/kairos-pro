@@ -49,10 +49,13 @@ class Occasio_Pro_Scroll_To_Top {
 		// Call Credit Link function of theme if credit link is activated.
 		if ( true === $theme_options['scroll_to_top'] && ! self::is_amp() ) :
 
-			wp_enqueue_script( 'occasio-pro-scroll-to-top', OCCASIO_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.min.js', array(), '20220119', true );
+			wp_enqueue_script( 'occasio-pro-scroll-to-top', OCCASIO_PRO_PLUGIN_URL . 'assets/js/scroll-to-top.min.js', array(), '20220924', true );
 
 			// Passing Parameters to navigation.js.
-			wp_localize_script( 'occasio-pro-scroll-to-top', 'occasioProScrollToTop', array( 'icon' => occasio_get_svg( 'collapse' ) ) );
+			wp_localize_script( 'occasio-pro-scroll-to-top', 'occasioProScrollToTop', array(
+				'icon'  => occasio_get_svg( 'collapse' ),
+				'label' => esc_attr__( 'Scroll to Top', 'occasio-pro' ),
+			) );
 
 		endif;
 	}
