@@ -78,9 +78,14 @@ class Occasio_Pro_Header_Search {
 
 			<div class="header-search-button">
 
-				<button class="header-search-icon" aria-expanded="false" aria-controls="header-search-dropdown" <?php self::amp_search_toggle(); ?>>
+				<button
+					class="header-search-icon"
+					aria-expanded="false"
+					aria-controls="header-search-dropdown"
+					aria-label="<?php esc_attr_e( 'Open search form', 'occasio-pro' ); ?>"
+					<?php self::amp_search_toggle(); ?>
+				>
 					<?php echo occasio_get_svg( 'search' ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'occasio-pro' ); ?></span>
 				</button>
 
 			</div>
