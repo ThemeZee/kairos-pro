@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Occasio Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2021-08-24 11:59+0200\n"
-"PO-Revision-Date: 2021-08-24 11:59+0200\n"
+"POT-Creation-Date: 2022-09-23 11:19+0200\n"
+"PO-Revision-Date: 2022-09-23 11:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -297,31 +297,32 @@ msgstr "Sekundäres Menü"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-header-search.php:83
-msgid "Search"
-msgstr "Suche"
+#: includes/modules/class-header-search.php:85
+msgid "Open search form"
+msgstr "Suchformular öffnen"
 
-#: includes/modules/class-header-search.php:128
+#: includes/modules/class-header-search.php:133
 msgid "Header Search"
 msgstr "Header Suche"
 
-#: includes/modules/class-header-search.php:144
+#: includes/modules/class-header-search.php:149
 msgid "Enable search field in header"
 msgstr "Suchfeld im Header aktivieren"
 
-#: includes/modules/class-scroll-to-top.php:70
-msgid "Scroll to Top"
+#: includes/modules/class-scroll-to-top.php:57
+#: includes/modules/class-scroll-to-top.php:73
+msgid "Scroll to top"
 msgstr "Nach oben scrollen"
 
-#: includes/modules/class-scroll-to-top.php:86
-msgid "Display Scroll to Top Button"
-msgstr "Button zum Nach oben Scrollen anzeigen"
+#: includes/modules/class-scroll-to-top.php:89
+msgid "Display Scroll to top button"
+msgstr "Button zum Nach oben scrollen anzeigen"
 
-#: includes/modules/class-social-icons.php:183
+#: includes/modules/class-social-icons.php:185
 msgid "Social Icons (Header)"
 msgstr "Social Icons (Header)"
 
-#: includes/modules/class-social-icons.php:184
+#: includes/modules/class-social-icons.php:186
 msgid "Social Icons (Footer)"
 msgstr "Social Icons (Footer)"
 
@@ -441,6 +442,9 @@ msgstr "Erscheint über dem Footer-Bereich."
 #: occasio-pro.php:206
 msgid "Theme Options"
 msgstr "Theme Optionen"
+
+#~ msgid "Search"
+#~ msgstr "Suche"
 
 #~ msgid "Local Fonts (GDPR)"
 #~ msgstr "Lokale Schriftarten (DSGVO)"

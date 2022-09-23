@@ -1,6 +1,6 @@
 <?php
 /**
- * Scroll to Top
+ * Scroll to top
  *
  * Displays scroll to top button based on theme options
  *
@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Scroll to Top Class
+ * Scroll to top Class
  */
 class Occasio_Pro_Scroll_To_Top {
 
 	/**
-	 * Scroll to Top Setup
+	 * Scroll to top Setup
 	 *
 	 * @return void
 	 */
@@ -54,7 +54,7 @@ class Occasio_Pro_Scroll_To_Top {
 			// Passing Parameters to navigation.js.
 			wp_localize_script( 'occasio-pro-scroll-to-top', 'occasioProScrollToTop', array(
 				'icon'  => occasio_get_svg( 'collapse' ),
-				'label' => esc_attr__( 'Scroll to Top', 'occasio-pro' ),
+				'label' => esc_attr__( 'Scroll to top', 'occasio-pro' ),
 			) );
 
 		endif;
@@ -67,17 +67,17 @@ class Occasio_Pro_Scroll_To_Top {
 	 */
 	static function scroll_to_top_settings( $wp_customize ) {
 
-		// Add Scroll to Top headline.
+		// Add Scroll to top headline.
 		$wp_customize->add_control( new Occasio_Customize_Header_Control(
 			$wp_customize, 'occasio_theme_options[scroll_top_title]', array(
-				'label'    => esc_html__( 'Scroll to Top', 'occasio-pro' ),
+				'label'    => esc_html__( 'Scroll to top', 'occasio-pro' ),
 				'section'  => 'occasio_section_footer',
 				'settings' => array(),
 				'priority' => 40,
 			)
 		) );
 
-		// Add Scroll to Top setting.
+		// Add Scroll to top setting.
 		$wp_customize->add_setting( 'occasio_theme_options[scroll_to_top]', array(
 			'default'           => false,
 			'type'              => 'option',
@@ -86,7 +86,7 @@ class Occasio_Pro_Scroll_To_Top {
 		) );
 
 		$wp_customize->add_control( 'occasio_theme_options[scroll_to_top]', array(
-			'label'    => esc_html__( 'Display Scroll to Top Button', 'occasio-pro' ),
+			'label'    => esc_html__( 'Display Scroll to top button', 'occasio-pro' ),
 			'section'  => 'occasio_section_footer',
 			'settings' => 'occasio_theme_options[scroll_to_top]',
 			'type'     => 'checkbox',
