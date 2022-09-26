@@ -5,14 +5,14 @@ Plugin URI: http://themezee.com/addons/occasio-pro/
 Description: Occasio Pro is an add-on plugin for Occasio including additional customization options for colors and typography as well as extra features like navigation menus, social icons and footer widgets.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.0.6
+Version: 1.0.7
 Text Domain: occasio-pro
 Domain Path: /languages/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Occasio Pro
-Copyright(C) 2021, ThemeZee.com - support@themezee.com
+Copyright(C) 2022, ThemeZee.com - support@themezee.com
 */
 
 // Exit if accessed directly.
@@ -60,7 +60,7 @@ class Occasio_Pro {
 		define( 'OCCASIO_PRO_NAME', 'Occasio Pro' );
 
 		// Define Version Number.
-		define( 'OCCASIO_PRO_VERSION', '1.0.6' );
+		define( 'OCCASIO_PRO_VERSION', '1.0.7' );
 
 		// Define Plugin Name.
 		define( 'OCCASIO_PRO_PRODUCT_ID', 232393 );
