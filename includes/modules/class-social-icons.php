@@ -63,7 +63,7 @@ class Occasio_Pro_Social_Icons {
 
 		// Create SVG markup.
 		$svg  = '<svg class="icon icon-' . esc_attr( $icon ) . '" aria-hidden="true" role="img">';
-		$svg .= ' <use xlink:href="' . OCCASIO_PRO_PLUGIN_URL . 'assets/icons/social-icons.svg#icon-' . esc_html( $icon ) . '"></use> ';
+		$svg .= ' <use xlink:href="' . OCCASIO_PRO_PLUGIN_URL . 'assets/icons/social-icons.svg?ver=20221122#icon-' . esc_html( $icon ) . '"></use> ';
 		$svg .= '</svg>';
 
 		return $svg;
@@ -90,7 +90,7 @@ class Occasio_Pro_Social_Icons {
 		// Search if menu URL is in supported icons.
 		$icon = 'star';
 		foreach ( $social_icons as $attr => $value ) {
-			if ( false !== strpos( $item_output, $attr ) ) {
+			if ( false !== stripos( $item_output, $attr ) ) {
 				$icon = esc_attr( $value );
 			}
 		}
@@ -134,6 +134,7 @@ class Occasio_Pro_Social_Icons {
 			'instagram.com'   => 'instagram',
 			'linkedin.com'    => 'linkedin',
 			'mailto:'         => 'envelope',
+			'mastodon'        => 'mastodon',
 			'medium.com'      => 'medium-m',
 			'meetup.com'      => 'meetup',
 			'patreon'         => 'patreon',
