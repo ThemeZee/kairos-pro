@@ -2,6 +2,9 @@
 Occasio Pro Changelog
 ===================================
 
+= 1.1 - 2024-01-24 =
+* added X to social icons menu
+
 = 1.0.9 - 2023-09-17 =
 * updated plugin updater
 
