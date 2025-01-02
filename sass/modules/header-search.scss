@@ -1,3 +1,6 @@
+@use "../_mixins";
+@use "../_variables";
+
 .header-search-enabled {
 	.header-main {
 		position: relative;
@@ -16,27 +19,27 @@
 	.header-search-button {
 		order: 2;
 		margin-left: auto;
-		@include font-size(17);
-		@include font-family(--navi-font);
-		@include font-weight(--navi-font-weight);
-		@include text-transform(--navi-text-transform);
+		@include mixins.font-size(17);
+		@include mixins.font-family(--navi-font);
+		@include mixins.font-weight(--navi-font-weight);
+		@include mixins.text-transform(--navi-text-transform);
 
 		.header-search-icon {
 			margin: 0;
 			padding: 1rem;
-			@include color(--header-text-color);
+			@include mixins.color(--header-text-color);
 			background: none;
 			border: none;
 
 			&:hover,
 			&:active {
 				cursor: pointer;
-				@include color(--header-text-hover-color);
+				@include mixins.color(--header-text-hover-color);
 			}
 
 			&:focus {
 				outline: thin dotted;
-				@include color(--header-text-color);
+				@include mixins.color(--header-text-color);
 			}
 
 			.icon-search {
@@ -55,7 +58,7 @@
 		display: none;
 		margin: 0;
 		padding: 0 1.5rem;
-		@include background(--header-background-color);
+		@include mixins.background(--header-background-color);
 		box-sizing: border-box;
 		z-index: 999;
 
@@ -68,7 +71,7 @@
 			display: flex;
 			padding: 1.5rem 0;
 			border-top: 1px solid;
-			@include border-color(--header-text-color);
+			@include mixins.border-color(--header-text-color);
 
 			.search-form {
 				flex-grow: 1;
@@ -80,11 +83,11 @@
 
 				.search-submit {
 					background: #fff;
-					@include color(--link-color);
+					@include mixins.color(--link-color);
 
 					&:hover,
 					&:active {
-						@include color(--link-hover-color);
+						@include mixins.color(--link-hover-color);
 					}
 				}
 			}
@@ -133,7 +136,7 @@
 			margin-top: -2rem;
 			padding: 0;
 			width: 100%;
-			max-width: $themeWidth;
+			max-width: variables.$themeWidth;
 			background: none;
 
 			.header-search-main {
@@ -145,7 +148,7 @@
 					flex-grow: 1;
 					margin-right: 2rem;
 					padding: 1.5rem;
-					@include background(--header-background-color);
+					@include mixins.background(--header-background-color);
 				}
 			}
 		}
@@ -156,7 +159,7 @@
 			max-width: 100%;
 
 			.header-search-main {
-				max-width: $themeWidth;
+				max-width: variables.$themeWidth;
 				margin-left: auto;
 				margin-right: auto;
 			}

@@ -1,3 +1,5 @@
+@use "../_mixins";
+
 .entry-author {
 	margin: 1.25rem 0 0;
 	padding: 0;
@@ -15,7 +17,7 @@
 
 .entry-author .author-heading .author-title {
 	margin: 0 0 0.5rem;
-	@include font-size(18);
+	@include mixins.font-size(18);
 }
 
 .entry-author .author-heading .author-link {
@@ -55,7 +57,7 @@
 	}
 
 	.entry-author .author-heading .author-title {
-		@include font-size(20);
+		@include mixins.font-size(20);
 	}
 }
 

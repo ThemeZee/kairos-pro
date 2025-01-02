@@ -1,8 +1,10 @@
+@use "../_variables";
+
 .before-header-widget-area,
 .after-header-widget-area,
 .before-footer-widget-area {
 	margin: 0 auto;
-	max-width: $themeWidth;
+	max-width: variables.$themeWidth;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 
