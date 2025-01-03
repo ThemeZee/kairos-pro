@@ -2,6 +2,9 @@
 Occasio Pro Changelog
 ===================================
 
+= 1.1.1 - 2025-01-03 =
+* improved tooling and code styling
+
 = 1.1 - 2024-01-24 =
 * added X to social icons menu
 
